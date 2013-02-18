@@ -1,4 +1,0 @@
-Kentaur_project
-===============
-
-SzTGyak
