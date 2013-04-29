@@ -21,13 +21,19 @@ namespace Zeusz
                  ÜzenetSzövege.ToString() + " ; ";
              */
 		
-            string[] újÜzenet = üzenet.getÖsszesAdat;
+            string újÜzenet = üzenet.getÖsszesAdat;
+            string seged; 
            for (int i = 0; i < újÜzenet.Length ; i++)
 			{  
                db = 0;
-               if ( string[i] újÜzenet = ";" )
+               if ( újÜzenet[i] == ";" )
                {
                    db++;
+               }
+               else
+	            {
+                    seged = seged + újÜzenet[i];
+	            }
 			 
 			    switch (db)
                 {
