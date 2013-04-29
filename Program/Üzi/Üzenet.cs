@@ -6,7 +6,7 @@ namespace Zeusz
 {
 	class Üzenet 
     {
-        string címzettek;
+        string[] címzettek;
         //string[] címzettek; ?
         public string Címzettek
         {
@@ -61,14 +61,14 @@ namespace Zeusz
 
 
 
-        public Üzenet(string ujcímzettek, string ujfeladó, DateTime ujküldésDátum, string ujtárgy, int ujüzenetazonosító, string ujüzenetSzöveg)
+        public Üzenet(string[] ujcímzettek, string ujfeladó, string ujtárgy, string ujüzenetSzöveg)
         {
             címzettek = ujcímzettek;
             elolvasva = false;
             feladó = ujfeladó;
-            küldésDátum = ujküldésDátum;
+            küldésDátum = System.DateTime.Now;
             tárgy = ujtárgy;
-            üzenetazonosító = ...;
+            üzenetazonosító = 1; //késõbb átírni adatbázisból következõ lekérésre
             üzenetSzöveg = ujüzenetSzöveg;
 
 		}
@@ -93,12 +93,12 @@ namespace Zeusz
 
 		public void delete()
         {
-            //?
+            //késõbb ab-val
 		}
 
 		public string getÖsszesAdat()
         {
-            return Üzenetazonosító.ToString() + " ; " + Címzettek.ToString() + " ; " + Feladó.ToString() + " ; " + Elolvasva.ToString() + " ; " + KüldésDátuma.ToString() + " ; " + Tárgy.ToString() + " ; "  + ÜzenetSzövege.ToString();
+            return Üzenetazonosító.ToString() + " ; " + Címzettek.ToString() + " ; " + Feladó.ToString() + " ; " + Elolvasva.ToString() + " ; " + KüldésDátuma.ToString() + " ; " + Tárgy.ToString() + " ; "  + ÜzenetSzövege.ToString() + " ; ";
 		}
 
 	}//end Üzenet
