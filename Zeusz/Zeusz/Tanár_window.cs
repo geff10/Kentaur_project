@@ -35,11 +35,11 @@ namespace Zeusz
             cmb_kovetelmeny.SelectedIndex = 0;
             this.Text = "Belépve " + név + " néven.";
             lsb_tantargyak.DataSource = tárgyak;
-            /*foreach (Tanár t in tanárok)
+            foreach (Tanár t in tanárok)
             {
                 lsb_oktatok.Items.Add(t.Zeuszkód);// + "      " + t.Név);
-            }*/
-            lsb_oktatok.DataSource = tanárok;
+            }
+            //lsb_oktatok.DataSource = tanárok;
             //lsb_tantargyak.SelectedIndex = 0;
         }
 
@@ -55,11 +55,11 @@ namespace Zeusz
             string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
             string segedlet = txb_segedlet.Text;
             string[] tanár = new string[5];
-            for (int i = 0; i < lsb_tanirok.Items.Count; i++)
+            for (int i = 0; i < lsb_tanarok.Items.Count; i++)
             {
-                tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanirok.SelectedItem).Zeuszkód;
+                tanár[i] = lsb_tanarok.Items[i].ToString();//tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
             }
-            tanár[0] = "toma";
+            //tanár[0] = "toma";
             Tantárgy tárgy = new Tantárgy(nev, terem, kezd, vege, het, tanár, kovetelmeny, segedlet);
             tantárgyKezelő.Tárgyhozzáadás(tárgy);
             tantárgyHozzáadKérelem kérelem = new tantárgyHozzáadKérelem("toma", "új tárgy",
@@ -82,9 +82,9 @@ namespace Zeusz
             string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
             string segedlet = txb_segedlet.Text;
             string[] tanár = null;
-            for (int i = 0; i < lsb_tanirok.Items.Count; i++)
+            for (int i = 0; i < lsb_tanarok.Items.Count; i++)
             {
-                tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanirok.SelectedItem).Zeuszkód;
+                tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
             }
             //tanár[0] = "toma";
             Tantárgy tárgy = new Tantárgy(nev, terem, kezd, vege, het, tanár, kovetelmeny, segedlet);
@@ -113,7 +113,17 @@ namespace Zeusz
         {
             if (lsb_oktatok.SelectedIndex != 0)
             {
-                lsb_tanirok.Items.Add(tanárok.Find((Predicate<Tanár>)lsb_oktatok.SelectedItem).SzemélyIgsz);
+                lsb_tanarok.Items.Add(lsb_oktatok.SelectedItem);
+                lsb_tanarok.Invalidate();
+            }
+        }
+
+        private void btn_töröl_Click(object sender, EventArgs e)
+        {
+            if (lsb_tanarok.SelectedIndex != 0)
+            {
+                lsb_tanarok.Items.Remove(lsb_tanarok.SelectedIndex);
+                lsb_tanarok.Invalidate();
             }
         }
     }

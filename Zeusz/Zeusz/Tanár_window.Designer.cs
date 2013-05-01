@@ -37,7 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_töröl = new System.Windows.Forms.Button();
             this.btn_hozzaad = new System.Windows.Forms.Button();
-            this.lsb_tanirok = new System.Windows.Forms.ListBox();
+            this.lsb_tanarok = new System.Windows.Forms.ListBox();
             this.lbl_tanárok = new System.Windows.Forms.Label();
             this.lsb_oktatok = new System.Windows.Forms.ListBox();
             this.lbl_oktatók = new System.Windows.Forms.Label();
@@ -160,7 +160,7 @@
             // 
             this.panel1.Controls.Add(this.btn_töröl);
             this.panel1.Controls.Add(this.btn_hozzaad);
-            this.panel1.Controls.Add(this.lsb_tanirok);
+            this.panel1.Controls.Add(this.lsb_tanarok);
             this.panel1.Controls.Add(this.lbl_tanárok);
             this.panel1.Controls.Add(this.lsb_oktatok);
             this.panel1.Controls.Add(this.lbl_oktatók);
@@ -177,6 +177,7 @@
             this.btn_töröl.TabIndex = 5;
             this.btn_töröl.Text = "Töröl";
             this.btn_töröl.UseVisualStyleBackColor = true;
+            this.btn_töröl.Click += new System.EventHandler(this.btn_töröl_Click);
             // 
             // btn_hozzaad
             // 
@@ -188,13 +189,13 @@
             this.btn_hozzaad.UseVisualStyleBackColor = true;
             this.btn_hozzaad.Click += new System.EventHandler(this.btn_hozzaad_Click);
             // 
-            // lsb_tanirok
+            // lsb_tanarok
             // 
-            this.lsb_tanirok.FormattingEnabled = true;
-            this.lsb_tanirok.Location = new System.Drawing.Point(64, 198);
-            this.lsb_tanirok.Name = "lsb_tanirok";
-            this.lsb_tanirok.Size = new System.Drawing.Size(135, 95);
-            this.lsb_tanirok.TabIndex = 3;
+            this.lsb_tanarok.FormattingEnabled = true;
+            this.lsb_tanarok.Location = new System.Drawing.Point(64, 198);
+            this.lsb_tanarok.Name = "lsb_tanarok";
+            this.lsb_tanarok.Size = new System.Drawing.Size(135, 95);
+            this.lsb_tanarok.TabIndex = 3;
             // 
             // lbl_tanárok
             // 
@@ -482,7 +483,7 @@
         private System.Windows.Forms.TextBox txb_segedlet;
         private System.Windows.Forms.Label lbl_segedlet;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox lsb_tanirok;
+        private System.Windows.Forms.ListBox lsb_tanarok;
         private System.Windows.Forms.Label lbl_tanárok;
         private System.Windows.Forms.ListBox lsb_oktatok;
         private System.Windows.Forms.Label lbl_oktatók;

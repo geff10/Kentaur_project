@@ -30,7 +30,7 @@ namespace Zeusz
     interface IKérelemkezelő
     {
         void Kérelemelbírálás(Kérelem kérelem);
-        void Kérelmezés(string típus);
+        void Kérelmezés(string típus, Kérelem kérelem);
         List<Kérelem> kérelemListázás();
         
     }
