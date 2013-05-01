@@ -91,8 +91,22 @@ namespace Zeusz
                 //if (siker = false) throw new Exception();
 
             }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            catch
+            { }
+=======
             catch { }
+>>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
+=======
+            catch { }
+>>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
+=======
+            catch { }
+>>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
         }
+ 
         public void hallgatóTörlés(string indoklás, Hallgató hallgató)
         {
 
