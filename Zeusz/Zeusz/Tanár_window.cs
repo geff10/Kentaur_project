@@ -71,26 +71,30 @@ namespace Zeusz
 
         private void btn_modosit_Click(object sender, EventArgs e)
         {
-            //Tantárgy valasztott = ;
-            string nev = txb_nev.Text;
-            string het = cmb_het.SelectedItem.ToString();
-            string terem = txb_terem.Text;
-            DateTime kezd = new DateTime(0, 0, 0, int.Parse(nud_kora.Value.ToString()),
-                int.Parse(nud_kperc.Value.ToString()), 0);
-            DateTime vege = new DateTime(0, 0, 0, int.Parse(nud_vora.Value.ToString()),
-                int.Parse(nud_vperc.Value.ToString()), 0);
-            string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
-            string segedlet = txb_segedlet.Text;
-            string[] tanár = null;
-            for (int i = 0; i < lsb_tanarok.Items.Count; i++)
+            if (lsb_tantargyak.SelectedIndex != -1)
             {
-                tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
+                Tantárgy valasztott = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem); ;
+                string nev = txb_nev.Text;
+                string het = cmb_het.SelectedItem.ToString();
+                string terem = txb_terem.Text;
+                DateTime kezd = new DateTime(0, 0, 0, int.Parse(nud_kora.Value.ToString()),
+                    int.Parse(nud_kperc.Value.ToString()), 0);
+                DateTime vege = new DateTime(0, 0, 0, int.Parse(nud_vora.Value.ToString()),
+                    int.Parse(nud_vperc.Value.ToString()), 0);
+                string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
+                string segedlet = txb_segedlet.Text;
+                string[] tanár = null;
+                for (int i = 0; i < lsb_tanarok.Items.Count; i++)
+                {
+                    tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
+                }
+                //tanár[0] = "toma";
+                Tantárgy tárgy = new Tantárgy(nev, terem, kezd, vege, het, tanár, kovetelmeny, segedlet);
+                tantárgyMódKérelem kérelem = new tantárgyMódKérelem("toma", "új tárgy",
+                    DateTime.Now, false, tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem).ToString(), tárgy);
+                kérelemKezelő.Kérelmezés("újTárgy", kérelem);
+                lsb_tantargyak.Invalidate();
             }
-            //tanár[0] = "toma";
-            Tantárgy tárgy = new Tantárgy(nev, terem, kezd, vege, het, tanár, kovetelmeny, segedlet);
-            tantárgyMódKérelem kérelem = new tantárgyMódKérelem("toma", "új tárgy",
-                DateTime.Now, false, tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem).ToString(), tárgy);
-            kérelemKezelő.Kérelmezés("újTárgy", kérelem);
         }
 
         private void lsb_tantargyak_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,7 +110,11 @@ namespace Zeusz
             nud_kperc.Value = tárgy.KezdésIdőpont.Minute;
             nud_vora.Value = tárgy.VégeIdőpont.Hour;
             nud_vperc.Value = tárgy.VégeIdőpont.Minute;
-            string[] tanarok = new string[5];
+            string[] tanarok = tárgy.Oktatók;
+            for (int i = 0; i < tanarok.Length; i++)
+            {
+                lsb_tanarok.Items.Add(tanarok[i]);
+            }
         }
 
         private void btn_hozzaad_Click(object sender, EventArgs e)
@@ -122,8 +130,18 @@ namespace Zeusz
         {
             if (lsb_tanarok.SelectedIndex != 0)
             {
-                lsb_tanarok.Items.Remove(lsb_tanarok.SelectedIndex);
+                lsb_tanarok.Items.Remove(lsb_tanarok.SelectedItem);
                 lsb_tanarok.Invalidate();
+            }
+        }
+
+        private void btn_targytorol_Click(object sender, EventArgs e)
+        {
+            if (lsb_tantargyak.SelectedIndex != 0)
+            {
+                Tantárgy törlendő = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
+                tantárgyKezelő.Tárgytörlés(törlendő);
+                lsb_tantargyak.Invalidate();
             }
         }
     }

@@ -135,6 +135,7 @@
             this.btn_targytorol.TabIndex = 20;
             this.btn_targytorol.Text = "Tantárgy törlése";
             this.btn_targytorol.UseVisualStyleBackColor = true;
+            this.btn_targytorol.Click += new System.EventHandler(this.btn_targytorol_Click);
             // 
             // btn_modosit
             // 
