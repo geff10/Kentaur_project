@@ -81,14 +81,17 @@ namespace Zeusz
                             hallgatóadat.SetElementValue("FelvettTárgyak", h.FelvettTárgyak);
                             hallgatóadat.SetElementValue("Aktív", h.Aktiv);
                             hallgatóadat.SetElementValue("Végzett", h.Végzett);
-                            
+
                         }
                         doc.Save("Hallgató.xml");
                         siker = true;
 
                     }
                 }
+                //if (siker = false) throw new Exception();
+
             }
+            catch { }
         }
         public void hallgatóTörlés(string indoklás, Hallgató hallgató)
         {
