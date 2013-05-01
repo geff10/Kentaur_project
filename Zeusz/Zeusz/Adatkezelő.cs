@@ -347,7 +347,7 @@ namespace Zeusz
 
 
 
-        void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető)
+        public void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető)
         {
             VezetőBeolvasás();
             //bool siker = false;
