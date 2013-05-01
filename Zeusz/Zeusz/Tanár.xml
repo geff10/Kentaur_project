@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tanárok>
+  <Tanár Zeuszkód="@]LT&lt;A">
+    <Név>Tteszt</Név>
+    <Lakhely>Tlakhfdasely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsfdasz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:44:46.9949944+02:00</SzületésiDátum>
+    <Születésihely>Tszüfdsalhely</Születésihely>
+    <Beosztás>portás</Beosztás>
+  </Tanár>
+  <Tanár Zeuszkód="7Xy{=">
+    <Név>Ttessszt</Név>
+    <Lakhely>Tlakhely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:45:53.8208166+02:00</SzületésiDátum>
+    <Születésihely>Tszülhely</Születésihely>
+    <Beosztás>sajt</Beosztás>
+  </Tanár>
+  <Tanár Zeuszkód="e5WJ8N">
+    <Név>Tteszt</Név>
+    <Lakhely>Tlakhfdasely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsfdasz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:45:53.8208166+02:00</SzületésiDátum>
+    <Születésihely>Tszüfdsalhely</Születésihely>
+    <Beosztás>portás</Beosztás>
+  </Tanár>
+  <Tanár Zeuszkód="i:ZbP@">
+    <Név>Ttessszt</Név>
+    <Lakhely>Tlakhely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
+    <Születésihely>Tszülhely</Születésihely>
+    <Beosztás>sajt</Beosztás>
+  </Tanár>
+  <Tanár Zeuszkód="i:ZbP@">
+    <Név>Tteszt</Név>
+    <Lakhely>Tlakhfdasely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsfdasz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
+    <Születésihely>Tszüfdsalhely</Születésihely>
+    <Beosztás>portás</Beosztás>
+  </Tanár>
+</Tanárok>

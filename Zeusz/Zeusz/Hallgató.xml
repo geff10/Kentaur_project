@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Hallgatók>
+  <Hallgató Zeuszkód="wj3Rc8">
+    <Név>teszt</Név>
+    <Lakhely>teszthely</Lakhely>
+    <SzemélyIgazolványSzám>teszt123456</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:49:58.0877878+02:00</SzületésiDátum>
+    <Születésihely>teszthely</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+  </Hallgató>
+  <Hallgató Zeuszkód="wj3Rc8">
+    <Név>tesssszt</Név>
+    <Lakhely>tesssssszthely</Lakhely>
+    <SzemélyIgazolványSzám>tesssssztasdf</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
+    <Születésihely>tesssssszthely</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+  </Hallgató>
+</Hallgatók>

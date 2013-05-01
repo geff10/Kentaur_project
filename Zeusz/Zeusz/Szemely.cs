@@ -5,44 +5,44 @@ using System.Text;
 
 namespace Zeusz
 {
-    class Szemely
+    class Személy
     {
         string lakhely;
-        string nev;
-        string szemelyIgsz;
-        DateTime szuletesiDatum;
-        string szuletesiHely;
-        string zeuszkod;
+        string név;
+        string személyIgsz;
+        DateTime születésiDátum;
+        string születésiHely;
+        string zeuszkód;
 
 
-        public string Nev       //itt van set
+        public string Név       //itt van set
         {
-            get { return nev; }
-            set { nev = value; }
+            get { return név; }
+            set { név = value; }
         }
        
-        public string SzemelyIgsz       //itt van set
+        public string SzemélyIgsz       //itt van set
         {
-            get { return szemelyIgsz; }
-            set { szemelyIgsz = value; }
+            get { return személyIgsz; }
+            set { személyIgsz = value; }
         }
    
-        public DateTime SzuletesiDatum
+        public DateTime SzületésiDátum
         {
-            get { return szuletesiDatum; }
-            set { szuletesiDatum = value; }
+            get { return születésiDátum; }
+            set { születésiDátum = value; }
         }
       
-        public string SzuletesiHely
+        public string SzületésiHely
         {
-            get { return szuletesiHely; }
-            set { szuletesiHely = value; }
+            get { return születésiHely; }
+            set { születésiHely = value; }
         }
         
-        public string Zeuszkod
+        public string Zeuszkód
         {
-            get { return zeuszkod; }
-            set { zeuszkod= value; }
+            get { return zeuszkód; }
+            set { zeuszkód= value; }
         }
 
         public string Lakhely //itt van set
@@ -51,34 +51,34 @@ namespace Zeusz
             set { lakhely = value; }
         }
 
-        public Szemely(string lakhely, string nev, string szemelyIgsz, DateTime szuletesiDatum,
-                        string szuletesiHely, string zeuszkod)
+        public Személy(string lakhely, string név, string személyIgsz, DateTime születésiDátum,
+                        string születésiHely, string zeuszkód)
         {
             this.lakhely = lakhely;
-            this.nev = nev;
-            this.szemelyIgsz = szemelyIgsz;
-            this.szuletesiDatum = szuletesiDatum;
-            this.szuletesiHely = szuletesiHely;
-            this.zeuszkod = zeuszkod;
+            this.név = név;
+            this.személyIgsz = személyIgsz;
+            this.születésiDátum = születésiDátum;
+            this.születésiHely = születésiHely;
+            this.zeuszkód = zeuszkód;
 
         }
 
         public override string ToString()
         {
-            return "Zeuszkód: " + zeuszkod + "Név: " + nev + ", Lakhely: " + lakhely + ", Igazolványszám: " + szemelyIgsz + ", Születési dátum: " + szuletesiDatum + ", Születési hely: " + szuletesiHely;
+            return "Zeuszkód: " + zeuszkód + "Név: " + név + ", Lakhely: " + lakhely + ", Igazolványszám: " + személyIgsz + ", Születési dátum: " + születésiDátum + ", Születési hely: " + születésiHely;
         }
 
-        private void delete() //kell ez ide? sztem belülről nem tudjuk törölni
+        private void delete() 
         {
-            
+            //kikeresi magát, kitörli az adatbázisből és mindenki boldog :)...csak ő szomorú, mert törölték 
         }
     }
 
-    class Hallgató : Szemely
+    class Hallgató : Személy
     {
-        bool aktiv = true;
-        bool vegzett = false;
-        List<string> felvettTargyak;  //ez majd list  tantárgy lesz
+        bool aktiv=true;
+        bool végzett = false;
+        List<Tantárgy> felvettTárgyak;  //ez majd list  tantárgy lesz
 
         public bool Aktiv
         {
@@ -86,59 +86,59 @@ namespace Zeusz
             set { aktiv = value; }
         }
         
-        public List<string> FelvettTargyak
+        public List<Tantárgy> FelvettTárgyak
         {
-            get { return felvettTargyak; }
-            set { felvettTargyak = value; }
+            get { return felvettTárgyak; }
+            set { felvettTárgyak = value; }
         }
         
-        public bool Vegzett
+        public bool Végzett
         {
-            get { return vegzett; }
-            set { vegzett = value; }
+            get { return végzett; }
+            set { végzett = value; }
         }
 
-        public Hallgató(string h_zeuszkod, string h_nev, string h_lakhely, string h_szemelyigsz, DateTime h_szuletesidatum, string h_szuletesihely, bool h_aktiv, bool h_vegzett)
-            : base(h_lakhely, h_nev, h_szemelyigsz, h_szuletesidatum, h_szuletesihely, h_zeuszkod)
+        public Hallgató(string h_zeuszkód, string h_név, string h_lakhely, string h_személyigsz, DateTime h_születésidátum, string h_születésihely, bool h_aktiv, bool h_végzett)
+            : base(h_lakhely, h_név, h_személyigsz, h_születésidátum, h_születésihely, h_zeuszkód)
         {
             this.aktiv = h_aktiv;
-            this.vegzett = h_vegzett;
+            this.végzett = h_végzett;
         }
 
-        private void setOsszesadat(string zeuszkod, string nev, string lakhely, string szemelyigsz, DateTime szuldatum, string szulhely, bool aktiv, bool vegzett)
+        public void setÖsszesadat(string zeuszkód, string név, string lakhely, string személyigsz, DateTime szüldátum, string szülhely, bool aktiv, bool végzett)
         {
-            if (zeuszkod != "")
-                Zeuszkod = zeuszkod;
+            if (zeuszkód != "")
+                Zeuszkód = zeuszkód;
 
-            if (nev != "")
-                Nev = nev;
+            if (név != "")
+                Név = név;
 
             if (lakhely != "")
                 Lakhely = lakhely;
 
-            if (szemelyigsz != "")
-                SzemelyIgsz = szemelyigsz;
+            if (személyigsz != "")
+                SzemélyIgsz = személyigsz;
 
-            if (szuldatum != null)
-                SzuletesiDatum = szuldatum;
+            if (szüldátum != null)
+                SzületésiDátum = szüldátum;
 
-            if (szulhely != "")
-                SzuletesiHely = szulhely;
+            if (szülhely != "")
+                SzületésiHely = szülhely;
             
             if (aktiv != null)
                 Aktiv = aktiv;
 
-            if (vegzett != null)
-                Vegzett = vegzett;
+            if (végzett != null)
+                Végzett = végzett;
 
         }
 
-        private string getOsszesadat() //diagramon itt void van, azzel nem jó, legalább stringet kell visszadobnia, void-ra nem tudok visszaadni semmit
+        public string getÖsszesadat() //diagramon itt void van, azzel nem jó, legalább stringet kell visszadobnia, void-ra nem tudok visszaadni semmit
         {
-            return Zeuszkod.ToString() + " ; " + Nev.ToString() + " ; " + Lakhely.ToString() + " ; " + SzemelyIgsz.ToString() + " ; " + SzuletesiDatum.ToString() + " ; " + SzuletesiHely.ToString() + " ; " + Aktiv.ToString() + " ; " + Vegzett.ToString();
+            return Zeuszkód.ToString() + " ; " + Név.ToString() + " ; " + Lakhely.ToString() + " ; " + SzemélyIgsz.ToString() + " ; " + SzületésiDátum.ToString() + " ; " + SzületésiHely.ToString() + " ; " + Aktiv.ToString() + " ; " + Végzett.ToString();
         }
 
-        private void setPassziv()
+        public void setPassziv()
         {
             Aktiv = false;
         }
@@ -151,9 +151,9 @@ namespace Zeusz
          * 
          * */
 
-        private void setTantargy(string tantargy)   //stringgel tesztelem
+        public void setTantargy(Tantárgy tantárgy)   //stringgel tesztelem
         {
-            FelvettTargyak.Add(tantargy);
+            FelvettTárgyak.Add(tantárgy);
 
         }
        
@@ -162,7 +162,7 @@ namespace Zeusz
     }
 
 
-    class Tanár : Szemely
+    class Tanár : Személy
     {
         string beosztas;
 
@@ -178,44 +178,44 @@ namespace Zeusz
             this.beosztas=t_beosztas;
         }
 
-        private void setOsszesadat(string zeusz, string nev, string lakhely, string szemigsz, DateTime szuldate, string szulhely, string beosztas)
+        public void setOsszesadat(string zeusz, string nev, string lakhely, string szemigsz, DateTime szuldate, string szulhely, string beosztas)
         {
             if (zeusz != "")        //értelemszerűen ha valami üres akkor marad a régi érték
-                Zeuszkod = zeusz;
+                Zeuszkód = zeusz;
             if (nev != "")
-                Nev = nev;
+                Név = nev;
             if (lakhely != "")
                 Lakhely = lakhely;
             if (szemigsz != "")
-                SzemelyIgsz = szemigsz;
+                SzemélyIgsz = szemigsz;
             if (szuldate != null)
-                SzuletesiDatum = szuldate;
+                SzületésiDátum = szuldate;
             if (szulhely != "")
-                SzuletesiHely = szulhely;
+                SzületésiHely = szulhely;
             if (beosztas != "")
                 Beosztas = beosztas;
         }
 
-        private void KimutatasKeszites(Object o)
+        public void KimutatasKeszites(Object o)
         {
             //na ezt k*ra nem tudm mit kéne ide
         }
 
-        private void hallgatoErtekeles(Félév_évfolyam félév, string tantárgy, Hallgató hallgato, int jegy)
+        public void hallgatoErtekeles(Félév_évfolyam félév, string tantárgy, Hallgató hallgato, int jegy)
         { 
             //stringes verzió..majd kell db meg többiek hozzá
         
         }
 
-        private void hallgatoErtekelesModositas(Félév_évfolyam félév, string tantárgy, Hallgató hallgato, int mit, int mire)
+        public void hallgatóÉrtekelésMódositas(Félév_évfolyam félév, string tantárgy, Hallgató hallgato, int mit, int mire)
         {
             //még írjam meg
         }
 
-        private string getOsszesadat()
+        public string getÖsszesadat()
         {
             //szintén legalább string kell neki a returnhoz
-            return Zeuszkod.ToString() + " ; " + Nev.ToString() + " ; " + Lakhely.ToString() + " ; " + SzemelyIgsz.ToString() + " ; " + SzuletesiDatum.ToString() + " ; " + SzuletesiHely.ToString() + " ; " + Beosztas.ToString();
+            return Zeuszkód.ToString() + " ; " + Név.ToString() + " ; " + Lakhely.ToString() + " ; " + SzemélyIgsz.ToString() + " ; " + SzületésiDátum.ToString() + " ; " + SzületésiHely.ToString() + " ; " + Beosztas.ToString();
         }
 
 
@@ -235,38 +235,38 @@ namespace Zeusz
 
     }
 
-    class Vezető : Szemely
+    class Vezető : Személy
     {
-        public Vezető(string v_zeusz, string v_nev, string v_lakhely, string v_szemigsz, DateTime v_szuldate, string v_szulhely)
-            : base(v_lakhely, v_nev, v_szemigsz, v_szuldate, v_szulhely, v_zeusz)
+        public Vezető(string v_zeusz, string v_név, string v_lakhely, string v_szémigsz, DateTime v_szüldate, string v_szülhely)
+            : base(v_lakhely, v_név, v_szémigsz, v_szüldate, v_szülhely, v_zeusz)
         {
 
         }
 
         public string getÖsszes()
         {
-            return Zeuszkod.ToString() + " ; " + Nev.ToString() + " ; " + Lakhely.ToString() + " ; " + SzemelyIgsz.ToString() + " ; " + SzuletesiDatum.ToString() + " ; " + SzuletesiHely.ToString();
+            return Zeuszkód.ToString() + " ; " + Név.ToString() + " ; " + Lakhely.ToString() + " ; " + SzemélyIgsz.ToString() + " ; " + SzületésiDátum.ToString() + " ; " + SzületésiHely.ToString();
         }
 
-        public void kimutatasKeszites(Object o)
+        public void kimutatásKészités(Object o)
         {
             //ez majd.. :)
         }
 
-        public void setOsszes(string zeusz, string nev, string cim, string szemigsz, DateTime szuldate, string szulhely)
+        public void setÖsszes(string zeusz, string nev, string cim, string szemigsz, DateTime szuldate, string szulhely)
         {
             if (zeusz != "")
-                Zeuszkod = zeusz;
+                Zeuszkód = zeusz;
             if (nev != "")
-                Nev = nev;
+                Név = nev;
             if (cim != "")
                 Lakhely = cim;
             if (szemigsz != "")
-                SzemelyIgsz = szemigsz;
+                SzemélyIgsz = szemigsz;
             if (szuldate != null)
-                SzuletesiDatum = szuldate;
+                SzületésiDátum = szuldate;
             if (szulhely != "")
-                SzuletesiHely = SzuletesiHely;
+                SzületésiHely = SzületésiHely;
         }
 
     }
