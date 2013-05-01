@@ -60,27 +60,83 @@ namespace Zeusz
         static Üzenetkezelő üzenetKezelő = new Üzenetkezelő();
         static List<Hallgató> hallgatók = adatKezelő.hallgatóListázás();
         static Hallgató hallgató = belépve();
-        //static List<Üzenet> üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
+        static List<Üzenet> üzenetek = null;
         
 
         private void ÉrtesítésekTab_Click(object sender, EventArgs e)
-        {        
-            //lsb_lista.DataSource = üzenetek;
+        {
+            try
+            {
+                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
+                lsb_lista.DataSource = üzenetek;
+            }
+            catch
+            {
+            }
         }
 
         private void btn_frissit_Click(object sender, EventArgs e)
         {
-            //lsb_lista.DataSource = üzenetek;
+            try
+            {
+                lsb_lista.Items.Clear();
+                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
+                lsb_lista.DataSource = üzenetek;
+                btn_osszes.Enabled = false;
+                btn_uj.Enabled = true;
+                btn_torol.Enabled = false;
+            }
+            catch
+            {
+                lsb_lista.Items.Clear();
+                lsb_lista.Items.Add("Nincs beérkezett üzenet");
+                btn_osszes.Enabled = false;
+                btn_uj.Enabled = false;
+                btn_torol.Enabled = false;
+            }
         }
 
         private void btn_osszes_Click(object sender, EventArgs e)
         {
-            //lsb_lista.DataSource = üzenetek;
+            try
+            {
+                lsb_lista.Items.Clear();
+                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
+                lsb_lista.DataSource = üzenetek;
+                btn_osszes.Enabled = false;
+                btn_uj.Enabled = true;
+                btn_torol.Enabled = false;
+            }
+            catch
+            {
+                lsb_lista.Items.Clear();
+                lsb_lista.Items.Add("Nincs beérkezett üzenet");
+                btn_osszes.Enabled = false;
+                btn_uj.Enabled = false;
+                btn_torol.Enabled = false;
+            }
         }
 
         private void btn_uj_Click(object sender, EventArgs e)
         {
-            //lsb_lista.DataSource = üzenetek;
+            try
+            {
+                lsb_lista.Items.Clear();
+                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, false);
+                lsb_lista.DataSource = üzenetek;
+                btn_osszes.Enabled = true;
+                btn_uj.Enabled = false;
+                btn_torol.Enabled = false;
+            }
+            catch
+            {
+                lsb_lista.Items.Clear();
+                lsb_lista.Items.Clear();
+                lsb_lista.Items.Add("Nincs új üzenet");
+                btn_osszes.Enabled = false;
+                btn_uj.Enabled = false;
+                btn_torol.Enabled = false;
+            }
         }
 
         private void lsb_lista_SelectedIndexChanged(object sender, EventArgs e)
