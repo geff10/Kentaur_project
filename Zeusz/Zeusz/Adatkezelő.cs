@@ -453,7 +453,43 @@ namespace Zeusz
 
             for (int i = 0; i < 6; i++)
             {
-                myZeusz += Convert.ToChar(rnd.Next(48, 128));
+                int j=rnd.Next(0, 2);
+                if (j == 0)
+                {
+                    myZeusz += rnd.Next(0, 9);
+                }
+                else
+                {
+                    myZeusz += Convert.ToChar(rnd.Next(65, 91));
+                }
+            }
+
+            //check
+            
+            HallgatóBeolvasás();
+            TanárBeolvasás();
+            VezetőBeolvasás();
+
+            foreach (Hallgató h in beolvasotthallgatók)
+            {
+                if (h.Zeuszkód == myZeusz)
+                {
+                    generateZeuszKód();
+                }
+            }
+            foreach (Tanár t in beolvasottTanárok)
+            {
+                if (t.Zeuszkód == myZeusz)
+                {
+                    generateZeuszKód();
+                }
+            }
+            foreach (Vezető v in beolvasottVezetők)
+            {
+                if (v.Zeuszkód == myZeusz)
+                {
+                    generateZeuszKód();
+                }
             }
             return myZeusz;
 
