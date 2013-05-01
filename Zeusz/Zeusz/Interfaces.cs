@@ -9,16 +9,16 @@ namespace Zeusz
     {
         //void hallgatóFelvétel(Hallgató újHallgató);
         //void hallgatóMódosítás(Hallgató módosítottHallgató,Hallgató módosítandóHallgató);
-        //void hallgatóTörlés(string indoklás,Hallgató hallgató);
+       // void hallgatóTörlés(string indoklás,Hallgató hallgató);
         //List<Hallgató> hallgatóListázás();
         //void passzívFélév(Hallgató hallgató);
         //void tanárFelvétel(Tanár újTanár);
         //void tanárMódosítás(Tanár módosítottTanár,Tanár újTanár);
-        //void tanárTörlés(string indoklás, Tanár tanár);
+       // void tanárTörlés(string indoklás, Tanár tanár);
         //List<Tanár> tanárListázás();
         //void vezetőFelvétel(Vezető újVezető);
         //void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető);
-        //void vezetőTörlés(string indoklás, Vezető vezető);
+       // void vezetőTörlés(string indoklás, Vezető vezető);
         //List<Vezető> vezetőListázás();
     }
 
@@ -47,9 +47,9 @@ namespace Zeusz
 
     interface IÜzenetkezelő
     {
-        //void üzenetKüldés(Üzenet üzenet);
-        //void üzenetTörlés(Üzenet üzenet);
-        //void üzenetKiíratás(Üzenet üzenet);
-        //List<Üzenet> üzenetListázás();
+        void üzenetKüldés();
+        void üzenetTörlés(Üzenet üzenet);
+        void üzenetKiíratás(Üzenet üzenet);
+        List<Üzenet> üzenetListázás();
     }
 }
