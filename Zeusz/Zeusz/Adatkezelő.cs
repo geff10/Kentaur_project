@@ -58,20 +58,20 @@ namespace Zeusz
         {
             
             HallgatóBeolvasás();
-            bool siker = false;
+           // bool siker = false;
             try
             {
                 foreach (Hallgató h in beolvasotthallgatók)
                 {
                     if (h.Zeuszkód == módosítandóHallgató.Zeuszkód)
                     {
-                        h.setÖsszesadat("", módosítandóHallgató.Név, módosítandóHallgató.Lakhely, módosítandóHallgató.SzemélyIgsz, módosítandóHallgató.SzületésiDátum, módosítandóHallgató.SzületésiHely, módosítandóHallgató.Aktiv, módosítandóHallgató.Végzett);
+                        h.setÖsszesadat("", módosítottHallgató.Név, módosítottHallgató.Lakhely, módosítottHallgató.SzemélyIgsz, módosítottHallgató.SzületésiDátum, módosítottHallgató.SzületésiHely, módosítottHallgató.Aktiv, módosítottHallgató.Végzett);
 
-                        XDocument doc = new XDocument("Hallgató.xml");
-                        var csere = from hallgató in doc.Descendants("Hallgató")
-                                    where hallgató.Attribute("ZeuszKód").Value == módosítandóHallgató.Zeuszkód
-                                    select hallgató;
-                        foreach (XElement hallgatóadat in csere)
+                        XDocument doc = XDocument.Load("Hallgató.xml");
+                        var hallgatók = from x in doc.Descendants("Hallgató")
+                                    where x.Attribute("Zeuszkód").Value == módosítandóHallgató.Zeuszkód
+                                    select x;
+                        foreach (XElement hallgatóadat in hallgatók)
                         {
                             hallgatóadat.SetElementValue("Név", h.Név);
                             hallgatóadat.SetElementValue("Lakhely", h.Lakhely);
@@ -84,7 +84,7 @@ namespace Zeusz
 
                         }
                         doc.Save("Hallgató.xml");
-                        siker = true;
+             //           siker = true;
 
                     }
                 }
@@ -135,7 +135,10 @@ namespace Zeusz
 
         public void tanárFelvétel(Tanár újTanár)
         {
-            újTanár.Zeuszkód = generateZeuszKód();
+            if (újTanár.Zeuszkód == null || újTanár.Zeuszkód == "")
+            {
+                újTanár.Zeuszkód = generateZeuszKód();
+            }
 
 
             //xmlbe irat
@@ -168,7 +171,42 @@ namespace Zeusz
 
 
 
-        //void tanárMódosítás(Tanár módosítottTanár,Tanár újTanár);
+       public void tanárMódosítás(Tanár módosítottTanár, Tanár újTanár)
+        {
+            TanárBeolvasás();
+            //bool siker = false;
+            try
+            {
+                foreach (Tanár t in beolvasottTanárok)
+                {
+                    if (t.Zeuszkód == újTanár.Zeuszkód)
+                    {
+                        t.setOsszesadat("", módosítottTanár.Név, módosítottTanár.Lakhely, módosítottTanár.SzemélyIgsz, módosítottTanár.SzületésiDátum, módosítottTanár.SzületésiHely, módosítottTanár.Beosztas);
+
+                        XDocument doc = XDocument.Load("Tanár.xml");
+                        var tanárok = from x in doc.Descendants("Tanár")
+                                        where x.Attribute("Zeuszkód").Value == újTanár.Zeuszkód
+                                        select x;
+                        foreach (XElement tanáradat in tanárok)
+                        {
+                            tanáradat.SetElementValue("Név", t.Név);
+                            tanáradat.SetElementValue("Lakhely", t.Lakhely);
+                            tanáradat.SetElementValue("SzemélyIgazolványSzám", t.SzemélyIgsz);
+                            tanáradat.SetElementValue("SzületésiDátum", t.SzületésiDátum);
+                            tanáradat.SetElementValue("Születésihely", t.SzületésiHely);
+                            tanáradat.SetElementValue("Beosztás", t.Beosztas);
+
+                        }
+                        doc.Save("Tanár.xml");
+                       // siker = true;
+
+                    }
+                }
+                //if (siker = false) throw new Exception();
+
+            }
+            catch { }
+        }
         //void tanárTörlés(string indoklás, Tanár tanár);
         
         
@@ -212,7 +250,44 @@ namespace Zeusz
 
 
 
-        //void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető);
+        void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető)
+        {
+            VezetőBeolvasás();
+            //bool siker = false;
+            try
+            {
+                foreach (Vezető v in beolvasottVezetők)
+                {
+                    if (v.Zeuszkód == újVezető.Zeuszkód)
+                    {
+                        v.setÖsszes("", módosítottVezető.Név, módosítottVezető.Lakhely, módosítottVezető.SzemélyIgsz, módosítottVezető.SzületésiDátum, módosítottVezető.SzületésiHely);
+
+                        XDocument doc = XDocument.Load("Vezető.xml");
+                        var vezetők = from x in doc.Descendants("Vezető")
+                                      where x.Attribute("Zeuszkód").Value == újVezető.Zeuszkód
+                                      select x;
+                        foreach (XElement vezetőadat in vezetők)
+                        {
+                            vezetőadat.SetElementValue("Név", v.Név);
+                            vezetőadat.SetElementValue("Lakhely", v.Lakhely);
+                            vezetőadat.SetElementValue("SzemélyIgazolványSzám", v.SzemélyIgsz);
+                            vezetőadat.SetElementValue("SzületésiDátum", v.SzületésiDátum);
+                            vezetőadat.SetElementValue("Születésihely", v.SzületésiHely);
+
+
+                        }
+                        doc.Save("Tanár.xml");
+                        // siker = true;
+
+                    }
+                }
+                //if (siker = false) throw new Exception();
+
+            }
+            catch { }
+        }
+
+
         //void vezetőTörlés(string indoklás, Vezető vezető);
         public List<Vezető> vezetőListázás()
         {
