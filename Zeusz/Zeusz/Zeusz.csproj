@@ -67,6 +67,12 @@
     <Compile Include="Szemely.cs" />
     <Compile Include="Tantárgy.cs" />
     <Compile Include="Tantárgykezelő.cs" />
+    <Compile Include="Tanár_window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanár_window.Designer.cs">
+      <DependentUpon>Tanár_window.cs</DependentUpon>
+    </Compile>
     <Compile Include="Üzenet.cs" />
     <Compile Include="Üzenetkezelő.cs" />
     <EmbeddedResource Include="Hallgató_window.resx">
@@ -84,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tanár_window.resx">
+      <DependentUpon>Tanár_window.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

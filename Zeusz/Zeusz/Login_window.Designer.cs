@@ -98,6 +98,7 @@
             this.btn_tanar.TabIndex = 6;
             this.btn_tanar.Text = "Teszt tanár";
             this.btn_tanar.UseVisualStyleBackColor = true;
+            this.btn_tanar.Click += new System.EventHandler(this.btn_tanar_Click);
             // 
             // btn_vezeto
             // 

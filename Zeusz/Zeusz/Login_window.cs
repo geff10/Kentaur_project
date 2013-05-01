@@ -31,5 +31,11 @@ namespace Zeusz
             Hallgató_window hallgató_Form = new Hallgató_window();
             hallgató_Form.ShowDialog();
         }
+
+        private void btn_tanar_Click(object sender, EventArgs e)
+        {
+            Tanár_window tanár_Form = new Tanár_window();
+            tanár_Form.ShowDialog();
+        }
     }
 }

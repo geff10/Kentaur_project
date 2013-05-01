@@ -12,11 +12,20 @@ namespace Zeusz
     public partial class Hallgató_window : Form
     {
         static string zeusz;
+        static Adatkezelő adatKezelő = new Adatkezelő();
+        static Tantárgykezelő tantárgykezelő = new Tantárgykezelő();
+        static Üzenetkezelő üzenetKezelő = new Üzenetkezelő();
+        static List<Hallgató> hallgatók = adatKezelő.hallgatóListázás();
+        static Hallgató hallgató = belépve();
+        static List<Üzenet> üzenetek = null;
+        static List<Tantárgy> tantárgyak = null;
+        static List<Tantárgy> felvettek = null;
+
         public Hallgató_window()
         {
             Login_window login = new Login_window();
-            InitializeComponent();
             zeusz = login.txtb_azonosito.Text;
+            InitializeComponent();     
         }
 
         
@@ -32,6 +41,11 @@ namespace Zeusz
              kéne a zeusz vltozóba a hallgató zeusz kódja is
              szintén a státusz is kéne
              */
+            név = hallgató.Név;
+            if (hallgató.Aktiv)
+                státusz = "aktív";
+            else
+                státusz = "passzív";
             int magassag_a = Screen.PrimaryScreen.Bounds.Height;
             int szelesseg_a = Screen.PrimaryScreen.Bounds.Width;
             int magassag_b = this.Size.Height / 2;
@@ -39,7 +53,7 @@ namespace Zeusz
             Point kezd = new Point(szelesseg_a / 2 - szelesseg_b, magassag_a / 2 - magassag_b);
             Location = kezd;
             this.Text = "Belépve " + név + " néven.";
-            //lbl_zeusz2.Text = zeusz;
+            lbl_zeusz2.Text = zeusz;
             lbl_statusz2.Text = státusz;
         }
 
@@ -55,17 +69,7 @@ namespace Zeusz
             }
             return bent;
         }
-
-        static Adatkezelő adatKezelő = new Adatkezelő();
-        static Tantárgykezelő tantárgykezelő = new Tantárgykezelő();
-        static Üzenetkezelő üzenetKezelő = new Üzenetkezelő();
-        static List<Hallgató> hallgatók = adatKezelő.hallgatóListázás();
-        static Hallgató hallgató = belépve();
-        static List<Üzenet> üzenetek = null;
-        static List<Tantárgy> tantárgyak = null;
-        static List<Tantárgy> felvettek = null;
         
-
         private void ÉrtesítésekTab_Click(object sender, EventArgs e)
         {
             try

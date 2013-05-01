@@ -18,7 +18,7 @@ namespace Zeusz
             //Üzenetkezelő.üzenetKüldés(üzenet);
         }
 
-        public void Kérelmezés(string típus)
+        public void Kérelmezés(string típus, Kérelem kérelem)
         {
             switch (típus){
                 case "hallgatómód":
@@ -38,6 +38,7 @@ namespace Zeusz
                     }
                 case "újtárgy":
                     {
+                        
                         //tantárgyHozzáadKérelem kérelem = new tantárgyHozzáadKérelem(adatok beolvasáa);
                         break;
                     }
