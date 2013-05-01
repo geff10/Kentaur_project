@@ -50,6 +50,6 @@ namespace Zeusz
         void üzenetKüldés();
         void üzenetTörlés(Üzenet üzenet);
         void üzenetKiíratás(Üzenet üzenet);
-        List<Üzenet> üzenetListázás();
+        List<Üzenet> üzenetListázás(string zeusz, bool mindet);
     }
 }

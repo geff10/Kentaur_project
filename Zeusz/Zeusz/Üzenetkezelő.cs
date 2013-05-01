@@ -80,8 +80,8 @@ namespace Zeusz
         {
             //Üzenet üzenet = new Üzenet(/*beolv üzik*/);
 		}
-		
-        public List<Üzenet> üzenetListázás()
+
+        public List<Üzenet> üzenetListázás(string zeusz,bool mindet)
         {
             List<Üzenet> üzenetek = new List<Üzenet>();
             // Üzenet adatbázison végigmegyünk

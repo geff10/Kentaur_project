@@ -134,13 +134,13 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_azonosito;
-        private System.Windows.Forms.TextBox txtb_azonosito;
         private System.Windows.Forms.Label lbl_jelszo;
         private System.Windows.Forms.TextBox txtb_jelszo;
         private System.Windows.Forms.Button btn_belepes;
         private System.Windows.Forms.Button btn_hallgato;
         private System.Windows.Forms.Button btn_tanar;
         private System.Windows.Forms.Button btn_vezeto;
+        public System.Windows.Forms.TextBox txtb_azonosito;
     }
 }
 
