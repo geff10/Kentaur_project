@@ -35,6 +35,11 @@ namespace Zeusz
             cmb_kovetelmeny.SelectedIndex = 0;
             this.Text = "Belépve " + név + " néven.";
             lsb_tantargyak.DataSource = tárgyak;
+            /*foreach (Tanár t in tanárok)
+            {
+                lsb_oktatok.Items.Add(t.Zeuszkód);// + "      " + t.Név);
+            }*/
+            lsb_oktatok.DataSource = tanárok;
             //lsb_tantargyak.SelectedIndex = 0;
         }
 
@@ -102,6 +107,14 @@ namespace Zeusz
             nud_vora.Value = tárgy.VégeIdőpont.Hour;
             nud_vperc.Value = tárgy.VégeIdőpont.Minute;
             string[] tanarok = new string[5];
+        }
+
+        private void btn_hozzaad_Click(object sender, EventArgs e)
+        {
+            if (lsb_oktatok.SelectedIndex != 0)
+            {
+                lsb_tanirok.Items.Add(tanárok.Find((Predicate<Tanár>)lsb_oktatok.SelectedItem).SzemélyIgsz);
+            }
         }
     }
 }

@@ -1,2 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Tantárgyak />
+<Tantárgyak>
+  <Tantárgy tárgykód="3853F">
+    <Tárgynév>gfdgs</Tárgynév>
+    <Helyszín>xc</Helyszín>
+    <Kezdés>2000.02.02. 8:00:30</Kezdés>
+    <Vége>2000.02.02. 9:00:30</Vége>
+    <Hét>Minden hét</Hét>
+    <Oktatók>toma</Oktatók>
+    <Követelmények>Vizsga</Követelmények>
+    <Segédletek>dsf</Segédletek>
+  </Tantárgy>
+</Tantárgyak>
