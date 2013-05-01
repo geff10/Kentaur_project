@@ -68,8 +68,8 @@ namespace Zeusz {
                 new XAttribute("tárgykód", tantárgy.Tárgykód),
                 new XElement("Tárgynév", tantárgy.Tárgynév),
                 new XElement("Helyszín", tantárgy.Helyszín),
-                new XElement("Kezdés", tantárgy.KezdésIdõpont),
-                new XElement("Vége", tantárgy.VégeIdõpont),
+                new XElement("Kezdés", tantárgy.KezdésIdõpont.ToString()),
+                new XElement("Vége", tantárgy.VégeIdõpont.ToString()),
                 new XElement("Hét", tantárgy.Hét),
                 new XElement("Oktatók", tantárgy.Oktatók),
                 new XElement("Követelmények", tantárgy.Követelmények),
@@ -107,9 +107,6 @@ namespace Zeusz {
 
                 throw (e);
             }
-
-
-            throw new System.NotImplementedException();
 		}
 
 

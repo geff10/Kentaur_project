@@ -145,7 +145,7 @@ namespace Zeusz {
                         var t = from tt in doc.Descendants("Tantárgy")
                                 where tt.Attribute("tárgykód").Value == this.tárgykód
                                 select tt;
-                        if (t != null)
+                        if (t != null && t.First() != null)
                             foglalt = true;
                         else
                             foglalt = false;
