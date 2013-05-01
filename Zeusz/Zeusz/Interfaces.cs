@@ -7,19 +7,19 @@ namespace Zeusz
 {
     interface IAdatkezelő
     {
-        //void hallgatóFelvétel(Hallgató újHallgató);
-        //void hallgatóMódosítás(Hallgató módosítottHallgató,Hallgató módosítandóHallgató);
-       // void hallgatóTörlés(string indoklás,Hallgató hallgató);
-        //List<Hallgató> hallgatóListázás();
-        //void passzívFélév(Hallgató hallgató);
-        //void tanárFelvétel(Tanár újTanár);
-        //void tanárMódosítás(Tanár módosítottTanár,Tanár újTanár);
-       // void tanárTörlés(string indoklás, Tanár tanár);
-        //List<Tanár> tanárListázás();
-        //void vezetőFelvétel(Vezető újVezető);
-        //void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető);
-       // void vezetőTörlés(string indoklás, Vezető vezető);
-        //List<Vezető> vezetőListázás();
+        void hallgatóFelvétel(Hallgató újHallgató);
+        void hallgatóMódosítás(Hallgató módosítottHallgató, Hallgató módosítandóHallgató);
+        void hallgatóTörlés(string indoklás, Hallgató hallgató);
+        List<Hallgató> hallgatóListázás();
+        void passzívFélév(Hallgató hallgató);
+        void tanárFelvétel(Tanár újTanár);
+        void tanárMódosítás(Tanár módosítottTanár, Tanár újTanár);
+        void tanárTörlés(string indoklás, Tanár tanár);
+        List<Tanár> tanárListázás();
+        void vezetőFelvétel(Vezető újVezető);
+        void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető);
+        void vezetőTörlés(string indoklás, Vezető vezető);
+        List<Vezető> vezetőListázás();
     }
 
     interface IBejelenkezésKezelő
