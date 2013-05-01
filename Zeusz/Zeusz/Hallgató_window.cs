@@ -151,6 +151,14 @@ namespace Zeusz
                         {
                             lsb_felveheto.Items.Clear();
                             tantárgyak = tantárgykezelő.tantárgyListázás();
+                            if (tantárgyak.First() == null)
+                            {
+                                lsb_felveheto.Items.Add("Nincs felvehető");
+                            }
+                            else
+                            {
+                                lsb_felveheto.DataSource = tantárgyak;
+                            }
 
                         }
                         catch

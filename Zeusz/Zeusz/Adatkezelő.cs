@@ -69,8 +69,8 @@ namespace Zeusz
 
                         XDocument doc = XDocument.Load("Hallgató.xml");
                         var hallgatók = from x in doc.Descendants("Hallgató")
-                                    where x.Attribute("Zeuszkód").Value == módosítandóHallgató.Zeuszkód
-                                    select x;
+                                        where x.Attribute("Zeuszkód").Value == módosítandóHallgató.Zeuszkód
+                                        select x;
                         foreach (XElement hallgatóadat in hallgatók)
                         {
                             hallgatóadat.SetElementValue("Név", h.Név);
@@ -84,13 +84,17 @@ namespace Zeusz
 
                         }
                         doc.Save("Hallgató.xml");
-             //           siker = true;
+                        //           siker = true;
 
                     }
                 }
                 //if (siker = false) throw new Exception();
 
             }
+            catch
+            {
+            }
+            /*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,7 +108,7 @@ namespace Zeusz
 >>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
 =======
             catch { }
->>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
+>>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59*/
         }
  
         public void hallgatóTörlés(string indoklás, Hallgató hallgató)
