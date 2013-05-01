@@ -119,7 +119,7 @@ namespace Zeusz
 
         private void btn_hozzaad_Click(object sender, EventArgs e)
         {
-            if (lsb_oktatok.SelectedIndex != 0)
+            if (lsb_oktatok.SelectedIndex != -1)
             {
                 lsb_tanarok.Items.Add(lsb_oktatok.SelectedItem);
                 lsb_tanarok.Invalidate();
@@ -128,7 +128,7 @@ namespace Zeusz
 
         private void btn_töröl_Click(object sender, EventArgs e)
         {
-            if (lsb_tanarok.SelectedIndex != 0)
+            if (lsb_tanarok.SelectedIndex != -1)
             {
                 lsb_tanarok.Items.Remove(lsb_tanarok.SelectedItem);
                 lsb_tanarok.Invalidate();
@@ -137,11 +137,36 @@ namespace Zeusz
 
         private void btn_targytorol_Click(object sender, EventArgs e)
         {
-            if (lsb_tantargyak.SelectedIndex != 0)
+            if (lsb_tantargyak.SelectedIndex != -1)
             {
                 Tantárgy törlendő = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
                 tantárgyKezelő.Tárgytörlés(törlendő);
                 lsb_tantargyak.Invalidate();
+            }
+        }
+
+        private void nud_kora_ValueChanged(object sender, EventArgs e)
+        {
+            nud_vora.Minimum = nud_kora.Value;
+            if (nud_kora.Value < nud_vora.Value)
+            {
+                nud_vperc.Minimum = 0;
+            }
+            else
+            {
+                nud_vperc.Minimum = nud_kperc.Value;
+            }
+        }
+
+        private void nud_kperc_ValueChanged(object sender, EventArgs e)
+        {
+            if (nud_kora.Value < nud_vora.Value)
+            {
+                nud_vperc.Minimum = 0;
+            }
+            else
+            {
+                nud_vperc.Minimum = nud_kperc.Value;
             }
         }
     }

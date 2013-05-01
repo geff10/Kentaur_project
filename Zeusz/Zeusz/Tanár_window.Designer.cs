@@ -284,6 +284,7 @@
             this.nud_vora.Name = "nud_vora";
             this.nud_vora.Size = new System.Drawing.Size(37, 20);
             this.nud_vora.TabIndex = 11;
+            this.nud_vora.ValueChanged += new System.EventHandler(this.nud_kperc_ValueChanged);
             // 
             // nud_kperc
             // 
@@ -296,6 +297,7 @@
             this.nud_kperc.Name = "nud_kperc";
             this.nud_kperc.Size = new System.Drawing.Size(45, 20);
             this.nud_kperc.TabIndex = 10;
+            this.nud_kperc.ValueChanged += new System.EventHandler(this.nud_kperc_ValueChanged);
             // 
             // nud_kora
             // 
@@ -308,11 +310,7 @@
             this.nud_kora.Name = "nud_kora";
             this.nud_kora.Size = new System.Drawing.Size(37, 20);
             this.nud_kora.TabIndex = 9;
-            this.nud_kora.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
+            this.nud_kora.ValueChanged += new System.EventHandler(this.nud_kora_ValueChanged);
             // 
             // lbl_idok
             // 
