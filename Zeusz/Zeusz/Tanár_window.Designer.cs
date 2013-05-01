@@ -339,6 +339,7 @@
             // 
             // cmb_het
             // 
+            this.cmb_het.Enabled = false;
             this.cmb_het.FormattingEnabled = true;
             this.cmb_het.Items.AddRange(new object[] {
             "Páros",
