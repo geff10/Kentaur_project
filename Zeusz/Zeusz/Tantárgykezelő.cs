@@ -10,6 +10,10 @@
 
 using System.Collections.Generic;
 using Zeusz;
+using System.IO;
+using System.Xml.Linq;
+using System.Linq;
+using System;
 namespace Zeusz {
 	public class Tantárgykezelõ : ITantárgykezelõ {
 
@@ -22,6 +26,23 @@ namespace Zeusz {
 		//~Tantárgykezelõ(){}
 
 		//public virtual void Dispose(){}
+
+
+        void XMLLétrehozás_Tantárgy(){
+            try
+            {
+                if (!File.Exists("Tantárgy.xml"))
+                {
+                    XElement tantárgyak = new XElement("Tantárgyak");
+                    tantárgyak.Save("Tantárgy.xml");
+                   
+                }
+            }
+            catch (Exception e)
+            { throw e; }
+        }
+        
+
 
 		/// 
 		/// <param name="tantárgy"></param>
@@ -38,7 +59,24 @@ namespace Zeusz {
 		/// 
 		/// <param name="tantárgy"></param>
 		public void Tárgyhozzáadás(Tantárgy tantárgy){
-            throw new System.NotImplementedException();
+
+            XMLLétrehozás_Tantárgy();
+
+            XDocument doc = XDocument.Load("Tantágy.xml");
+
+            XElement tantárgyElem = new XElement("Tantárgy",
+                new XAttribute("tárgykód", tantárgy.Tárgykód),
+                new XElement("Tárgynév", tantárgy.Tárgynév),
+                new XElement("Helyszín", tantárgy.Helyszín),
+                new XElement("Kezdés", tantárgy.KezdésIdõpont),
+                new XElement("Vége", tantárgy.VégeIdõpont),
+                new XElement("Hét", tantárgy.Hét),
+                new XElement("Oktatók", tantárgy.Oktatók),
+                new XElement("Követelmények", tantárgy.Követelmények),
+                new XElement("Segédletek", tantárgy.Segédletek));
+            doc.Element("Tantárgyak").Add(tantárgyElem);
+
+            doc.Save("Tantárgy.xml");
 		}
 
 		/// 
@@ -51,6 +89,25 @@ namespace Zeusz {
 		/// 
 		/// <param name="tantárgy"></param>
 		public void Tárgytörlés(Tantárgy tantárgy){
+            try
+            {
+                if (File.Exists("Tantárgy.xml"))
+                {
+                    XDocument doc = XDocument.Load("Tantárgy.xml");
+                    var t = from tt in doc.Descendants("Tantárgy")
+                            where tt.Attribute("tárgykód").Value == tantárgy.Tárgykód
+                            select tt;
+
+                    //kitörölni tt-t
+                }
+            }
+            catch (Exception e)
+            {
+
+                throw (e);
+            }
+
+
             throw new System.NotImplementedException();
 		}
 

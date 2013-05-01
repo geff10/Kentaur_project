@@ -10,6 +10,9 @@
 
 using System;
 using System.Text;
+using System.IO;
+using System.Xml.Linq;
+using System.Linq;
 namespace Zeusz {
 	public class Tantárgy {
         public static Random R = new Random();
@@ -61,13 +64,14 @@ namespace Zeusz {
             get { return hét; }
             set { hét = value; }
         }
-        private string oktatók;
+        private string[] oktatók;
 
-        public string Oktatók
+        public string[] Oktatók
         {
             get { return oktatók; }
             set { oktatók = value; }
         }
+
         private string követelmények;
 
         public string Követelmények
@@ -89,8 +93,10 @@ namespace Zeusz {
         //metódusok
         public string TárgyKódGen()
         {
-            
-            return string.Empty;
+            //pszeudorandom
+            string str = this.tárgynév[0] + this.oktatók[0][0] + this.kezdésIdõpont.ToString()[0] +
+                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString() + R.Next(65, 90);
+            return str;
         }
 
 
@@ -101,7 +107,7 @@ namespace Zeusz {
 		}
 
         public Tantárgy(string tárgynév, string tárgykód, string helyszín,DateTime kezdés,
-            DateTime vége, string hét, string oktatók, string követelmények, string segédletek)
+            DateTime vége, string hét, string[] oktatók, string követelmények, string segédletek)
         {
             this.tárgynév = tárgynév;
             this.tárgykód = tárgykód;
@@ -117,7 +123,7 @@ namespace Zeusz {
 
         //tárgykód nélküli
         public Tantárgy(string tárgynév,  string helyszín, DateTime kezdés,
-                DateTime vége, string hét, string oktatók, string követelmények, string segédletek)
+                DateTime vége, string hét, string[] oktatók, string követelmények, string segédletek)
         {
             this.tárgynév = tárgynév;
             this.helyszín = helyszín;
@@ -128,16 +134,37 @@ namespace Zeusz {
             this.követelmények = követelmények;
             this.segédletek = segédletek;
 
+            bool foglalt = false;
+            do {
+                this.tárgykód = TárgyKódGen();               
+                try
+                {
+                    if (File.Exists("Tantárgy.xml"))
+                    {
+                        XDocument doc = XDocument.Load("Tantárgy.xml");
+                        var t = from tt in doc.Descendants("Tantárgy")
+                                where tt.Attribute("tárgykód").Value == this.tárgykód
+                                select tt;
+                        if (t != null)
+                            foglalt = true;
+                        else
+                            foglalt = false;
+                    }
+                }
+                catch (Exception e)
+                {
 
-            this.tárgykód = TárgyKódGen();
-            /*if (már létezik ilyen kód)
-            {
-             *
-             * this.tárgykód = TárgyKódGen();
-                ...
-            }*/
+                    throw (e);
+                }
+            } while(foglalt);
         }
 
+        
+
+        /// <summary>
+        /// ToString()-ek
+        /// </summary>
+        /// <returns></returns>
 
 
         public override string ToString()
