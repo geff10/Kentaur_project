@@ -62,7 +62,7 @@ namespace Zeusz {
 
             XMLLétrehozás_Tantárgy();
 
-            XDocument doc = XDocument.Load("Tantágy.xml");
+            XDocument doc = XDocument.Load("Tantárgy.xml");
 
             XElement tantárgyElem = new XElement("Tantárgy",
                 new XAttribute("tárgykód", tantárgy.Tárgykód),
