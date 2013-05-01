@@ -57,10 +57,13 @@ namespace Zeusz
         }
 
         static Adatkezelő adatKezelő = new Adatkezelő();
+        static Tantárgykezelő tantárgykezelő = new Tantárgykezelő();
         static Üzenetkezelő üzenetKezelő = new Üzenetkezelő();
         static List<Hallgató> hallgatók = adatKezelő.hallgatóListázás();
         static Hallgató hallgató = belépve();
         static List<Üzenet> üzenetek = null;
+        static List<Tantárgy> tantárgyak = null;
+        static List<Tantárgy> felvettek = null;
         
 
         private void ÉrtesítésekTab_Click(object sender, EventArgs e)
@@ -131,7 +134,6 @@ namespace Zeusz
             catch
             {
                 lsb_lista.Items.Clear();
-                lsb_lista.Items.Clear();
                 lsb_lista.Items.Add("Nincs új üzenet");
                 btn_osszes.Enabled = false;
                 btn_uj.Enabled = false;
@@ -139,9 +141,46 @@ namespace Zeusz
             }
         }
 
-        private void lsb_lista_SelectedIndexChanged(object sender, EventArgs e)
+        private void tabc_hallgato_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //üzenetek.Find(); 
+            switch (tabc_hallgato.SelectedIndex)
+            {
+                case 1:
+                    {
+                        try
+                        {
+                            lsb_felveheto.Items.Clear();
+                            tantárgyak = tantárgykezelő.tantárgyListázás();
+
+                        }
+                        catch
+                        {
+                            lsb_felveheto.Items.Clear();
+                            lsb_felveheto.Items.Add("Nincs felvehető");
+                        }
+                        try
+                        {
+                            lsb_felvett.Items.Clear();
+                            felvettek = hallgató.FelvettTárgyak;
+                        }
+                        catch
+                        {
+                            lsb_felvett.Items.Clear();
+                            lsb_felvett.Items.Add("Nincs felvett");
+                        }
+                        break;
+                    }
+                case 4:
+                    {
+                        try
+                        {
+                        }
+                        catch
+                        {
+                        }
+                        break;
+                    }
+            }
         }
     }
 }
