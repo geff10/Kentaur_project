@@ -99,6 +99,7 @@ namespace Zeusz {
                             select tt;
 
                     //kitörölni tt-t
+                    t.Remove();
                 }
             }
             catch (Exception e)
@@ -121,6 +122,12 @@ namespace Zeusz {
           return tantárgyLista;
 		}
 
+        public List<Tantárgy> tantárgyListázás(string tanárZeuszkód)
+        {
+            //AB lekérdezés
+            List<Tantárgy> tantárgyLista = new List<Tantárgy>();
+            return tantárgyLista;
+        }
 
 
         public void Tárgymódosítás(Tantárgy tárgyról, Tantárgy tárgyra)

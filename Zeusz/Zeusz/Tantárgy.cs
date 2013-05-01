@@ -95,7 +95,7 @@ namespace Zeusz {
         {
             //pszeudorandom
             string str = this.tárgynév[0] + this.oktatók[0][0] + this.kezdésIdõpont.ToString()[0] +
-                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString() + R.Next(65, 90);
+                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString() + (char)R.Next(65, 90);
             return str;
         }
 

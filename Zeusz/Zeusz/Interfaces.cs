@@ -43,6 +43,7 @@ namespace Zeusz
         void Tárgymódosítás(Tantárgy tárgyról, Tantárgy tárgyra);
         void Tárgytörlés(Tantárgy tantárgy);
         List<Tantárgy> tantárgyListázás();
+        List<Tantárgy> tantárgyListázás(string tanárZeuszkód);
     }
 
     interface IÜzenetkezelő
