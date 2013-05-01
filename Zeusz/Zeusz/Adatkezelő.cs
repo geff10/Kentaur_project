@@ -53,7 +53,7 @@ namespace Zeusz
 
         }
 
-        //ezt írom épp ezt még ne használjátok
+      
         public void hallgatóMódosítás(Hallgató módosítottHallgató, Hallgató módosítandóHallgató)
         {
             
@@ -69,8 +69,8 @@ namespace Zeusz
 
                         XDocument doc = XDocument.Load("Hallgató.xml");
                         var hallgatók = from x in doc.Descendants("Hallgató")
-                                        where x.Attribute("Zeuszkód").Value == módosítandóHallgató.Zeuszkód
-                                        select x;
+                                    where x.Attribute("Zeuszkód").Value == módosítandóHallgató.Zeuszkód
+                                    select x;
                         foreach (XElement hallgatóadat in hallgatók)
                         {
                             hallgatóadat.SetElementValue("Név", h.Név);
@@ -84,45 +84,63 @@ namespace Zeusz
 
                         }
                         doc.Save("Hallgató.xml");
-                        //           siker = true;
+             //           siker = true;
 
                     }
                 }
                 //if (siker = false) throw new Exception();
 
             }
-            catch
-            {
-            }
-            /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            catch
-            { }
-=======
             catch { }
->>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
-=======
-            catch { }
->>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59
-=======
-            catch { }
->>>>>>> 34bf61427edcc806cdc9e3c7c2e8425154e99e59*/
         }
- 
         public void hallgatóTörlés(string indoklás, Hallgató hallgató)
         {
 
-            XDocument doc = new XDocument("hallgató.xml");
-            
+            try
+            {
+                foreach (Hallgató h in beolvasotthallgatók)
+                {
+                    if (h.Zeuszkód == hallgató.Zeuszkód)
+                    {
+                        beolvasotthallgatók.Remove(h);
 
+                        break;
+                    }
+                }
+               
+                
+                //archiváljuk
+                if (!File.Exists("ArchiveHallgató.xml"))
+                {
+                    XElement hallgatóarch = new XElement("Hallgatók");
+                    hallgatóarch.Save("ArchiveHallgató.xml");
+                }
+              
+                XDocument docarch = XDocument.Load("ArchiveHallgató.xml");
+                XElement hallgatóarchive = new XElement("Hallgató",
+                    new XAttribute("Zeuszkód", hallgató.Zeuszkód),
+                    new XElement("Név", hallgató.Név),
+                    new XElement("Lakhely", hallgató.Lakhely),
+                    new XElement("SzemélyIgazolványSzám", hallgató.SzemélyIgsz),
+                    new XElement("SzületésiDátum", hallgató.SzületésiDátum),
+                    new XElement("Születésihely", hallgató.SzületésiHely),
+                    new XElement("FelvettTárgyak", hallgató.FelvettTárgyak),
+                    new XElement("Aktív", hallgató.Aktiv),
+                    new XElement("Végzett", hallgató.Végzett),
+                    new XElement("Indoklás", indoklás));
+                docarch.Element("Hallgatók").Add(hallgatóarchive);
+                docarch.Save("ArchiveHallgató.xml");
 
+                //töröljük
+                XDocument doc = XDocument.Load("Hallgató.xml");
+                var hallgatók = from x in doc.Descendants("Hallgató")
+                                where x.Attribute("Zeuszkód").Value == hallgató.Zeuszkód
+                                select x;
+                hallgatók.Remove();
+                doc.Save("Hallgató.xml");
+            }
+            catch { }
 
-            /*var xElement = (from elemet in xdoc.Elements("Projects").Elements("Project")
-                            where elemet.Attribute("projectName").Value == foundProject
-                            select elemet);
-            xElement.Remove();*/
 
         }
 
@@ -132,10 +150,34 @@ namespace Zeusz
             HallgatóBeolvasás();
             return beolvasotthallgatók;
         }
-        
-        
-        //void passzívFélév(Hallgató hallgató);
 
+
+        public void passzívFélév(Hallgató hallgató)
+        {
+            HallgatóBeolvasás();
+            // bool siker = false;
+            try
+            {
+                foreach (Hallgató h in beolvasotthallgatók)
+                {
+                    if (h.Zeuszkód == hallgató.Zeuszkód)
+                    {
+                        h.setPassziv();
+
+                        XDocument doc = XDocument.Load("Hallgató.xml");
+                        var hallgatók = from x in doc.Descendants("Hallgató")
+                                        where x.Attribute("Zeuszkód").Value == hallgató.Zeuszkód
+                                        select x;
+                        foreach (XElement hallgatóadat in hallgatók)
+                        {
+                            hallgatóadat.SetElementValue("Aktív", h.Aktiv);
+                        }
+                        doc.Save("Hallgató.xml");
+                    }
+                }
+            }
+            catch { }
+        }
 
         public void tanárFelvétel(Tanár újTanár)
         {
@@ -211,7 +253,56 @@ namespace Zeusz
             }
             catch { }
         }
-        //void tanárTörlés(string indoklás, Tanár tanár);
+
+
+       public void tanárTörlés(string indoklás, Tanár tanár)
+       {
+
+           try
+           {
+               foreach (Tanár t in beolvasottTanárok)
+               {
+                   if (t.Zeuszkód == tanár.Zeuszkód)
+                   {
+                       beolvasottTanárok.Remove(t);
+
+                       break;
+                   }
+               }
+
+
+               //archiváljuk
+               if (!File.Exists("ArchiveTanár.xml"))
+               {
+                   XElement tanárarch = new XElement("Tanárok");
+                   tanárarch.Save("ArchiveTanár.xml");
+               }
+
+               XDocument docarch = XDocument.Load("ArchiveTanár.xml");
+               XElement tanárarchive = new XElement("Tanár",
+                   new XAttribute("Zeuszkód", tanár.Zeuszkód),
+                   new XElement("Név", tanár.Név),
+                   new XElement("Lakhely", tanár.Lakhely),
+                   new XElement("SzemélyIgazolványSzám", tanár.SzemélyIgsz),
+                   new XElement("SzületésiDátum", tanár.SzületésiDátum),
+                   new XElement("Születésihely", tanár.SzületésiHely),
+                   new XElement("Beosztás", tanár.Beosztas),
+                   new XElement("Indoklás", indoklás));
+               docarch.Element("Tanárok").Add(tanárarchive);
+               docarch.Save("ArchiveTanár.xml");
+
+               //töröljük
+               XDocument doc = XDocument.Load("Tanár.xml");
+               var tanárok = from x in doc.Descendants("Tanár")
+                               where x.Attribute("Zeuszkód").Value == tanár.Zeuszkód
+                               select x;
+               tanárok.Remove();
+               doc.Save("Tanár.xml");
+           }
+           catch { }
+
+
+       }
         
         
         public List<Tanár> tanárListázás()
@@ -222,8 +313,10 @@ namespace Zeusz
         }
         public void vezetőFelvétel(Vezető újVezető)
         {
-            újVezető.Zeuszkód = generateZeuszKód();
-
+            if (újVezető.Zeuszkód == null || újVezető.Zeuszkód == "")
+            {
+                újVezető.Zeuszkód = generateZeuszKód();
+            }
 
             //xmlbe irat
             try
@@ -292,7 +385,55 @@ namespace Zeusz
         }
 
 
-        //void vezetőTörlés(string indoklás, Vezető vezető);
+        public void vezetőTörlés(string indoklás, Vezető vezető)
+        {
+
+            try
+            {
+                foreach (Vezető v in beolvasottVezetők)
+                {
+                    if (v.Zeuszkód == vezető.Zeuszkód)
+                    {
+                        beolvasottVezetők.Remove(v);
+
+                        break;
+                    }
+                }
+
+
+                //archiváljuk
+                if (!File.Exists("ArchiveVezető.xml"))
+                {
+                    XElement vezetőarch = new XElement("Vezetők");
+                    vezetőarch.Save("ArchiveVezető.xml");
+                }
+
+                XDocument docarch = XDocument.Load("ArchiveVezető.xml");
+                XElement vezetőarchive = new XElement("Vezető",
+                    new XAttribute("Zeuszkód", vezető.Zeuszkód),
+                    new XElement("Név", vezető.Név),
+                    new XElement("Lakhely", vezető.Lakhely),
+                    new XElement("SzemélyIgazolványSzám", vezető.SzemélyIgsz),
+                    new XElement("SzületésiDátum", vezető.SzületésiDátum),
+                    new XElement("Születésihely", vezető.SzületésiHely),
+                    new XElement("Indoklás", indoklás));
+                docarch.Element("Vezetők").Add(vezetőarchive);
+                docarch.Save("ArchiveVezető.xml");
+
+                //töröljük
+                XDocument doc = XDocument.Load("Vezető.xml");
+                var vezetők = from x in doc.Descendants("Vezető")
+                              where x.Attribute("Zeuszkód").Value == vezető.Zeuszkód
+                              select x;
+                vezetők.Remove();
+                doc.Save("Vezető.xml");
+            }
+            catch { }
+
+
+        }
+
+
         public List<Vezető> vezetőListázás()
         {
             beolvasottVezetők.Clear();
@@ -320,6 +461,7 @@ namespace Zeusz
 
         private void HallgatóBeolvasás()
         {
+            beolvasotthallgatók.Clear();
             try
             {
 
@@ -347,6 +489,7 @@ namespace Zeusz
 
         private void TanárBeolvasás()
         {
+            beolvasottTanárok.Clear();
             try
             {
 
@@ -371,6 +514,7 @@ namespace Zeusz
         }
         private void VezetőBeolvasás()
         {
+            beolvasottVezetők.Clear();
             try
             {
 
