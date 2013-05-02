@@ -50,4 +50,28 @@
     <Születésihely>Budapest</Születésihely>
     <Jelszó>passw1234</Jelszó>
   </Vezető>
+  <Vezető Zeuszkód="1UZ50B">
+    <Név>Nagy Ferenc</Név>
+    <Lakhely>Budapest</Lakhely>
+    <SzemélyIgazolványSzám>12345678</SzemélyIgazolványSzám>
+    <SzületésiDátum>1963-07-04T23:49:11</SzületésiDátum>
+    <Születésihely>Budapest</Születésihely>
+    <Jelszó>passw1234</Jelszó>
+  </Vezető>
+  <Vezető Zeuszkód="FC7J68">
+    <Név>Pintér József</Név>
+    <Lakhely>Miskolc</Lakhely>
+    <SzemélyIgazolványSzám>12345679</SzemélyIgazolványSzám>
+    <SzületésiDátum>1959-04-09T23:51:14</SzületésiDátum>
+    <Születésihely>Miskolc</Születésihely>
+    <Jelszó>passw1234</Jelszó>
+  </Vezető>
+  <Vezető Zeuszkód="133V5J">
+    <Név>Béres István</Név>
+    <Lakhely>Szeged</Lakhely>
+    <SzemélyIgazolványSzám>21345678</SzemélyIgazolványSzám>
+    <SzületésiDátum>1973-02-01T23:52:59</SzületésiDátum>
+    <Születésihely>Szeged</Születésihely>
+    <Jelszó>passw1234</Jelszó>
+  </Vezető>
 </Vezetők>

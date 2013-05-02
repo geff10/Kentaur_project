@@ -1,43 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Tantárgyak>
-  <Tantárgy tárgykód="Gb2s3E">
-    <Tárgynév>Gyakorlás1</Tárgynév>
-    <Helyszín>F01</Helyszín>
-    <Kezdés>2013.05.13. 8:00:00</Kezdés>
-    <Vége>2013.05.13. 9:40:00</Vége>
+  <Tantárgy tárgykód="F22s7I">
+    <Tárgynév>Földrajz</Tárgynév>
+    <Helyszín>A0</Helyszín>
+    <Kezdés>2013.05.14. 8:00:00</Kezdés>
+    <Vége>2013.05.14. 10:00:00</Vége>
     <Hét>Páros</Hét>
-    <Oktatók>bbbbbb    Tteszti:ZbP@    Ttessszt</Oktatók>
+    <Oktatók>2ZBKETK78Z4N</Oktatók>
     <Követelmények>Évközi jegy</Követelmények>
-    <Segédletek>gyakorolj</Segédletek>
+    <Segédletek>segédlet1</Segédletek>
   </Tantárgy>
-  <Tantárgy tárgykód="Gi2n4Y">
-    <Tárgynév>Gyakorlás2</Tárgynév>
-    <Helyszín>F02</Helyszín>
-    <Kezdés>2013.05.15. 8:00:00</Kezdés>
-    <Vége>2013.05.15. 9:40:00</Vége>
-    <Hét>Páratlan</Hét>
-    <Oktatók>i:ZbP@    Ttessszt</Oktatók>
+  <Tantárgy tárgykód="M22s4F">
+    <Tárgynév>Matematika</Tárgynév>
+    <Helyszín>A2</Helyszín>
+    <Kezdés>2013.05.14. 8:00:00</Kezdés>
+    <Vége>2013.05.14. 13:00:00</Vége>
+    <Hét>Páros</Hét>
+    <Oktatók>2ZBKETK78Z4N</Oktatók>
     <Követelmények>Évközi jegy</Követelmények>
-    <Segédletek>gyakorolj</Segédletek>
-  </Tantárgy>
-  <Tantárgy tárgykód="Gb2t5I">
-    <Tárgynév>Gyakorlás3</Tárgynév>
-    <Helyszín>F03</Helyszín>
-    <Kezdés>2013.05.17. 9:40:00</Kezdés>
-    <Vége>2013.05.17. 11:30:00</Vége>
-    <Hét>Minden hét</Hét>
-    <Oktatók>bbbbbb    Tteszt</Oktatók>
-    <Követelmények>Aláírás</Követelmények>
-    <Segédletek>gyakorolj</Segédletek>
-  </Tantárgy>
-  <Tantárgy tárgykód="Gb2n0A">
-    <Tárgynév>Gyakorlás 4</Tárgynév>
-    <Helyszín>rre</Helyszín>
-    <Kezdés>2013.05.15. 1:00:00</Kezdés>
-    <Vége>2013.05.15. 1:00:00</Vége>
-    <Hét>Páratlan</Hét>
-    <Oktatók>bbbbbbi:ZbP@</Oktatók>
-    <Követelmények>Vizsga</Követelmények>
-    <Segédletek>sdaf</Segédletek>
+    <Segédletek>segédlet1</Segédletek>
   </Tantárgy>
 </Tantárgyak>
