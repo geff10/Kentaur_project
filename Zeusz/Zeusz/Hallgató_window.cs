@@ -69,6 +69,7 @@ namespace Zeusz
             txb_lakhely.Text = hallgató.Lakhely;
             txb_szulhely.Text = hallgató.SzületésiHely;
             dtp_szulDatum.Value = hallgató.SzületésiDátum;
+            txb_jelszo.Text = hallgató.Jelszó;
         }
 
         /*static Hallgató belépve()
@@ -174,9 +175,10 @@ namespace Zeusz
                 aktiv = false;
             Hallgató uj = new Hallgató(lbl_zeusz2.Text, txb_nev.Text, txb_lakhely.Text, txb_személyiIgsz.Text,
                 dtp_szulDatum.Value, txb_szulhely.Text, aktiv, hallgató.Végzett);
-            hallgMódKérelem kérelemmod = new hallgMódKérelem(hallgató.Zeuszkód,"Adatok módosítása",DateTime.Now,
-                false, uj);
-            kérelemKezelő.Kérelmezés("hallgatómód", kérelemmod);
+            //hallgMódKérelem kérelemmod = new hallgMódKérelem(hallgató.Zeuszkód,"Adatok módosítása",DateTime.Now,
+            //    false, uj);
+            //kérelemKezelő.Kérelmezés("hallgatómód", kérelemmod);
+            adatKezelő.hallgatóMódosítás(uj, hallgató);
         }
 
         private void btn_kerelem_Click(object sender, EventArgs e)
@@ -319,23 +321,28 @@ namespace Zeusz
 
         private void btn_felvetel_Click(object sender, EventArgs e)
         {
-            tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
-            bool van = false;
-            for (int i = 0; i < lsb_felvett.Items.Count; i++)
+            try
             {
-                if (lsb_felvett.Items[i] == tárgy)
+                tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
+                bool van = false;
+                for (int i = 0; i < lsb_felvett.Items.Count; i++)
                 {
-                    van = true;
+                    if (lsb_felvett.Items[i] == tárgy)
+                    {
+                        van = true;
+                    }
+                }
+                if (van)
+                {
+                    MessageBox.Show("A tárgy már fel van véve");
+                }
+                else
+                {
+                    tantárgykezelő.Tárgyfelvétel(tárgy, hallgató.Zeuszkód);
                 }
             }
-            if (van)
-            {
-                MessageBox.Show("A tárgy már fel van véve");
-            }
-            else
-            {
-                tantárgykezelő.Tárgyfelvétel(tárgy,hallgató.Zeuszkód);
-            }
+            catch
+            { }
 
         }
 
@@ -343,6 +350,11 @@ namespace Zeusz
         {
             tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felvett.SelectedItem);
             tantárgykezelő.Tárgyleadás(tárgy,hallgató.Zeuszkód);
+        }
+
+        private void btn_jelszo_Click(object sender, EventArgs e)
+        {
+            adatKezelő.Jelszómódosítás(hallgató, txb_jelszo.Text);
         }
     }
 }

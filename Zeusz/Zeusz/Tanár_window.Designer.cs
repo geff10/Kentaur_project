@@ -61,8 +61,6 @@
             this.lbl_kod = new System.Windows.Forms.Label();
             this.lsb_tantargyak = new System.Windows.Forms.ListBox();
             this.lbl_tanitot = new System.Windows.Forms.Label();
-            this.ÜzenetTab = new System.Windows.Forms.TabPage();
-            this.ÉrtékelésTab = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.TantárgyakTab.SuspendLayout();
             this.grb_kezel.SuspendLayout();
@@ -76,8 +74,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.TantárgyakTab);
-            this.tabControl1.Controls.Add(this.ÜzenetTab);
-            this.tabControl1.Controls.Add(this.ÉrtékelésTab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -425,25 +421,6 @@
             this.lbl_tanitot.TabIndex = 0;
             this.lbl_tanitot.Text = "Tanított tantárgyak:";
             // 
-            // ÜzenetTab
-            // 
-            this.ÜzenetTab.BackColor = System.Drawing.SystemColors.Control;
-            this.ÜzenetTab.Location = new System.Drawing.Point(4, 22);
-            this.ÜzenetTab.Name = "ÜzenetTab";
-            this.ÜzenetTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ÜzenetTab.Size = new System.Drawing.Size(625, 365);
-            this.ÜzenetTab.TabIndex = 1;
-            this.ÜzenetTab.Text = "Üzenetek";
-            // 
-            // ÉrtékelésTab
-            // 
-            this.ÉrtékelésTab.BackColor = System.Drawing.SystemColors.Control;
-            this.ÉrtékelésTab.Location = new System.Drawing.Point(4, 22);
-            this.ÉrtékelésTab.Name = "ÉrtékelésTab";
-            this.ÉrtékelésTab.Size = new System.Drawing.Size(625, 365);
-            this.ÉrtékelésTab.TabIndex = 2;
-            this.ÉrtékelésTab.Text = "Tanulók értékelése";
-            // 
             // Tanár_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,8 +451,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TantárgyakTab;
-        private System.Windows.Forms.TabPage ÜzenetTab;
-        private System.Windows.Forms.TabPage ÉrtékelésTab;
         private System.Windows.Forms.GroupBox grb_kezel;
         private System.Windows.Forms.TextBox txb_nev;
         private System.Windows.Forms.Label lbl_nev;

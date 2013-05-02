@@ -148,14 +148,17 @@ namespace Zeusz
         {
             Aktiv = false;
         }
-       
-        /* ha lesz tantárgy akkor írjam át
-        private void passTantargy()
+
+        private void passTantargy(Tantárgy tantárgy)
         {
-         * 
+            foreach (Tantárgy t in felvettTárgyak)
+            {
+                if (t.Tárgykód == tantárgy.Tárgykód)
+                {
+                    felvettTárgyak.Remove(t);
+                }
+            }
         }
-         * 
-         * */
 
         public void setTantargy(Tantárgy tantárgy)   //stringgel tesztelem
         {

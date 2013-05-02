@@ -55,22 +55,31 @@ namespace Zeusz
             {
                 if (belep is Hallgató)
                 {
-                    Hallgató_window hallgato_Form = new Hallgató_window((Hallgató)belep);
-                    hallgato_Form.ShowDialog();
+                    if (adatKezelő.Jelszóellenőrzés(zeuszkód, jelszó))
+                    {
+                        Hallgató_window hallgato_Form = new Hallgató_window((Hallgató)belep);
+                        hallgato_Form.ShowDialog();
+                    }
                 }
                 else
                 {
                     if (belep is Tanár)
                     {
-                        Tanár_window tanár_Form = new Tanár_window((Tanár)belep);
-                        tanár_Form.ShowDialog();
+                        if (adatKezelő.Jelszóellenőrzés(zeuszkód, jelszó))
+                        {
+                            Tanár_window tanár_Form = new Tanár_window((Tanár)belep);
+                            tanár_Form.ShowDialog();
+                        }
                     }
                     else
                     {
                         if (belep is Vezető)
                         {
-                            Vezető_window vezeto_Form = new Vezető_window((Vezető)belep);
-                            vezeto_Form.ShowDialog();
+                            if (adatKezelő.Jelszóellenőrzés(zeuszkód, jelszó))
+                            {
+                                Vezető_window vezeto_Form = new Vezető_window((Vezető)belep);
+                                vezeto_Form.ShowDialog();
+                            }
                         }
                     }
                 }

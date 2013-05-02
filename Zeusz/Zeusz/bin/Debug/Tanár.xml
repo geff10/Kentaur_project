@@ -49,4 +49,13 @@
     <Beosztás>töritanár</Beosztás>
     <Jelszó>passw1234</Jelszó>
   </Tanár>
+  <Tanár Zeuszkód="36Y6Y6">
+    <Név>vg</Név>
+    <Lakhely></Lakhely>
+    <SzemélyIgazolványSzám></SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-02T21:35:14.4193176+02:00</SzületésiDátum>
+    <Születésihely></Születésihely>
+    <Beosztás></Beosztás>
+    <Jelszó>passw1234</Jelszó>
+  </Tanár>
 </Tanárok>
