@@ -33,6 +33,7 @@ namespace Zeusz {
             {
                 if (!File.Exists("Tantárgy.xml"))
                 {
+
                     XElement tantárgyak = new XElement("Tantárgyak");
                     tantárgyak.Save("Tantárgy.xml");
                    

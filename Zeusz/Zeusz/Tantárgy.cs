@@ -142,13 +142,15 @@ namespace Zeusz {
                     if (File.Exists("Tantárgy.xml"))
                     {
                         XDocument doc = XDocument.Load("Tantárgy.xml");
-                        var t = from tt in doc.Descendants("Tantárgy")
-                                where tt.Attribute("tárgykód").Value == this.tárgykód
-                                select tt;
-                        if (t != null && t.First() != null)
-                            foglalt = true;
-                        else
-                            foglalt = false;
+                        //var t = from tt in doc.Descendants("Tantárgy")
+                        //        where tt.Attribute("tárgykód").Value == this.tárgykód
+                        //        select tt;
+                        //if (t == null || t.First() == null ||
+                        //    t.Count() == 0 ||
+                        //    t.First().Attribute("tárgykód").Value.Length < 5)
+                        //    foglalt = false;
+                        //else
+                        //    foglalt = true;
                     }
                 }
                 catch (Exception e)
