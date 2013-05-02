@@ -22,11 +22,17 @@ namespace Zeusz {
 
         List<Tantárgy> beolvasottTantárgyak = new List<Tantárgy>();
 
-		public Tantárgykezelõ(){
-		}
+        public List<Tantárgy> BeolvasottTantárgyak
+        {
+            get { return beolvasottTantárgyak; }
+            set { beolvasottTantárgyak = value; }
+        }
 
+        //konstruktor
+		public Tantárgykezelõ(){}
 
-        private void tantárgyBeolvasás()
+        //metódusok
+        private  void tantárgyBeolvasás()
         {
              beolvasottTantárgyak.Clear();
             try

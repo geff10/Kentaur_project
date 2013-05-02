@@ -131,7 +131,8 @@ namespace Zeusz {
         //metódusok
         public string TárgyKódGen()
         {
-            //beolvas
+            //beolvas?
+            
             //pszeudorandom
             string str = this.tárgynév[0].ToString() +
                 this.oktatók[0][0].ToString() +
@@ -218,17 +219,16 @@ namespace Zeusz {
                 {
                     if (File.Exists("Tantárgy.xml"))
                     {
-                        
-                        //XDocument doc = XDocument.Load("Tantárgy.xml");
-                        //var t = from tt in doc.Descendants("Tantárgy")
-                        //        where tt.Attribute("tárgykód").Value == this.tárgykód
-                        //        select tt;
-                        //if (t == null || t.First() == null ||
-                        //    t.Count() == 0 ||
-                        //    t.First().Attribute("tárgykód").Value.Length < 5)
-                        //    foglalt = false;
-                        //else
-                        //    foglalt = true;
+
+                        XDocument doc = XDocument.Load("Tantárgy.xml");
+                        var t = from tt in doc.Descendants("Tantárgy")
+                                where tt.Attribute("tárgykód").Value == this.tárgykód
+                                select tt;
+                        if (t == null ||
+                            t.Count() == 0)
+                            foglalt = false;
+                        else
+                            foglalt = true;
                     }
                 }
                 catch (Exception e)
@@ -281,17 +281,16 @@ namespace Zeusz {
                 {
                     if (File.Exists("Tantárgy.xml"))
                     {
-                        
-                        //XDocument doc = XDocument.Load("Tantárgy.xml");
-                        //var t = from tt in doc.Descendants("Tantárgy")
-                        //        where tt.Attribute("tárgykód").Value == this.tárgykód
-                        //        select tt;
-                        //if (t == null || t.First() == null ||
-                        //    t.Count() == 0 ||
-                        //    t.First().Attribute("tárgykód").Value.Length < 5)
-                        //    foglalt = false;
-                        //else
-                        //    foglalt = true;
+
+                        XDocument doc = XDocument.Load("Tantárgy.xml");
+                        var t = from tt in doc.Descendants("Tantárgy")
+                                where tt.Attribute("tárgykód").Value == this.tárgykód
+                                select tt;
+                        if (t == null ||
+                            t.Count() == 0)
+                            foglalt = false;
+                        else
+                            foglalt = true;
                     }
                 }
                 catch (Exception e)
