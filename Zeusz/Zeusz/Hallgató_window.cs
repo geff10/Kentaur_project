@@ -85,69 +85,6 @@ namespace Zeusz
         }
         */
 
-        private void btn_frissit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lsb_lista.Items.Clear();
-                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
-                lsb_lista.DataSource = üzenetek;
-                btn_osszes.Enabled = false;
-                btn_uj.Enabled = true;
-                btn_torol.Enabled = false;
-            }
-            catch
-            {
-                lsb_lista.Items.Clear();
-                lsb_lista.Items.Add("Nincs beérkezett üzenet");
-                btn_osszes.Enabled = false;
-                btn_uj.Enabled = false;
-                btn_torol.Enabled = false;
-            }
-        }
-
-        private void btn_osszes_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lsb_lista.Items.Clear();
-                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
-                lsb_lista.DataSource = üzenetek;
-                btn_osszes.Enabled = false;
-                btn_uj.Enabled = true;
-                btn_torol.Enabled = false;
-            }
-            catch
-            {
-                lsb_lista.Items.Clear();
-                lsb_lista.Items.Add("Nincs beérkezett üzenet");
-                btn_osszes.Enabled = false;
-                btn_uj.Enabled = false;
-                btn_torol.Enabled = false;
-            }
-        }
-
-        private void btn_uj_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lsb_lista.Items.Clear();
-                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, false);
-                lsb_lista.DataSource = üzenetek;
-                btn_osszes.Enabled = true;
-                btn_uj.Enabled = false;
-                btn_torol.Enabled = false;
-            }
-            catch
-            {
-                lsb_lista.Items.Clear();
-                lsb_lista.Items.Add("Nincs új üzenet");
-                btn_osszes.Enabled = false;
-                btn_uj.Enabled = false;
-                btn_torol.Enabled = false;
-            }
-        }
-
         private void tabc_hallgato_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (tabc_hallgato.SelectedIndex)
@@ -222,18 +159,6 @@ namespace Zeusz
                             lsb_felvett.Items.Clear();
                             lsb_felvett.Items.Add("Nincs felvett");
                             btn_leadas.Enabled = false;
-                        }
-                        break;
-                    }
-                case 4:
-                    {
-                        try
-                        {
-                            üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
-                            lsb_lista.DataSource = üzenetek;
-                        }
-                        catch
-                        {
                         }
                         break;
                     }

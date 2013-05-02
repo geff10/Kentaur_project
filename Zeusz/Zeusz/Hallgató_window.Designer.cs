@@ -78,37 +78,18 @@
             this.lbl_felvett = new System.Windows.Forms.Label();
             this.lsb_felveheto = new System.Windows.Forms.ListBox();
             this.lbl_felveheto = new System.Windows.Forms.Label();
-            this.ÓrarendTab = new System.Windows.Forms.TabPage();
-            this.LeckekönyvTab = new System.Windows.Forms.TabPage();
-            this.ÉrtesítésekTab = new System.Windows.Forms.TabPage();
-            this.btn_torol = new System.Windows.Forms.Button();
-            this.rtxb_uzenet = new System.Windows.Forms.RichTextBox();
-            this.lbl_üzenet = new System.Windows.Forms.Label();
-            this.txb_kuldo = new System.Windows.Forms.TextBox();
-            this.lbl_kuldo = new System.Windows.Forms.Label();
-            this.txb_targy = new System.Windows.Forms.TextBox();
-            this.lbl_tárgy = new System.Windows.Forms.Label();
-            this.btn_uj = new System.Windows.Forms.Button();
-            this.btn_osszes = new System.Windows.Forms.Button();
-            this.btn_frissit = new System.Windows.Forms.Button();
-            this.lsb_lista = new System.Windows.Forms.ListBox();
-            this.lbl_üzenetbe = new System.Windows.Forms.Label();
             this.tabc_hallgato.SuspendLayout();
             this.SzemélyiAdatokTab.SuspendLayout();
             this.grb_kerelem.SuspendLayout();
             this.grb_adatok.SuspendLayout();
             this.TantárgykezelőTab.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.ÉrtesítésekTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabc_hallgato
             // 
             this.tabc_hallgato.Controls.Add(this.SzemélyiAdatokTab);
             this.tabc_hallgato.Controls.Add(this.TantárgykezelőTab);
-            this.tabc_hallgato.Controls.Add(this.ÓrarendTab);
-            this.tabc_hallgato.Controls.Add(this.LeckekönyvTab);
-            this.tabc_hallgato.Controls.Add(this.ÉrtesítésekTab);
             this.tabc_hallgato.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabc_hallgato.Location = new System.Drawing.Point(0, 0);
             this.tabc_hallgato.Name = "tabc_hallgato";
@@ -596,153 +577,6 @@
             this.lbl_felveheto.TabIndex = 0;
             this.lbl_felveheto.Text = "Felvehető tárgyak";
             // 
-            // ÓrarendTab
-            // 
-            this.ÓrarendTab.BackColor = System.Drawing.SystemColors.Control;
-            this.ÓrarendTab.Location = new System.Drawing.Point(4, 22);
-            this.ÓrarendTab.Name = "ÓrarendTab";
-            this.ÓrarendTab.Size = new System.Drawing.Size(441, 344);
-            this.ÓrarendTab.TabIndex = 2;
-            this.ÓrarendTab.Text = "Órarend";
-            // 
-            // LeckekönyvTab
-            // 
-            this.LeckekönyvTab.BackColor = System.Drawing.SystemColors.Control;
-            this.LeckekönyvTab.Location = new System.Drawing.Point(4, 22);
-            this.LeckekönyvTab.Name = "LeckekönyvTab";
-            this.LeckekönyvTab.Size = new System.Drawing.Size(441, 344);
-            this.LeckekönyvTab.TabIndex = 3;
-            this.LeckekönyvTab.Text = "Leckekönyv";
-            // 
-            // ÉrtesítésekTab
-            // 
-            this.ÉrtesítésekTab.BackColor = System.Drawing.SystemColors.Control;
-            this.ÉrtesítésekTab.Controls.Add(this.btn_torol);
-            this.ÉrtesítésekTab.Controls.Add(this.rtxb_uzenet);
-            this.ÉrtesítésekTab.Controls.Add(this.lbl_üzenet);
-            this.ÉrtesítésekTab.Controls.Add(this.txb_kuldo);
-            this.ÉrtesítésekTab.Controls.Add(this.lbl_kuldo);
-            this.ÉrtesítésekTab.Controls.Add(this.txb_targy);
-            this.ÉrtesítésekTab.Controls.Add(this.lbl_tárgy);
-            this.ÉrtesítésekTab.Controls.Add(this.btn_uj);
-            this.ÉrtesítésekTab.Controls.Add(this.btn_osszes);
-            this.ÉrtesítésekTab.Controls.Add(this.btn_frissit);
-            this.ÉrtesítésekTab.Controls.Add(this.lsb_lista);
-            this.ÉrtesítésekTab.Controls.Add(this.lbl_üzenetbe);
-            this.ÉrtesítésekTab.Location = new System.Drawing.Point(4, 22);
-            this.ÉrtesítésekTab.Name = "ÉrtesítésekTab";
-            this.ÉrtesítésekTab.Size = new System.Drawing.Size(441, 344);
-            this.ÉrtesítésekTab.TabIndex = 4;
-            this.ÉrtesítésekTab.Text = "Üzenetek";
-            // 
-            // btn_torol
-            // 
-            this.btn_torol.Location = new System.Drawing.Point(8, 313);
-            this.btn_torol.Name = "btn_torol";
-            this.btn_torol.Size = new System.Drawing.Size(120, 23);
-            this.btn_torol.TabIndex = 11;
-            this.btn_torol.Text = "Üzenet törlése";
-            this.btn_torol.UseVisualStyleBackColor = true;
-            // 
-            // rtxb_uzenet
-            // 
-            this.rtxb_uzenet.Enabled = false;
-            this.rtxb_uzenet.Location = new System.Drawing.Point(137, 106);
-            this.rtxb_uzenet.Name = "rtxb_uzenet";
-            this.rtxb_uzenet.Size = new System.Drawing.Size(296, 208);
-            this.rtxb_uzenet.TabIndex = 10;
-            this.rtxb_uzenet.Text = "";
-            // 
-            // lbl_üzenet
-            // 
-            this.lbl_üzenet.AutoSize = true;
-            this.lbl_üzenet.Location = new System.Drawing.Point(134, 90);
-            this.lbl_üzenet.Name = "lbl_üzenet";
-            this.lbl_üzenet.Size = new System.Drawing.Size(44, 13);
-            this.lbl_üzenet.TabIndex = 9;
-            this.lbl_üzenet.Text = "Üzenet:";
-            // 
-            // txb_kuldo
-            // 
-            this.txb_kuldo.Enabled = false;
-            this.txb_kuldo.Location = new System.Drawing.Point(134, 67);
-            this.txb_kuldo.Name = "txb_kuldo";
-            this.txb_kuldo.Size = new System.Drawing.Size(299, 20);
-            this.txb_kuldo.TabIndex = 8;
-            // 
-            // lbl_kuldo
-            // 
-            this.lbl_kuldo.AutoSize = true;
-            this.lbl_kuldo.Location = new System.Drawing.Point(134, 51);
-            this.lbl_kuldo.Name = "lbl_kuldo";
-            this.lbl_kuldo.Size = new System.Drawing.Size(37, 13);
-            this.lbl_kuldo.TabIndex = 7;
-            this.lbl_kuldo.Text = "Küldő:";
-            // 
-            // txb_targy
-            // 
-            this.txb_targy.Enabled = false;
-            this.txb_targy.Location = new System.Drawing.Point(134, 28);
-            this.txb_targy.Name = "txb_targy";
-            this.txb_targy.Size = new System.Drawing.Size(299, 20);
-            this.txb_targy.TabIndex = 6;
-            // 
-            // lbl_tárgy
-            // 
-            this.lbl_tárgy.AutoSize = true;
-            this.lbl_tárgy.Location = new System.Drawing.Point(134, 12);
-            this.lbl_tárgy.Name = "lbl_tárgy";
-            this.lbl_tárgy.Size = new System.Drawing.Size(37, 13);
-            this.lbl_tárgy.TabIndex = 5;
-            this.lbl_tárgy.Text = "Tárgy:";
-            // 
-            // btn_uj
-            // 
-            this.btn_uj.Location = new System.Drawing.Point(8, 284);
-            this.btn_uj.Name = "btn_uj";
-            this.btn_uj.Size = new System.Drawing.Size(120, 23);
-            this.btn_uj.TabIndex = 4;
-            this.btn_uj.Text = "Csak az újak";
-            this.btn_uj.UseVisualStyleBackColor = true;
-            this.btn_uj.Click += new System.EventHandler(this.btn_uj_Click);
-            // 
-            // btn_osszes
-            // 
-            this.btn_osszes.Location = new System.Drawing.Point(8, 255);
-            this.btn_osszes.Name = "btn_osszes";
-            this.btn_osszes.Size = new System.Drawing.Size(120, 23);
-            this.btn_osszes.TabIndex = 3;
-            this.btn_osszes.Text = "Összes üzenet";
-            this.btn_osszes.UseVisualStyleBackColor = true;
-            this.btn_osszes.Click += new System.EventHandler(this.btn_osszes_Click);
-            // 
-            // btn_frissit
-            // 
-            this.btn_frissit.Location = new System.Drawing.Point(8, 226);
-            this.btn_frissit.Name = "btn_frissit";
-            this.btn_frissit.Size = new System.Drawing.Size(120, 23);
-            this.btn_frissit.TabIndex = 2;
-            this.btn_frissit.Text = "Frissítés";
-            this.btn_frissit.UseVisualStyleBackColor = true;
-            this.btn_frissit.Click += new System.EventHandler(this.btn_frissit_Click);
-            // 
-            // lsb_lista
-            // 
-            this.lsb_lista.FormattingEnabled = true;
-            this.lsb_lista.Location = new System.Drawing.Point(8, 28);
-            this.lsb_lista.Name = "lsb_lista";
-            this.lsb_lista.Size = new System.Drawing.Size(120, 186);
-            this.lsb_lista.TabIndex = 1;
-            // 
-            // lbl_üzenetbe
-            // 
-            this.lbl_üzenetbe.AutoSize = true;
-            this.lbl_üzenetbe.Location = new System.Drawing.Point(5, 12);
-            this.lbl_üzenetbe.Name = "lbl_üzenetbe";
-            this.lbl_üzenetbe.Size = new System.Drawing.Size(105, 13);
-            this.lbl_üzenetbe.TabIndex = 0;
-            this.lbl_üzenetbe.Text = "Beérkezett üzenetek";
-            // 
             // Hallgató_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,8 +598,6 @@
             this.TantárgykezelőTab.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.ÉrtesítésekTab.ResumeLayout(false);
-            this.ÉrtesítésekTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -775,9 +607,6 @@
         private System.Windows.Forms.TabControl tabc_hallgato;
         private System.Windows.Forms.TabPage SzemélyiAdatokTab;
         private System.Windows.Forms.TabPage TantárgykezelőTab;
-        private System.Windows.Forms.TabPage ÓrarendTab;
-        private System.Windows.Forms.TabPage LeckekönyvTab;
-        private System.Windows.Forms.TabPage ÉrtesítésekTab;
         private System.Windows.Forms.TextBox txb_személyiIgsz;
         private System.Windows.Forms.TextBox txb_nev;
         private System.Windows.Forms.Label lbl_zeusz;
@@ -797,18 +626,6 @@
         private System.Windows.Forms.Button btn_kerelem;
         private System.Windows.Forms.RadioButton rb_kijelentkezes;
         private System.Windows.Forms.RadioButton rb_passziv;
-        private System.Windows.Forms.RichTextBox rtxb_uzenet;
-        private System.Windows.Forms.Label lbl_üzenet;
-        private System.Windows.Forms.TextBox txb_kuldo;
-        private System.Windows.Forms.Label lbl_kuldo;
-        private System.Windows.Forms.TextBox txb_targy;
-        private System.Windows.Forms.Label lbl_tárgy;
-        private System.Windows.Forms.Button btn_uj;
-        private System.Windows.Forms.Button btn_osszes;
-        private System.Windows.Forms.Button btn_frissit;
-        private System.Windows.Forms.ListBox lsb_lista;
-        private System.Windows.Forms.Label lbl_üzenetbe;
-        private System.Windows.Forms.Button btn_torol;
         private System.Windows.Forms.Button btn_leadas;
         private System.Windows.Forms.Button btn_felvetel;
         private System.Windows.Forms.ListBox lsb_felvett;

@@ -40,4 +40,13 @@
     <Születésihely>Tszüfdsalhely</Születésihely>
     <Beosztás>portás</Beosztás>
   </Tanár>
+  <Tanár Zeuszkód="T6A1K7">
+    <Név>Kun Béla</Név>
+    <Lakhely>Kistarcsa</Lakhely>
+    <SzemélyIgazolványSzám>2134324</SzemélyIgazolványSzám>
+    <SzületésiDátum>2004-10-13T21:01:35</SzületésiDátum>
+    <Születésihely>Bivalybasznád</Születésihely>
+    <Beosztás>töritanár</Beosztás>
+    <Jelszó>passw1234</Jelszó>
+  </Tanár>
 </Tanárok>

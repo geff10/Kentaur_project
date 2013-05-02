@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Vezetők>
   <Vezető Zeuszkód="cccccc">
-    <Név>Vteszt</Név>
+    <Név>cccccc</Név>
     <Lakhely>Vlak</Lakhely>
     <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
     <SzületésiDátum>2013-05-01T04:43:25.1623138+02:00</SzületésiDátum>
@@ -41,5 +41,13 @@
     <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
     <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
     <Születésihely>Vszül</Születésihely>
+  </Vezető>
+  <Vezető Zeuszkód="C37Z73">
+    <Név>Balogh Ferenc</Név>
+    <Lakhely>Keszthely</Lakhely>
+    <SzemélyIgazolványSzám>012345676</SzemélyIgazolványSzám>
+    <SzületésiDátum>1990-06-08T20:51:11</SzületésiDátum>
+    <Születésihely>Budapest</Születésihely>
+    <Jelszó>passw1234</Jelszó>
   </Vezető>
 </Vezetők>

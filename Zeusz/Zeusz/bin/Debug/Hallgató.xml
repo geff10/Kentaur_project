@@ -20,4 +20,15 @@
     <Aktív>true</Aktív>
     <Végzett>false</Végzett>
   </Hallgató>
+  <Hallgató Zeuszkód="421I17">
+    <Név>Kolombár Rambó</Név>
+    <Lakhely>Hévíz</Lakhely>
+    <SzemélyIgazolványSzám>2134fsd</SzemélyIgazolványSzám>
+    <SzületésiDátum>2000-05-02T21:01:35</SzületésiDátum>
+    <Születésihely>Bivalybasznád</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
 </Hallgatók>
