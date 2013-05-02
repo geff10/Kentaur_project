@@ -62,6 +62,7 @@
             this.lbl_tanitot = new System.Windows.Forms.Label();
             this.ÜzenetTab = new System.Windows.Forms.TabPage();
             this.ÉrtékelésTab = new System.Windows.Forms.TabPage();
+            this.cmb_nap = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.TantárgyakTab.SuspendLayout();
             this.grb_kezel.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             // grb_kezel
             // 
+            this.grb_kezel.Controls.Add(this.cmb_nap);
             this.grb_kezel.Controls.Add(this.btn_targytorol);
             this.grb_kezel.Controls.Add(this.btn_modosit);
             this.grb_kezel.Controls.Add(this.btn_targyplusz);
@@ -339,7 +341,6 @@
             // 
             // cmb_het
             // 
-            this.cmb_het.Enabled = false;
             this.cmb_het.FormattingEnabled = true;
             this.cmb_het.Items.AddRange(new object[] {
             "Páros",
@@ -430,6 +431,20 @@
             this.ÉrtékelésTab.TabIndex = 2;
             this.ÉrtékelésTab.Text = "Tanulók értékelése";
             // 
+            // cmb_nap
+            // 
+            this.cmb_nap.FormattingEnabled = true;
+            this.cmb_nap.Items.AddRange(new object[] {
+            "Hétfő",
+            "Kedd",
+            "Szerda",
+            "Csütörtök",
+            "Péntek"});
+            this.cmb_nap.Location = new System.Drawing.Point(133, 58);
+            this.cmb_nap.Name = "cmb_nap";
+            this.cmb_nap.Size = new System.Drawing.Size(90, 21);
+            this.cmb_nap.TabIndex = 21;
+            // 
             // Tanár_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,5 +507,6 @@
         private System.Windows.Forms.Button btn_targyplusz;
         private System.Windows.Forms.Button btn_töröl;
         private System.Windows.Forms.Button btn_hozzaad;
+        private System.Windows.Forms.ComboBox cmb_nap;
     }
 }

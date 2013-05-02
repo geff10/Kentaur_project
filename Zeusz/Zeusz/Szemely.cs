@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Zeusz
 {
-    class Személy
+    public class Személy
     {
         string lakhely;
         string név;
@@ -74,7 +74,7 @@ namespace Zeusz
         }
     }
 
-    class Hallgató : Személy
+    public class Hallgató : Személy
     {
         bool aktiv=true;
         bool végzett = false;
@@ -162,7 +162,7 @@ namespace Zeusz
     }
 
 
-    class Tanár : Személy
+    public class Tanár : Személy
     {
         string beosztas;
 
@@ -221,21 +221,21 @@ namespace Zeusz
 
     }
 
-    enum Évfolyam
+    public enum Évfolyam
     {
         Első,
         Második, 
         Harmadik, 
         Negyedik        
     }
-    struct Félév_évfolyam       //nem vagyok ebben teljesen biztos, lehet osztály kéne belőle....
+    public struct Félév_évfolyam       //nem vagyok ebben teljesen biztos, lehet osztály kéne belőle....
     {
         Évfolyam éf;
         int félév;
 
     }
 
-    class Vezető : Személy
+    public class Vezető : Személy
     {
         public Vezető(string v_zeusz, string v_név, string v_lakhely, string v_szémigsz, DateTime v_szüldate, string v_szülhely)
             : base(v_lakhely, v_név, v_szémigsz, v_szüldate, v_szülhely, v_zeusz)

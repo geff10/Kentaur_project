@@ -48,10 +48,11 @@ namespace Zeusz
             string nev = txb_nev.Text;
             string het = cmb_het.SelectedItem.ToString();
             string terem = txb_terem.Text;
-            DateTime kezd = new DateTime(2000,02,02,int.Parse(nud_kora.Value.ToString()),
-                int.Parse(nud_kperc.Value.ToString()),30);
-            DateTime vege = new DateTime(2000, 02, 02, int.Parse(nud_vora.Value.ToString()),
-                int.Parse(nud_vperc.Value.ToString()), 30);
+            int kezdo = (int)nud_kora.Value;
+            int kezdp = (int)nud_kperc.Value;
+            int vego = (int)nud_vora.Value;
+            int vegp = (int)nud_vperc.Value;
+            string nap = cmb_nap.SelectedItem.ToString();
             string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
             string segedlet = txb_segedlet.Text;
             string[] tanár = new string[5];
@@ -60,7 +61,8 @@ namespace Zeusz
                 tanár[i] = lsb_tanarok.Items[i].ToString();//tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
             }
             //tanár[0] = "toma";
-            Tantárgy tárgy = new Tantárgy(nev, terem, kezd, vege, het, tanár, kovetelmeny, segedlet);
+            Tantárgy tárgy = new Tantárgy(nev, terem, kezdo, kezdp, vego, vegp,
+                nap, het, tanár, kovetelmeny, segedlet);
             tantárgyKezelő.Tárgyhozzáadás(tárgy);
             tantárgyHozzáadKérelem kérelem = new tantárgyHozzáadKérelem("toma", "új tárgy",
                 DateTime.Now, false, tárgy);
@@ -77,10 +79,11 @@ namespace Zeusz
                 string nev = txb_nev.Text;
                 string het = cmb_het.SelectedItem.ToString();
                 string terem = txb_terem.Text;
-                DateTime kezd = new DateTime(0, 0, 0, int.Parse(nud_kora.Value.ToString()),
-                    int.Parse(nud_kperc.Value.ToString()), 0);
-                DateTime vege = new DateTime(0, 0, 0, int.Parse(nud_vora.Value.ToString()),
-                    int.Parse(nud_vperc.Value.ToString()), 0);
+                int kezdo = (int)nud_kora.Value;
+                int kezdp = (int)nud_kperc.Value;
+                int vego = (int)nud_vora.Value;
+                int vegp = (int)nud_vperc.Value;
+                string nap = cmb_nap.SelectedItem.ToString();
                 string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
                 string segedlet = txb_segedlet.Text;
                 string[] tanár = null;
@@ -89,7 +92,8 @@ namespace Zeusz
                     tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
                 }
                 //tanár[0] = "toma";
-                Tantárgy tárgy = new Tantárgy(nev, terem, kezd, vege, het, tanár, kovetelmeny, segedlet);
+                Tantárgy tárgy = new Tantárgy(nev, terem, kezdo, kezdp, vego, vegp,
+                    nap, het, tanár, kovetelmeny, segedlet);
                 tantárgyMódKérelem kérelem = new tantárgyMódKérelem("toma", "új tárgy",
                     DateTime.Now, false, tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem).ToString(), tárgy);
                 kérelemKezelő.Kérelmezés("újTárgy", kérelem);
@@ -106,6 +110,7 @@ namespace Zeusz
             txb_terem.Text = tárgy.Helyszín;
             txb_segedlet.Text = tárgy.Segédletek;
             cmb_kovetelmeny.SelectedItem = cmb_kovetelmeny.FindString(tárgy.Követelmények);
+            cmb_nap.SelectedItem = cmb_nap.FindString(tárgy.Hétnapja);
             nud_kora.Value = tárgy.KezdésIdőpont.Hour;
             nud_kperc.Value = tárgy.KezdésIdőpont.Minute;
             nud_vora.Value = tárgy.VégeIdőpont.Hour;

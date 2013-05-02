@@ -20,12 +20,15 @@ namespace Zeusz
         static List<Üzenet> üzenetek = null;
         static List<Tantárgy> tantárgyak = null;
         static List<Tantárgy> felvettek = null;
+        //public Hallgató belépő;
 
-        public Hallgató_window()
+        public Hallgató_window(Hallgató belépő)
         {
             Login_window login = new Login_window();
             zeusz = login.txtb_azonosito.Text;
-            InitializeComponent();     
+            InitializeComponent();
+            hallgató = belépő;
+            zeusz = hallgató.Zeuszkód;
         }
 
         

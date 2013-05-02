@@ -28,8 +28,19 @@ namespace Zeusz
 
         private void btn_hallgato_Click(object sender, EventArgs e)
         {
-            Hallgató_window hallgató_Form = new Hallgató_window();
-            hallgató_Form.ShowDialog();
+            //Hallgató_window hallgató_Form = new Hallgató_window();
+            Adatkezelő adatKezelő = new Adatkezelő();
+            List<Hallgató> hallgatok = adatKezelő.hallgatóListázás();
+            Hallgató_window hallgató_Form;
+            foreach (Hallgató h in hallgatok)
+            {
+                if (h.Zeuszkód == txtb_azonosito.Text)
+                {
+                    Hallgató belépő = h;
+                    hallgató_Form = new Hallgató_window(belépő);
+                    hallgató_Form.ShowDialog();
+                }
+            }        
         }
 
         private void btn_tanar_Click(object sender, EventArgs e)
