@@ -134,10 +134,10 @@ namespace Zeusz {
             //beolvas?
             
             //pszeudorandom
-            string str = this.tárgynév[0].ToString() +
-                this.oktatók[0][0].ToString() +
-                this.kezdésIdõpont.ToString()[0].ToString() +
-                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString() +
+            string str = this.tárgynév[0].ToString().ToUpper() +
+                this.oktatók[0][0].ToString().ToUpper() +
+                this.kezdésIdõpont.ToString()[0].ToString().ToUpper() +
+                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString().ToUpper() +
                 ((char)R.Next(65, 90)).ToString();
             return str;
         }
