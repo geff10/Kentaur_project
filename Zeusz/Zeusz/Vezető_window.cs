@@ -29,7 +29,7 @@ namespace Zeusz
                     {
                         foreach (Kérelem k in kérelmek)
                         {
-                            lsb_kerelmek.Items.Add(k.);
+                            lsb_kerelmek.Items.Add(k.KérelemAzonosító);
                         }
                         break;
                     }

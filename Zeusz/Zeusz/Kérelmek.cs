@@ -49,7 +49,7 @@ namespace Zeusz
         }
 
         private int KérelemAzonosító;
-        public int KérelemAzonosító1
+        public int KérelemAzonosító
         {
             get { return KérelemAzonosító; }
             set { KérelemAzonosító = value; }
