@@ -32,32 +32,35 @@ namespace Zeusz {
             try
             {
 
-                XDocument doc = XDocument.Load("Tantárgy.xml");
-
-
-
-                foreach (var p in doc.Descendants("Tantárgy"))
+                if (File.Exists("Tantárgy.xml"))
                 {
-                    int oktatókSzáma = ((string)p.Element("Oktatók")).Length / 6;
-                    string[] strOktTömb = new string[oktatókSzáma];
-                    for (int i = 0; i < oktatókSzáma; i++)
-			        {
-			            strOktTömb[i] = 
-                            ((string)p.Element("Oktatók")).Substring(i*6,6);
-			        }
+                    XDocument doc = XDocument.Load("Tantárgy.xml");
 
-                    beolvasottTantárgyak.Add(new Tantárgy(
-                         (string)p.Element("Tárgynév"),
-                         (string)p.Attribute("tárgykód"),
-                         (string)p.Element("Helyszín"),
-                         (DateTime)p.Element("Kezdés"),
-                         (DateTime)p.Element("Vége"),
-                         (string)p.Element("Hét"),
-                         strOktTömb,
-                         (string)p.Element("Követelmények"),
-                         (string)p.Element("Segédletek"))
-                         );
-                }
+
+
+                    foreach (var p in doc.Descendants("Tantárgy"))
+                    {
+                        int oktatókSzáma = ((string)p.Element("Oktatók")).Length / 6;
+                        string[] strOktTömb = new string[oktatókSzáma];
+                        for (int i = 0; i < oktatókSzáma; i++)
+                        {
+                            strOktTömb[i] =
+                                ((string)p.Element("Oktatók")).Substring(i * 6, 6);
+                        }
+
+                        beolvasottTantárgyak.Add(new Tantárgy(
+                             (string)p.Element("Tárgynév"),
+                             (string)p.Attribute("tárgykód"),
+                             (string)p.Element("Helyszín"),
+                             (DateTime)p.Element("Kezdés"),
+                             (DateTime)p.Element("Vége"),
+                             (string)p.Element("Hét"),
+                             strOktTömb,
+                             (string)p.Element("Követelmények"),
+                             (string)p.Element("Segédletek"))
+                             );
+                    }
+                } //if file exists
             }
             catch (Exception e) { throw (e); }
 
@@ -164,8 +167,13 @@ namespace Zeusz {
 
         public List<Tantárgy> tantárgyListázás(string tanárZeuszkód)
         {
-            //AB lekérdezés
+            beolvasottTantárgyak.Clear();
+            tantárgyBeolvasás();
             List<Tantárgy> tantárgyLista = new List<Tantárgy>();
+            //foreach (var tárgy in beolvasottTantárgyak)
+            //{
+            //    if(tárgy.Oktatók.Contains(
+            //}
             return tantárgyLista;
         }
 
