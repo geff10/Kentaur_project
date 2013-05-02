@@ -131,6 +131,7 @@ namespace Zeusz {
         //metódusok
         public string TárgyKódGen()
         {
+            //beolvas
             //pszeudorandom
             string str = this.tárgynév[0].ToString() +
                 this.oktatók[0][0].ToString() +
@@ -159,6 +160,23 @@ namespace Zeusz {
             this.oktatók = oktatók;
             this.követelmények = követelmények;
             this.segédletek = segédletek;
+
+            this.kezdésÓra = kezdés.Hour;
+            this.kezdésPerc = kezdés.Minute;
+            this.végeÓra = vége.Hour;
+            this.végePerc = vége.Minute;
+
+            switch (kezdésIdõpont.DayOfWeek)
+            {
+                case DayOfWeek.Monday: { this.hétnapja = "Hétfõ"; break; }
+                case DayOfWeek.Tuesday: { this.hétnapja = "Kedd"; break; }
+                case DayOfWeek.Wednesday: { this.hétnapja = "Szerda"; break; }
+                case DayOfWeek.Thursday: { this.hétnapja = "Csütörtök"; break; }
+                case DayOfWeek.Friday: { this.hétnapja = "Péntek"; break; }
+                default:
+                    this.hétnapja = "Hétfõ";
+                    break;
+            }
         }
 
 
@@ -175,14 +193,33 @@ namespace Zeusz {
             this.követelmények = követelmények;
             this.segédletek = segédletek;
 
+            this.kezdésÓra = kezdés.Hour;
+            this.kezdésPerc = kezdés.Minute;
+            this.végeÓra = vége.Hour;
+            this.végePerc = vége.Minute;
+
+            switch (kezdésIdõpont.DayOfWeek)
+            {
+                case DayOfWeek.Monday: { this.hétnapja = "Hétfõ"; break; }
+                case DayOfWeek.Tuesday: { this.hétnapja = "Kedd"; break; }
+                case DayOfWeek.Wednesday: { this.hétnapja = "Szerda"; break; }
+                case DayOfWeek.Thursday: { this.hétnapja = "Csütörtök"; break; }
+                case DayOfWeek.Friday: { this.hétnapja = "Péntek"; break; }
+                default:
+                    this.hétnapja = "Hétfõ";
+                    break;
+            }
+
             bool foglalt = false;
             do {
+                
                 this.tárgykód = TárgyKódGen();               
                 try
                 {
                     if (File.Exists("Tantárgy.xml"))
                     {
-                        XDocument doc = XDocument.Load("Tantárgy.xml");
+                        
+                        //XDocument doc = XDocument.Load("Tantárgy.xml");
                         //var t = from tt in doc.Descendants("Tantárgy")
                         //        where tt.Attribute("tárgykód").Value == this.tárgykód
                         //        select tt;
@@ -244,7 +281,8 @@ namespace Zeusz {
                 {
                     if (File.Exists("Tantárgy.xml"))
                     {
-                        XDocument doc = XDocument.Load("Tantárgy.xml");
+                        
+                        //XDocument doc = XDocument.Load("Tantárgy.xml");
                         //var t = from tt in doc.Descendants("Tantárgy")
                         //        where tt.Attribute("tárgykód").Value == this.tárgykód
                         //        select tt;
