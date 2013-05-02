@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Tantárgyak>
-  <Tantárgy tárgykód="3658B">
-    <Tárgynév>dfg</Tárgynév>
-    <Helyszín>dfsgasf</Helyszín>
-    <Kezdés>2000.02.02. 8:00:30</Kezdés>
-    <Vége>2000.02.02. 10:00:30</Vége>
+  <Tantárgy tárgykód="3082Q">
+    <Tárgynév>Teszt1</Tárgynév>
+    <Helyszín>F01</Helyszín>
+    <Kezdés>2013.05.14. 8:00:00</Kezdés>
+    <Vége>2013.05.14. 9:40:00</Vége>
     <Hét>Páratlan</Hét>
-    <Oktatók>i:ZbP@i:ZbP@</Oktatók>
-    <Követelmények>Aláírás</Követelmények>
-    <Segédletek>dsaf</Segédletek>
+    <Oktatók>@]LT&lt;A7Xy{=</Oktatók>
+    <Követelmények>Vizsga</Követelmények>
+    <Segédletek>nincs</Segédletek>
   </Tantárgy>
-  <Tantárgy tárgykód="3636H">
-    <Tárgynév>adsf</Tárgynév>
-    <Helyszín>ff</Helyszín>
-    <Kezdés>2013.04.13. 8:00:00</Kezdés>
-    <Vége>2013.04.13. 9:40:00</Vége>
+  <Tantárgy tárgykód="3548A">
+    <Tárgynév>Teszt2</Tárgynév>
+    <Helyszín>AM</Helyszín>
+    <Kezdés>2013.05.15. 8:00:00</Kezdés>
+    <Vége>2013.05.15. 9:40:00</Vége>
     <Hét>Páros</Hét>
-    <Oktatók>e5WJ8N</Oktatók>
+    <Oktatók>i:ZbP@e5WJ8N</Oktatók>
     <Követelmények>Évközi jegy</Követelmények>
-    <Segédletek>dsaf</Segédletek>
+    <Segédletek>nincs</Segédletek>
   </Tantárgy>
 </Tantárgyak>

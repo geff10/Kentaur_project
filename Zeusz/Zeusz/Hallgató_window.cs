@@ -12,12 +12,14 @@ namespace Zeusz
     public partial class Hallgató_window : Form
     {
         static string zeusz;
+        static string státusz = null;
         static Adatkezelő adatKezelő = new Adatkezelő();
         static Tantárgykezelő tantárgykezelő = new Tantárgykezelő();
         static Kérelemkezelő kérelemKezelő = new Kérelemkezelő();
         static Üzenetkezelő üzenetKezelő = new Üzenetkezelő();
         static List<Hallgató> hallgatók = adatKezelő.hallgatóListázás();
         static Hallgató hallgató;// = belépve();
+        static Tantárgy tárgy;
         static List<Üzenet> üzenetek = null;
         static List<Tantárgy> tantárgyak = null;
         static List<Tantárgy> felvettek = null;
@@ -37,8 +39,7 @@ namespace Zeusz
         private void Hallgató_window_Load(object sender, EventArgs e)
         {
             
-            string név = null;
-            string státusz = null;
+            string név = null; 
             //megírni a belépett hallgatót
             /*
              ide írd meg, hogy megkapja a név változóba a hallgató nevét
@@ -153,6 +154,27 @@ namespace Zeusz
         {
             switch (tabc_hallgato.SelectedIndex)
             {
+                case 0:
+                    {
+                        if (hallgató.Aktiv)
+                        {
+                            státusz = "aktív";
+                            rb_passziv.Enabled = true;
+                        }
+                        else
+                        {
+                            státusz = "passzív";
+                            rb_passziv.Enabled = false;
+                        }
+                        lbl_zeusz2.Text = zeusz;
+                        lbl_statusz2.Text = státusz;
+                        txb_nev.Text = hallgató.Név;
+                        txb_személyiIgsz.Text = hallgató.SzemélyIgsz;
+                        txb_lakhely.Text = hallgató.Lakhely;
+                        txb_szulhely.Text = hallgató.SzületésiHely;
+                        dtp_szulDatum.Value = hallgató.SzületésiDátum;
+                        break;
+                    }
                 case 1:
                     {
                         try
@@ -162,10 +184,16 @@ namespace Zeusz
                             if (tantárgyak.First() == null)
                             {
                                 lsb_felveheto.Items.Add("Nincs felvehető");
+                                btn_felvetel.Enabled = false;
                             }
                             else
                             {
-                                lsb_felveheto.DataSource = tantárgyak;
+                                foreach (Tantárgy t in tantárgyak)
+                                {
+                                    lsb_felveheto.Items.Add(t.Tárgykód.ToString() + "    "  + t.Tárgynév.ToString());
+                                }
+                                lsb_felveheto.SelectedIndex = -1;
+                                btn_felvetel.Enabled = false;
                             }
 
                         }
@@ -173,6 +201,7 @@ namespace Zeusz
                         {
                             lsb_felveheto.Items.Clear();
                             lsb_felveheto.Items.Add("Nincs felvehető");
+                            btn_felvetel.Enabled = false;
                         }
                         try
                         {
@@ -181,16 +210,20 @@ namespace Zeusz
                             if (felvettek.First() == null)
                             {
                                 lsb_felvett.Items.Add("Nincs felvett");
+                                btn_leadas.Enabled = false;
                             }
                             else
                             {
                                 lsb_felvett.DataSource = tantárgyak;
+                                btn_leadas.Enabled = false;
+                                lsb_felvett.SelectedIndex = -1;
                             }
                         }
                         catch
                         {
                             lsb_felvett.Items.Clear();
                             lsb_felvett.Items.Add("Nincs felvett");
+                            btn_leadas.Enabled = false;
                         }
                         break;
                     }
@@ -235,6 +268,158 @@ namespace Zeusz
                 Kérelem kijelentkezesi = new Kérelem(hallgató.Zeuszkód, "Passzív kérelem", DateTime.Now, true);
                 kérelemKezelő.Kérelmezés("kijelentkezési", kijelentkezesi);
             }
+        }
+
+        private void lsb_felveheto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsb_felveheto.SelectedIndex != -1)
+            {
+                lsb_felvett.SelectedIndex = -1;
+                if (lsb_felveheto.Items[0].ToString() != "Nincs felvehető")
+                {
+                    foreach (Tantárgy t in tantárgyak)
+                    {
+                        if (t.Tárgykód == lsb_felveheto.SelectedItem.ToString().Substring(0,6))
+                        {
+                            tárgy = t;
+                        }
+                    }
+                    //tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
+                    txb_targynev.Text = tárgy.Tárgynév;
+                    lbl_kod2.Text = tárgy.Tárgykód;
+                    lbl_parose.Text = tárgy.Hét;
+                    txb_terem.Text = tárgy.Helyszín;
+                    txb_tanar.Text = tárgy.Oktatók[0];
+                    txb_kezdes.Text = tárgy.KezdésÓra.ToString() + ":" + tárgy.KezdésPerc.ToString();
+                    txb_befejezes.Text = tárgy.VégeÓra.ToString() + ":" + tárgy.VégePerc.ToString();
+                    lbl_követelmeny.Text = tárgy.Követelmények;
+                    switch (tárgy.Hétnapja)
+                    {
+                        case "Hétfő":
+                            {
+                                lbl_nap2.Text = "H";
+                                break;
+                            }
+                        case "Kedd":
+                            {
+                                lbl_nap2.Text = "K";
+                                break;
+                            }
+                        case "Szerda":
+                            {
+                                lbl_nap2.Text = "Sz";
+                                break;
+                            }
+                        case "Csütörtök":
+                            {
+                                lbl_nap2.Text = "Cs";
+                                break;
+                            }
+                        case "Péntek":
+                            {
+                                lbl_nap2.Text = "P";
+                                break;
+                            }
+                    }
+                    txb_segedlet.Text = tárgy.Segédletek;
+                    btn_felvetel.Enabled = true;
+                }
+                else
+                { 
+                    btn_felvetel.Enabled = false;
+                }
+            }
+            else
+            {
+                btn_felvetel.Enabled = false;
+            }
+            
+        }
+
+        private void lsb_felvett_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsb_felvett.SelectedIndex != -1)
+            {
+                lsb_felveheto.SelectedIndex = -1;
+                if (lsb_felvett.Items[0].ToString() != "Nincs felvett")
+                {
+                    tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
+                    txb_targynev.Text = tárgy.Tárgynév;
+                    lbl_kod2.Text = tárgy.Tárgykód;
+                    lbl_parose.Text = tárgy.Hét;
+                    txb_terem.Text = tárgy.Helyszín;
+                    txb_tanar.Text = tárgy.Oktatók[0];
+                    txb_kezdes.Text = tárgy.KezdésÓra.ToString() + ":" + tárgy.KezdésPerc.ToString();
+                    txb_befejezes.Text = tárgy.VégeÓra.ToString() + ":" + tárgy.VégePerc.ToString();
+                    lbl_követelmeny.Text = tárgy.Követelmények;
+                    switch (tárgy.Hétnapja)
+                    {
+                        case "Hétfő":
+                            {
+                                lbl_nap2.Text = "H";
+                                break;
+                            }
+                        case "Kedd":
+                            {
+                                lbl_nap2.Text = "K";
+                                break;
+                            }
+                        case "Szerda":
+                            {
+                                lbl_nap2.Text = "Sz";
+                                break;
+                            }
+                        case "Csütörtök":
+                            {
+                                lbl_nap2.Text = "Cs";
+                                break;
+                            }
+                        case "Péntek":
+                            {
+                                lbl_nap2.Text = "P";
+                                break;
+                            }
+                    }
+                    txb_segedlet.Text = tárgy.Segédletek;
+                    btn_leadas.Enabled = true;
+                }
+                else
+                {
+                    btn_leadas.Enabled = false;
+                }
+            }
+            else
+            {
+                btn_leadas.Enabled = false;
+            }  
+        }
+
+        private void btn_felvetel_Click(object sender, EventArgs e)
+        {
+            tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
+            bool van = false;
+            for (int i = 0; i < lsb_felvett.Items.Count; i++)
+            {
+                if (lsb_felvett.Items[i] == tárgy)
+                {
+                    van = true;
+                }
+            }
+            if (van)
+            {
+                MessageBox.Show("A tárgy már fel van véve");
+            }
+            else
+            {
+                tantárgykezelő.Tárgyfelvétel(tárgy,hallgató.Zeuszkód);
+            }
+
+        }
+
+        private void btn_leadas_Click(object sender, EventArgs e)
+        {
+            tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felvett.SelectedItem);
+            tantárgykezelő.Tárgyleadás(tárgy,hallgató.Zeuszkód);
         }
     }
 }

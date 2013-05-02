@@ -34,7 +34,7 @@ namespace Zeusz
             cmb_het.SelectedIndex = 0;
             cmb_kovetelmeny.SelectedIndex = 0;
             this.Text = "Belépve " + név + " néven.";
-            lsb_tantargyak.DataSource = tárgyak;
+            //lsb_tantargyak.DataSource = tárgyak;
             foreach (Tanár t in tanárok)
             {
                 lsb_oktatok.Items.Add(t.Zeuszkód);// + "      " + t.Név);

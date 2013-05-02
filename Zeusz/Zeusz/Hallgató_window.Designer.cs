@@ -37,6 +37,7 @@
             this.lbl_statusz2 = new System.Windows.Forms.Label();
             this.lbl_statusz = new System.Windows.Forms.Label();
             this.grb_adatok = new System.Windows.Forms.GroupBox();
+            this.dtp_szulDatum = new System.Windows.Forms.DateTimePicker();
             this.btn_kuldes = new System.Windows.Forms.Button();
             this.lbl_szuldatum = new System.Windows.Forms.Label();
             this.txb_szulhely = new System.Windows.Forms.TextBox();
@@ -90,7 +91,8 @@
             this.btn_frissit = new System.Windows.Forms.Button();
             this.lsb_lista = new System.Windows.Forms.ListBox();
             this.lbl_üzenetbe = new System.Windows.Forms.Label();
-            this.dtp_szulDatum = new System.Windows.Forms.DateTimePicker();
+            this.lbl_nap = new System.Windows.Forms.Label();
+            this.lbl_nap2 = new System.Windows.Forms.Label();
             this.tabc_hallgato.SuspendLayout();
             this.SzemélyiAdatokTab.SuspendLayout();
             this.grb_kerelem.SuspendLayout();
@@ -214,6 +216,14 @@
             this.grb_adatok.TabStop = false;
             this.grb_adatok.Text = "Személyi adatok megváltoztatása";
             // 
+            // dtp_szulDatum
+            // 
+            this.dtp_szulDatum.Enabled = false;
+            this.dtp_szulDatum.Location = new System.Drawing.Point(233, 38);
+            this.dtp_szulDatum.Name = "dtp_szulDatum";
+            this.dtp_szulDatum.Size = new System.Drawing.Size(166, 20);
+            this.dtp_szulDatum.TabIndex = 13;
+            // 
             // btn_kuldes
             // 
             this.btn_kuldes.Location = new System.Drawing.Point(9, 181);
@@ -334,6 +344,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_nap2);
+            this.panel1.Controls.Add(this.lbl_nap);
             this.panel1.Controls.Add(this.txb_segedlet);
             this.panel1.Controls.Add(this.lbl_segedlet);
             this.panel1.Controls.Add(this.lbl_jegy);
@@ -368,7 +380,7 @@
             // lbl_segedlet
             // 
             this.lbl_segedlet.AutoSize = true;
-            this.lbl_segedlet.Location = new System.Drawing.Point(14, 87);
+            this.lbl_segedlet.Location = new System.Drawing.Point(14, 86);
             this.lbl_segedlet.Name = "lbl_segedlet";
             this.lbl_segedlet.Size = new System.Drawing.Size(52, 13);
             this.lbl_segedlet.TabIndex = 16;
@@ -377,16 +389,15 @@
             // lbl_jegy
             // 
             this.lbl_jegy.AutoSize = true;
-            this.lbl_jegy.Location = new System.Drawing.Point(326, 60);
+            this.lbl_jegy.Location = new System.Drawing.Point(355, 61);
             this.lbl_jegy.Name = "lbl_jegy";
-            this.lbl_jegy.Size = new System.Drawing.Size(61, 13);
+            this.lbl_jegy.Size = new System.Drawing.Size(0, 13);
             this.lbl_jegy.TabIndex = 15;
-            this.lbl_jegy.Text = "Évközi jegy";
             // 
             // lbl_követelmeny
             // 
             this.lbl_követelmeny.AutoSize = true;
-            this.lbl_követelmeny.Location = new System.Drawing.Point(249, 60);
+            this.lbl_követelmeny.Location = new System.Drawing.Point(278, 60);
             this.lbl_követelmeny.Name = "lbl_követelmeny";
             this.lbl_követelmeny.Size = new System.Drawing.Size(71, 13);
             this.lbl_követelmeny.TabIndex = 14;
@@ -395,15 +406,15 @@
             // txb_befejezes
             // 
             this.txb_befejezes.Enabled = false;
-            this.txb_befejezes.Location = new System.Drawing.Point(186, 57);
+            this.txb_befejezes.Location = new System.Drawing.Point(238, 58);
             this.txb_befejezes.Name = "txb_befejezes";
-            this.txb_befejezes.Size = new System.Drawing.Size(57, 20);
+            this.txb_befejezes.Size = new System.Drawing.Size(34, 20);
             this.txb_befejezes.TabIndex = 13;
             // 
             // lbl_befejez
             // 
             this.lbl_befejez.AutoSize = true;
-            this.lbl_befejez.Location = new System.Drawing.Point(124, 60);
+            this.lbl_befejez.Location = new System.Drawing.Point(176, 60);
             this.lbl_befejez.Name = "lbl_befejez";
             this.lbl_befejez.Size = new System.Drawing.Size(56, 13);
             this.lbl_befejez.TabIndex = 12;
@@ -414,9 +425,8 @@
             this.lbl_parose.AutoSize = true;
             this.lbl_parose.Location = new System.Drawing.Point(371, 9);
             this.lbl_parose.Name = "lbl_parose";
-            this.lbl_parose.Size = new System.Drawing.Size(45, 13);
+            this.lbl_parose.Size = new System.Drawing.Size(0, 13);
             this.lbl_parose.TabIndex = 11;
-            this.lbl_parose.Text = "páratlan";
             // 
             // lbl_het
             // 
@@ -430,15 +440,15 @@
             // txb_kezdes
             // 
             this.txb_kezdes.Enabled = false;
-            this.txb_kezdes.Location = new System.Drawing.Point(61, 57);
+            this.txb_kezdes.Location = new System.Drawing.Point(136, 58);
             this.txb_kezdes.Name = "txb_kezdes";
-            this.txb_kezdes.Size = new System.Drawing.Size(57, 20);
+            this.txb_kezdes.Size = new System.Drawing.Size(34, 20);
             this.txb_kezdes.TabIndex = 9;
             // 
             // lbl_kezdes
             // 
             this.lbl_kezdes.AutoSize = true;
-            this.lbl_kezdes.Location = new System.Drawing.Point(14, 60);
+            this.lbl_kezdes.Location = new System.Drawing.Point(85, 60);
             this.lbl_kezdes.Name = "lbl_kezdes";
             this.lbl_kezdes.Size = new System.Drawing.Size(45, 13);
             this.lbl_kezdes.TabIndex = 8;
@@ -483,9 +493,8 @@
             this.lbl_kod2.AutoSize = true;
             this.lbl_kod2.Location = new System.Drawing.Point(283, 9);
             this.lbl_kod2.Name = "lbl_kod2";
-            this.lbl_kod2.Size = new System.Drawing.Size(49, 13);
+            this.lbl_kod2.Size = new System.Drawing.Size(0, 13);
             this.lbl_kod2.TabIndex = 3;
-            this.lbl_kod2.Text = "AAAAAA";
             // 
             // lbl_kod
             // 
@@ -521,6 +530,7 @@
             this.btn_leadas.TabIndex = 5;
             this.btn_leadas.Text = "Leadás";
             this.btn_leadas.UseVisualStyleBackColor = true;
+            this.btn_leadas.Click += new System.EventHandler(this.btn_leadas_Click);
             // 
             // btn_felvetel
             // 
@@ -530,6 +540,7 @@
             this.btn_felvetel.TabIndex = 4;
             this.btn_felvetel.Text = "Felvétel";
             this.btn_felvetel.UseVisualStyleBackColor = true;
+            this.btn_felvetel.Click += new System.EventHandler(this.btn_felvetel_Click);
             // 
             // lsb_felvett
             // 
@@ -538,6 +549,7 @@
             this.lsb_felvett.Name = "lsb_felvett";
             this.lsb_felvett.Size = new System.Drawing.Size(158, 186);
             this.lsb_felvett.TabIndex = 3;
+            this.lsb_felvett.SelectedIndexChanged += new System.EventHandler(this.lsb_felvett_SelectedIndexChanged);
             // 
             // lbl_felvett
             // 
@@ -555,6 +567,7 @@
             this.lsb_felveheto.Name = "lsb_felveheto";
             this.lsb_felveheto.Size = new System.Drawing.Size(161, 186);
             this.lsb_felveheto.TabIndex = 1;
+            this.lsb_felveheto.SelectedIndexChanged += new System.EventHandler(this.lsb_felveheto_SelectedIndexChanged);
             // 
             // lbl_felveheto
             // 
@@ -712,13 +725,22 @@
             this.lbl_üzenetbe.TabIndex = 0;
             this.lbl_üzenetbe.Text = "Beérkezett üzenetek";
             // 
-            // dtp_szulDatum
+            // lbl_nap
             // 
-            this.dtp_szulDatum.Enabled = false;
-            this.dtp_szulDatum.Location = new System.Drawing.Point(233, 38);
-            this.dtp_szulDatum.Name = "dtp_szulDatum";
-            this.dtp_szulDatum.Size = new System.Drawing.Size(166, 20);
-            this.dtp_szulDatum.TabIndex = 13;
+            this.lbl_nap.AutoSize = true;
+            this.lbl_nap.Location = new System.Drawing.Point(14, 60);
+            this.lbl_nap.Name = "lbl_nap";
+            this.lbl_nap.Size = new System.Drawing.Size(30, 13);
+            this.lbl_nap.TabIndex = 18;
+            this.lbl_nap.Text = "Nap:";
+            // 
+            // lbl_nap2
+            // 
+            this.lbl_nap2.AutoSize = true;
+            this.lbl_nap2.Location = new System.Drawing.Point(50, 60);
+            this.lbl_nap2.Name = "lbl_nap2";
+            this.lbl_nap2.Size = new System.Drawing.Size(0, 13);
+            this.lbl_nap2.TabIndex = 19;
             // 
             // Hallgató_window
             // 
@@ -812,5 +834,7 @@
         private System.Windows.Forms.Label lbl_jegy;
         private System.Windows.Forms.Label lbl_követelmeny;
         private System.Windows.Forms.DateTimePicker dtp_szulDatum;
+        private System.Windows.Forms.Label lbl_nap2;
+        private System.Windows.Forms.Label lbl_nap;
     }
 }
