@@ -24,7 +24,7 @@ namespace Zeusz
 
     interface IBejelenkezésKezelő
     {
-        //void Beléptetés(string Zeuszkód, string Jelszó);
+        void Beléptetés(string Zeuszkód, string Jelszó);
     }
 
     interface IKérelemkezelő

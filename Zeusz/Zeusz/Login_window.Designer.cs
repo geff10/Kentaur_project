@@ -33,9 +33,6 @@
             this.lbl_jelszo = new System.Windows.Forms.Label();
             this.txtb_jelszo = new System.Windows.Forms.TextBox();
             this.btn_belepes = new System.Windows.Forms.Button();
-            this.btn_hallgato = new System.Windows.Forms.Button();
-            this.btn_tanar = new System.Windows.Forms.Button();
-            this.btn_vezeto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_azonosito
@@ -79,44 +76,13 @@
             this.btn_belepes.TabIndex = 4;
             this.btn_belepes.Text = "Belépés";
             this.btn_belepes.UseVisualStyleBackColor = true;
-            // 
-            // btn_hallgato
-            // 
-            this.btn_hallgato.Location = new System.Drawing.Point(96, 90);
-            this.btn_hallgato.Name = "btn_hallgato";
-            this.btn_hallgato.Size = new System.Drawing.Size(97, 23);
-            this.btn_hallgato.TabIndex = 5;
-            this.btn_hallgato.Text = "Teszt hallgató";
-            this.btn_hallgato.UseVisualStyleBackColor = true;
-            this.btn_hallgato.Click += new System.EventHandler(this.btn_hallgato_Click);
-            // 
-            // btn_tanar
-            // 
-            this.btn_tanar.Location = new System.Drawing.Point(15, 119);
-            this.btn_tanar.Name = "btn_tanar";
-            this.btn_tanar.Size = new System.Drawing.Size(75, 23);
-            this.btn_tanar.TabIndex = 6;
-            this.btn_tanar.Text = "Teszt tanár";
-            this.btn_tanar.UseVisualStyleBackColor = true;
-            this.btn_tanar.Click += new System.EventHandler(this.btn_tanar_Click);
-            // 
-            // btn_vezeto
-            // 
-            this.btn_vezeto.Location = new System.Drawing.Point(96, 119);
-            this.btn_vezeto.Name = "btn_vezeto";
-            this.btn_vezeto.Size = new System.Drawing.Size(96, 23);
-            this.btn_vezeto.TabIndex = 7;
-            this.btn_vezeto.Text = "Teszt vezető";
-            this.btn_vezeto.UseVisualStyleBackColor = true;
+            this.btn_belepes.Click += new System.EventHandler(this.btn_belepes_Click);
             // 
             // Login_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(202, 160);
-            this.Controls.Add(this.btn_vezeto);
-            this.Controls.Add(this.btn_tanar);
-            this.Controls.Add(this.btn_hallgato);
+            this.ClientSize = new System.Drawing.Size(202, 123);
             this.Controls.Add(this.btn_belepes);
             this.Controls.Add(this.txtb_jelszo);
             this.Controls.Add(this.lbl_jelszo);
@@ -138,9 +104,6 @@
         private System.Windows.Forms.Label lbl_jelszo;
         private System.Windows.Forms.TextBox txtb_jelszo;
         private System.Windows.Forms.Button btn_belepes;
-        private System.Windows.Forms.Button btn_hallgato;
-        private System.Windows.Forms.Button btn_tanar;
-        private System.Windows.Forms.Button btn_vezeto;
         public System.Windows.Forms.TextBox txtb_azonosito;
     }
 }

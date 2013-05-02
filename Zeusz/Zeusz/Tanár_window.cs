@@ -17,7 +17,7 @@ namespace Zeusz
         static List<Tanár> tanárok = adatKezelő.tanárListázás();
         static List<Tantárgy> tárgyak = tantárgyKezelő.tantárgyListázás();
 
-        public Tanár_window()
+        public Tanár_window(Tanár belépő)
         {
             InitializeComponent();
         }

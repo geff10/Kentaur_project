@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adatkezelő.cs" />
+    <Compile Include="BejelenktkezésKezelő.cs" />
     <Compile Include="Hallgató_window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,12 @@
     </Compile>
     <Compile Include="Tanár_window.Designer.cs">
       <DependentUpon>Tanár_window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vezető_window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vezető_window.Designer.cs">
+      <DependentUpon>Vezető_window.cs</DependentUpon>
     </Compile>
     <Compile Include="Üzenet.cs" />
     <Compile Include="Üzenetkezelő.cs" />

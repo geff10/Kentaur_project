@@ -45,8 +45,14 @@ namespace Zeusz
 
         private void btn_tanar_Click(object sender, EventArgs e)
         {
-            Tanár_window tanár_Form = new Tanár_window();
-            tanár_Form.ShowDialog();
+            /*Tanár_window tanár_Form = new Tanár_window(belépő);
+            tanár_Form.ShowDialog();*/
+        }
+
+        private void btn_belepes_Click(object sender, EventArgs e)
+        {
+            BejelenktkezésKezelő bejelentkezésKezelő = new BejelenktkezésKezelő();
+            bejelentkezésKezelő.Beléptetés(txtb_azonosito.Text, txtb_jelszo.Text);
         }
     }
 }
