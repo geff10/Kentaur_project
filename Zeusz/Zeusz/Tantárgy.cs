@@ -161,6 +161,62 @@ namespace Zeusz {
             } while(foglalt);
         }
 
+
+        //egyszerûsített bevitel
+        //tárgykód nélküli
+        public Tantárgy(string tárgynév, string helyszín, int kezdésÓra, int kezdésPerc,int végeÓra, int végePerc,
+            string hétnapja, string hét, string[] oktatók, string követelmények, string segédletek)
+        {
+            this.tárgynév = tárgynév;
+            this.helyszín = helyszín;
+
+            int napEltolás = 0;
+            switch (hétnapja)
+            {
+                case "Hétfõ": { napEltolás = 0; break; }
+                case "Kedd": { napEltolás = 1; break; }
+                case "Szerda": { napEltolás = 2; break; }
+                case "Csütörtök": { napEltolás = 3; break; }
+                case "Péntek": { napEltolás = 4; break; }
+                default:
+                    napEltolás = 0;
+                    break;
+            }
+            //alapértelmezett dátum legyen: 2013.4.29, Hétfõ
+            this.kezdésIdõpont = new DateTime(2013, 4, 13 + napEltolás, kezdésÓra, kezdésPerc, 0);
+            this.végeIdõpont = new DateTime(2013, 4, 13 + napEltolás, végeÓra, végePerc, 0);
+            this.hét = hét;
+            this.oktatók = oktatók;
+            this.követelmények = követelmények;
+            this.segédletek = segédletek;
+
+            bool foglalt = false;
+            do
+            {
+                this.tárgykód = TárgyKódGen();
+                try
+                {
+                    if (File.Exists("Tantárgy.xml"))
+                    {
+                        XDocument doc = XDocument.Load("Tantárgy.xml");
+                        //var t = from tt in doc.Descendants("Tantárgy")
+                        //        where tt.Attribute("tárgykód").Value == this.tárgykód
+                        //        select tt;
+                        //if (t == null || t.First() == null ||
+                        //    t.Count() == 0 ||
+                        //    t.First().Attribute("tárgykód").Value.Length < 5)
+                        //    foglalt = false;
+                        //else
+                        //    foglalt = true;
+                    }
+                }
+                catch (Exception e)
+                {
+
+                    throw (e);
+                }
+            } while (foglalt);
+        }
         
 
         /// <summary>
