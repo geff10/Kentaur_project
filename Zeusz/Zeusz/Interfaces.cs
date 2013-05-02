@@ -20,6 +20,8 @@ namespace Zeusz
         void vezetőMódosítás(Vezető módosítottVezető, Vezető újVezető);
         void vezetőTörlés(string indoklás, Vezető vezető);
         List<Vezető> vezetőListázás();
+        void Jelszómódosítás(Személy személy, string újjelszó);
+        bool Jelszóellenőrzés(string zeuszkód, string jelszó);
     }
 
     interface IBejelenkezésKezelő

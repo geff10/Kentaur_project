@@ -43,7 +43,8 @@ namespace Zeusz
                     new XElement("Születésihely", újHallgató.SzületésiHely),
                     new XElement("FelvettTárgyak", újHallgató.FelvettTárgyak),
                     new XElement("Aktív", újHallgató.Aktiv),
-                    new XElement("Végzett", újHallgató.Végzett));
+                    new XElement("Végzett", újHallgató.Végzett),
+                    new XElement("Jelszó", újHallgató.Jelszó));
                 doc.Element("Hallgatók").Add(hallgató);
                 doc.Save("Hallgató.xml");
 
@@ -127,7 +128,9 @@ namespace Zeusz
                     new XElement("FelvettTárgyak", hallgató.FelvettTárgyak),
                     new XElement("Aktív", hallgató.Aktiv),
                     new XElement("Végzett", hallgató.Végzett),
-                    new XElement("Indoklás", indoklás));
+                    new XElement("Indoklás", indoklás),
+                    new XElement("Jelszó", hallgató.Jelszó));
+
                 docarch.Element("Hallgatók").Add(hallgatóarchive);
                 docarch.Save("ArchiveHallgató.xml");
 
@@ -206,7 +209,8 @@ namespace Zeusz
                     new XElement("SzemélyIgazolványSzám", újTanár.SzemélyIgsz),
                     new XElement("SzületésiDátum", újTanár.SzületésiDátum),
                     new XElement("Születésihely", újTanár.SzületésiHely),
-                    new XElement("Beosztás", újTanár.Beosztas));
+                    new XElement("Beosztás", újTanár.Beosztas),
+                    new XElement("Jelszó", újTanár.Jelszó));
                 doc.Element("Tanárok").Add(tanár);
                 doc.Save("Tanár.xml");
 
@@ -287,7 +291,8 @@ namespace Zeusz
                    new XElement("SzületésiDátum", tanár.SzületésiDátum),
                    new XElement("Születésihely", tanár.SzületésiHely),
                    new XElement("Beosztás", tanár.Beosztas),
-                   new XElement("Indoklás", indoklás));
+                   new XElement("Indoklás", indoklás),
+                   new XElement("Jelszó", tanár.Jelszó));
                docarch.Element("Tanárok").Add(tanárarchive);
                docarch.Save("ArchiveTanár.xml");
 
@@ -335,7 +340,8 @@ namespace Zeusz
                     new XElement("Lakhely", újVezető.Lakhely),
                     new XElement("SzemélyIgazolványSzám", újVezető.SzemélyIgsz),
                     new XElement("SzületésiDátum", újVezető.SzületésiDátum),
-                    new XElement("Születésihely", újVezető.SzületésiHely));     
+                    new XElement("Születésihely", újVezető.SzületésiHely),
+                    new XElement ("Jelszó", újVezető.Jelszó));     
                 doc.Element("Vezetők").Add(vezető);
                 doc.Save("Vezető.xml");
 
@@ -416,7 +422,8 @@ namespace Zeusz
                     new XElement("SzemélyIgazolványSzám", vezető.SzemélyIgsz),
                     new XElement("SzületésiDátum", vezető.SzületésiDátum),
                     new XElement("Születésihely", vezető.SzületésiHely),
-                    new XElement("Indoklás", indoklás));
+                    new XElement("Indoklás", indoklás),
+                    new XElement("Jelszó", vezető.Jelszó));
                 docarch.Element("Vezetők").Add(vezetőarchive);
                 docarch.Save("ArchiveVezető.xml");
 
@@ -442,7 +449,144 @@ namespace Zeusz
         }
 
 
+        public void Jelszómódosítás(Személy személy, string újjelszó)
+        {
+            try
+            {
 
+                if (személy is Hallgató)
+                {
+                    beolvasotthallgatók.Clear();
+                    HallgatóBeolvasás();
+
+                    foreach (Hallgató h in beolvasotthallgatók)
+                    {
+                        if (h.Zeuszkód == személy.Zeuszkód)
+                        {
+                            h.Jelszó = újjelszó;
+
+                            XDocument doc = XDocument.Load("Hallgató.xml");
+                            var hallgatók = from x in doc.Descendants("Hallgató")
+                                            where x.Attribute("Zeuszkód").Value == személy.Zeuszkód
+                                            select x;
+                            foreach (XElement hallgatóadat in hallgatók)
+                            {
+                                hallgatóadat.SetElementValue("Jelszó", h.Jelszó);
+                            }
+                            doc.Save("Hallgató.xml");
+                            break;
+                        }
+                    }
+                }
+                else if (személy is Tanár)
+                {
+                    beolvasottTanárok.Clear();
+                    TanárBeolvasás();
+
+                    foreach (Tanár t in beolvasottTanárok)
+                    {
+                        if (t.Zeuszkód == személy.Zeuszkód)
+                        {
+                            t.Jelszó = újjelszó;
+
+                            XDocument doc = XDocument.Load("Tanár.xml");
+                            var tanárok = from x in doc.Descendants("Tanár")
+                                          where x.Attribute("Zeuszkód").Value == személy.Zeuszkód
+                                          select x;
+                            foreach (XElement tanáradat in tanárok)
+                            {
+                                tanáradat.SetElementValue("Jelszó", t.Jelszó);
+                            }
+                            doc.Save("Tanár.xml");
+                            break;
+                        }
+                    }
+                }
+                else if (személy is Vezető)
+                {
+                    beolvasottVezetők.Clear();
+                    VezetőBeolvasás();
+
+                    foreach (Vezető v in beolvasottVezetők)
+                    {
+                        if (v.Zeuszkód == személy.Zeuszkód)
+                        {
+                            v.Jelszó = újjelszó;
+
+                            XDocument doc = XDocument.Load("Vezető.xml");
+                            var vezetők = from x in doc.Descendants("Vezető")
+                                          where x.Attribute("Zeuszkód").Value == személy.Zeuszkód
+                                          select x;
+                            foreach (XElement vezetőadat in vezetők)
+                            {
+                                vezetőadat.SetElementValue("Jelszó", v.Jelszó);
+                            }
+                            doc.Save("Vezető.xml");
+                            break;
+                        }
+                    }
+                }
+            }
+            catch { }
+        }
+
+        public bool Jelszóellenőrzés(string zeuszkód, string jelszó)
+        {
+            beolvasotthallgatók.Clear();
+            beolvasottTanárok.Clear();
+            beolvasottVezetők.Clear();
+
+            try
+            {
+                HallgatóBeolvasás();
+                VezetőBeolvasás();
+                TanárBeolvasás();
+
+                foreach (Hallgató h in beolvasotthallgatók)
+                {
+                    if (h.Zeuszkód == zeuszkód)
+                    {
+                        if (h.Jelszó == jelszó)
+                        {
+                            return true;
+                        }
+                    }
+
+                }
+
+
+                foreach (Tanár t in beolvasottTanárok)
+                {
+                    if (t.Zeuszkód == zeuszkód)
+                    {
+                        if (t.Jelszó == jelszó)
+                        {
+                            return true;
+                        }
+
+                    }
+
+                }
+
+                foreach (Vezető v in beolvasottVezetők)
+                {
+                    if (v.Zeuszkód == zeuszkód)
+                    {
+                        if (v.Jelszó == jelszó)
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+
+            }
+
+
+            catch { }
+
+            return false;
+        }
 
         // segédmetódusok
 
@@ -573,6 +717,7 @@ namespace Zeusz
 
         }
 
+        
 
 
     }

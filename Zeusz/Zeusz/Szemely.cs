@@ -13,6 +13,7 @@ namespace Zeusz
         DateTime születésiDátum;
         string születésiHely;
         string zeuszkód;
+        string jelszó = "passw1234";
 
 
         public string Név       //itt van set
@@ -49,6 +50,11 @@ namespace Zeusz
         {
             get { return lakhely; }
             set { lakhely = value; }
+        }
+        public string Jelszó
+        {
+            get { return jelszó; }
+            set { jelszó = value; }
         }
 
         public Személy(string lakhely, string név, string személyIgsz, DateTime születésiDátum,
