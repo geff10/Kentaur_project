@@ -15,16 +15,18 @@ namespace Zeusz
         static Kérelemkezelő kérelemKezelő = new Kérelemkezelő();
         static Tantárgykezelő tantárgyKezelő = new Tantárgykezelő();
         static List<Tanár> tanárok = adatKezelő.tanárListázás();
-        static List<Tantárgy> tárgyak = tantárgyKezelő.tantárgyListázás();
+        static List<Tantárgy> tárgyak;// = tantárgyKezelő.tantárgyListázás(belépve.Zeuszkód);
+        static Tanár belépve;
 
         public Tanár_window(Tanár belépő)
         {
             InitializeComponent();
+            belépve = belépő;
         }
 
         private void Tanár_window_Load(object sender, EventArgs e)
         {
-            string név = null;
+            string név = belépve.Név;
             int magassag_a = Screen.PrimaryScreen.Bounds.Height;
             int szelesseg_a = Screen.PrimaryScreen.Bounds.Width;
             int magassag_b = this.Size.Height / 2;
@@ -34,10 +36,14 @@ namespace Zeusz
             cmb_het.SelectedIndex = 0;
             cmb_kovetelmeny.SelectedIndex = 0;
             this.Text = "Belépve " + név + " néven.";
-            //lsb_tantargyak.DataSource = tárgyak;
+            tárgyak = tantárgyKezelő.tantárgyListázás(belépve.Zeuszkód);
+            foreach (Tantárgy t in tárgyak)
+            {
+                lsb_tantargyak.Items.Add(t.Tárgykód.ToString() + "    " + t.Tárgynév);
+            }
             foreach (Tanár t in tanárok)
             {
-                lsb_oktatok.Items.Add(t.Zeuszkód);// + "      " + t.Név);
+                lsb_oktatok.Items.Add(t.Zeuszkód + "    " + t.Név);
             }
             //lsb_oktatok.DataSource = tanárok;
             //lsb_tantargyak.SelectedIndex = 0;
@@ -58,7 +64,7 @@ namespace Zeusz
             string[] tanár = new string[5];
             for (int i = 0; i < lsb_tanarok.Items.Count; i++)
             {
-                tanár[i] = lsb_tanarok.Items[i].ToString();//tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
+                tanár[i] = lsb_tanarok.Items[i].ToString().Substring(0,6);//tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
             }
             //tanár[0] = "toma";
             Tantárgy tárgy = new Tantárgy(nev, terem, kezdo, kezdp, vego, vegp,
@@ -103,7 +109,14 @@ namespace Zeusz
 
         private void lsb_tantargyak_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tantárgy tárgy = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
+            Tantárgy tárgy = null;// = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
+            foreach (Tantárgy t in tárgyak)
+            {
+                if (t.Tárgykód == lsb_tantargyak.SelectedItem.ToString().Substring(0,6))
+                {
+                    tárgy = t;
+                }
+            }
             lbl_kod2.Text = tárgy.Tárgykód;
             txb_nev.Text = tárgy.Tárgynév;
             cmb_het.SelectedItem = cmb_het.FindString(tárgy.Hét);

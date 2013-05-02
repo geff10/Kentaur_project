@@ -27,8 +27,6 @@ namespace Zeusz
 
         public Hallgató_window(Hallgató belépő)
         {
-            Login_window login = new Login_window();
-            zeusz = login.txtb_azonosito.Text;
             InitializeComponent();
             hallgató = belépő;
             zeusz = hallgató.Zeuszkód;

@@ -37,3 +37,4 @@ c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Generat
 c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\bin\Debug\Zeusz.exe
 c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\bin\Debug\Zeusz.pdb
 c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Tanár_window.resources
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Vezető_window.resources

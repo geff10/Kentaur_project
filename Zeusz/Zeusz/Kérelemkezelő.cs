@@ -57,6 +57,10 @@ namespace Zeusz
                         //tantárgyTörlésKérelem kérelem = new tantárgyTörlésKérelem(adatbe);
                         break;
                     }
+                case "tárgylead":
+                        {
+                            break;
+                        }
             }
             //adatbázisnak elküld
         }

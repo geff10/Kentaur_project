@@ -52,6 +52,8 @@
             this.lbl_nev = new System.Windows.Forms.Label();
             this.TantárgykezelőTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_nap2 = new System.Windows.Forms.Label();
+            this.lbl_nap = new System.Windows.Forms.Label();
             this.txb_segedlet = new System.Windows.Forms.TextBox();
             this.lbl_segedlet = new System.Windows.Forms.Label();
             this.lbl_jegy = new System.Windows.Forms.Label();
@@ -91,8 +93,6 @@
             this.btn_frissit = new System.Windows.Forms.Button();
             this.lsb_lista = new System.Windows.Forms.ListBox();
             this.lbl_üzenetbe = new System.Windows.Forms.Label();
-            this.lbl_nap = new System.Windows.Forms.Label();
-            this.lbl_nap2 = new System.Windows.Forms.Label();
             this.tabc_hallgato.SuspendLayout();
             this.SzemélyiAdatokTab.SuspendLayout();
             this.grb_kerelem.SuspendLayout();
@@ -344,6 +344,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lbl_nap2);
             this.panel1.Controls.Add(this.lbl_nap);
             this.panel1.Controls.Add(this.txb_segedlet);
@@ -368,6 +369,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(425, 116);
             this.panel1.TabIndex = 6;
+            // 
+            // lbl_nap2
+            // 
+            this.lbl_nap2.AutoSize = true;
+            this.lbl_nap2.Location = new System.Drawing.Point(50, 60);
+            this.lbl_nap2.Name = "lbl_nap2";
+            this.lbl_nap2.Size = new System.Drawing.Size(0, 13);
+            this.lbl_nap2.TabIndex = 19;
+            // 
+            // lbl_nap
+            // 
+            this.lbl_nap.AutoSize = true;
+            this.lbl_nap.Location = new System.Drawing.Point(14, 60);
+            this.lbl_nap.Name = "lbl_nap";
+            this.lbl_nap.Size = new System.Drawing.Size(30, 13);
+            this.lbl_nap.TabIndex = 18;
+            this.lbl_nap.Text = "Nap:";
             // 
             // txb_segedlet
             // 
@@ -423,7 +441,7 @@
             // lbl_parose
             // 
             this.lbl_parose.AutoSize = true;
-            this.lbl_parose.Location = new System.Drawing.Point(371, 9);
+            this.lbl_parose.Location = new System.Drawing.Point(355, 9);
             this.lbl_parose.Name = "lbl_parose";
             this.lbl_parose.Size = new System.Drawing.Size(0, 13);
             this.lbl_parose.TabIndex = 11;
@@ -431,7 +449,7 @@
             // lbl_het
             // 
             this.lbl_het.AutoSize = true;
-            this.lbl_het.Location = new System.Drawing.Point(338, 9);
+            this.lbl_het.Location = new System.Drawing.Point(328, 9);
             this.lbl_het.Name = "lbl_het";
             this.lbl_het.Size = new System.Drawing.Size(27, 13);
             this.lbl_het.TabIndex = 10;
@@ -724,23 +742,6 @@
             this.lbl_üzenetbe.Size = new System.Drawing.Size(105, 13);
             this.lbl_üzenetbe.TabIndex = 0;
             this.lbl_üzenetbe.Text = "Beérkezett üzenetek";
-            // 
-            // lbl_nap
-            // 
-            this.lbl_nap.AutoSize = true;
-            this.lbl_nap.Location = new System.Drawing.Point(14, 60);
-            this.lbl_nap.Name = "lbl_nap";
-            this.lbl_nap.Size = new System.Drawing.Size(30, 13);
-            this.lbl_nap.TabIndex = 18;
-            this.lbl_nap.Text = "Nap:";
-            // 
-            // lbl_nap2
-            // 
-            this.lbl_nap2.AutoSize = true;
-            this.lbl_nap2.Location = new System.Drawing.Point(50, 60);
-            this.lbl_nap2.Name = "lbl_nap2";
-            this.lbl_nap2.Size = new System.Drawing.Size(0, 13);
-            this.lbl_nap2.TabIndex = 19;
             // 
             // Hallgató_window
             // 

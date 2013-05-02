@@ -31,6 +31,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TantárgyakTab = new System.Windows.Forms.TabPage();
             this.grb_kezel = new System.Windows.Forms.GroupBox();
+            this.cmb_nap = new System.Windows.Forms.ComboBox();
             this.btn_targytorol = new System.Windows.Forms.Button();
             this.btn_modosit = new System.Windows.Forms.Button();
             this.btn_targyplusz = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.lbl_tanitot = new System.Windows.Forms.Label();
             this.ÜzenetTab = new System.Windows.Forms.TabPage();
             this.ÉrtékelésTab = new System.Windows.Forms.TabPage();
-            this.cmb_nap = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.TantárgyakTab.SuspendLayout();
             this.grb_kezel.SuspendLayout();
@@ -128,6 +128,20 @@
             this.grb_kezel.TabIndex = 2;
             this.grb_kezel.TabStop = false;
             this.grb_kezel.Text = "Kezelés";
+            // 
+            // cmb_nap
+            // 
+            this.cmb_nap.FormattingEnabled = true;
+            this.cmb_nap.Items.AddRange(new object[] {
+            "Hétfő",
+            "Kedd",
+            "Szerda",
+            "Csütörtök",
+            "Péntek"});
+            this.cmb_nap.Location = new System.Drawing.Point(133, 58);
+            this.cmb_nap.Name = "cmb_nap";
+            this.cmb_nap.Size = new System.Drawing.Size(90, 21);
+            this.cmb_nap.TabIndex = 21;
             // 
             // btn_targytorol
             // 
@@ -381,9 +395,8 @@
             this.lbl_kod2.AutoSize = true;
             this.lbl_kod2.Location = new System.Drawing.Point(78, 16);
             this.lbl_kod2.Name = "lbl_kod2";
-            this.lbl_kod2.Size = new System.Drawing.Size(49, 13);
+            this.lbl_kod2.Size = new System.Drawing.Size(0, 13);
             this.lbl_kod2.TabIndex = 1;
-            this.lbl_kod2.Text = "AAAAAA";
             // 
             // lbl_kod
             // 
@@ -430,20 +443,6 @@
             this.ÉrtékelésTab.Size = new System.Drawing.Size(625, 365);
             this.ÉrtékelésTab.TabIndex = 2;
             this.ÉrtékelésTab.Text = "Tanulók értékelése";
-            // 
-            // cmb_nap
-            // 
-            this.cmb_nap.FormattingEnabled = true;
-            this.cmb_nap.Items.AddRange(new object[] {
-            "Hétfő",
-            "Kedd",
-            "Szerda",
-            "Csütörtök",
-            "Péntek"});
-            this.cmb_nap.Location = new System.Drawing.Point(133, 58);
-            this.cmb_nap.Name = "cmb_nap";
-            this.cmb_nap.Size = new System.Drawing.Size(90, 21);
-            this.cmb_nap.TabIndex = 21;
             // 
             // Tanár_window
             // 
