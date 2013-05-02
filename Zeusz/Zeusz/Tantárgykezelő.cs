@@ -26,34 +26,43 @@ namespace Zeusz {
 		}
 
 
-        /*private void HallgatóBeolvasás()
+        private void tantárgyBeolvasás()
         {
              beolvasottTantárgyak.Clear();
             try
             {
 
-                XDocument doc = XDocument.Load("Hallgató.xml");
+                XDocument doc = XDocument.Load("Tantárgy.xml");
 
-                foreach (var p in doc.Descendants("Hallgató"))
+
+
+                foreach (var p in doc.Descendants("Tantárgy"))
                 {
-                    beolvasottTantárgyak.Add(new Hallgató(
+                    int oktatókSzáma = ((string)p.Element("Oktatók")).Length / 6;
+                    string[] strOktTömb = new string[oktatókSzáma];
+                    for (int i = 0; i < oktatókSzáma; i++)
+			        {
+			            strOktTömb[i] = 
+                            ((string)p.Element("Oktatók")).Substring(i*6,6);
+			        }
 
-
-                         (string)p.Attribute("Zeuszkód"),
-                         (string)p.Element("Név"),
-                         (string)p.Element("Lakhely"),
-                         (string)p.Element("SzemélyIgazolványSzám"),
-                         (DateTime)p.Element("SzületésiDátum"),
-                         (string)p.Element("Születésihely"),
-                         (bool)p.Element("Aktív"),
-                         (bool)p.Element("Végzett"))
+                    beolvasottTantárgyak.Add(new Tantárgy(
+                         (string)p.Element("Tárgynév"),
+                         (string)p.Attribute("tárgykód"),
+                         (string)p.Element("Helyszín"),
+                         (DateTime)p.Element("Kezdés"),
+                         (DateTime)p.Element("Vége"),
+                         (string)p.Element("Hét"),
+                         strOktTömb,
+                         (string)p.Element("Követelmények"),
+                         (string)p.Element("Segédletek"))
                          );
                 }
             }
             catch (Exception e) { throw (e); }
 
         }
-        */
+        
         
 		//~Tantárgykezelõ(){}
 
@@ -79,13 +88,14 @@ namespace Zeusz {
 
 		/// 
 		/// <param name="tantárgy"></param>
-		public void Tárgyfelvétel(Tantárgy tantárgy){
+        public void Tárgyfelvétel(Tantárgy tantárgy, string hallgatóZeuszkód)
+        {
             throw new System.NotImplementedException();
 		}
 
 		/// 
 		/// <param name="tantárgy"></param>
-		public void Tárgyleadás(Tantárgy tantárgy){
+		public void Tárgyleadás(Tantárgy tantárgy, string hallgatóZeuszkód){
             throw new System.NotImplementedException();
 		}
 
@@ -147,9 +157,9 @@ namespace Zeusz {
 		/// 
 		/// <param name="tantárgyak"></param>
 		public List<Tantárgy> tantárgyListázás(){
-            //AB lekérdezés
-          List<Tantárgy> tantárgyLista =   new List<Tantárgy>();
-          return tantárgyLista;
+            beolvasottTantárgyak.Clear();
+            tantárgyBeolvasás();
+          return beolvasottTantárgyak;
 		}
 
         public List<Tantárgy> tantárgyListázás(string tanárZeuszkód)
