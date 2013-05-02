@@ -37,8 +37,8 @@ namespace Zeusz
 
     interface ITantárgykezelő
     {
-        void Tárgyfelvétel(Tantárgy tantárgy);
-        void Tárgyleadás(Tantárgy tantárgy);
+        void Tárgyfelvétel(Tantárgy tantárgy, string hallgatóZeuszkód);
+        void Tárgyleadás(Tantárgy tantárgy, string hallgatóZeuszkód);
         void Tárgyhozzáadás(Tantárgy tantárgy);
         void Tárgymódosítás(Tantárgy tárgyról, Tantárgy tárgyra);
         void Tárgytörlés(Tantárgy tantárgy);
