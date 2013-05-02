@@ -20,9 +20,41 @@ namespace Zeusz {
 		//public Személy m_Személy;
 		//public Tantárgy list_tantárgyak;
 
+        List<Tantárgy> beolvasottTantárgyak = new List<Tantárgy>();
+
 		public Tantárgykezelõ(){
 		}
 
+
+        /*private void HallgatóBeolvasás()
+        {
+             beolvasottTantárgyak.Clear();
+            try
+            {
+
+                XDocument doc = XDocument.Load("Hallgató.xml");
+
+                foreach (var p in doc.Descendants("Hallgató"))
+                {
+                    beolvasottTantárgyak.Add(new Hallgató(
+
+
+                         (string)p.Attribute("Zeuszkód"),
+                         (string)p.Element("Név"),
+                         (string)p.Element("Lakhely"),
+                         (string)p.Element("SzemélyIgazolványSzám"),
+                         (DateTime)p.Element("SzületésiDátum"),
+                         (string)p.Element("Születésihely"),
+                         (bool)p.Element("Aktív"),
+                         (bool)p.Element("Végzett"))
+                         );
+                }
+            }
+            catch (Exception e) { throw (e); }
+
+        }
+        */
+        
 		//~Tantárgykezelõ(){}
 
 		//public virtual void Dispose(){}

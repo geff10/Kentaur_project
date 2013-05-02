@@ -87,7 +87,45 @@ namespace Zeusz {
             set { segédletek = value; }
         }
 
+        int kezdésÓra;
 
+        public int KezdésÓra
+        {
+            get { return kezdésÓra; }
+            set { kezdésÓra = value; }
+        }
+
+        int kezdésPerc;
+
+        public int KezdésPerc
+        {
+            get { return kezdésPerc; }
+            set { kezdésPerc = value; }
+        }
+
+        int végeÓra;
+
+        public int VégeÓra
+        {
+            get { return végeÓra; }
+            set { végeÓra = value; }
+        }
+
+        int végePerc;
+
+        public int VégePerc
+        {
+            get { return végePerc; }
+            set { végePerc = value; }
+        }
+
+        string hétnapja;
+
+        public string Hétnapja
+        {
+            get { return hétnapja; }
+            set { hétnapja = value; }
+        } 
 
 
         //metódusok
@@ -182,9 +220,14 @@ namespace Zeusz {
                     napEltolás = 0;
                     break;
             }
-            //alapértelmezett dátum legyen: 2013.4.29, Hétfõ
-            this.kezdésIdõpont = new DateTime(2013, 4, 13 + napEltolás, kezdésÓra, kezdésPerc, 0);
-            this.végeIdõpont = new DateTime(2013, 4, 13 + napEltolás, végeÓra, végePerc, 0);
+            //alapértelmezett dátum legyen: 2013.5.13, Hétfõ
+            this.kezdésIdõpont = new DateTime(2013, 5, 13 + napEltolás, kezdésÓra, kezdésPerc, 0);
+            this.végeIdõpont = new DateTime(2013, 5, 13 + napEltolás, végeÓra, végePerc, 0);
+            this.kezdésÓra = kezdésÓra;
+            this.kezdésPerc = kezdésPerc;
+            this.végeÓra = végeÓra;
+            this.végePerc = végePerc;
+            this.hétnapja = hétnapja;
             this.hét = hét;
             this.oktatók = oktatók;
             this.követelmények = követelmények;
@@ -230,6 +273,7 @@ namespace Zeusz {
             return this.Tárgynév + "\n"
                 + this.kezdésIdõpont.Hour.ToString() + ":" + this.kezdésIdõpont.Minute.ToString() + " - " +
                     this.végeIdõpont.Hour.ToString() + ":" + this.végeIdõpont.Minute.ToString() + "\n " +
+                    this.hétnapja + "\n" +
                     this.hét + "\n" +
                     this.helyszín + "\n" +
                     this.oktatók + "\n" +
@@ -242,6 +286,7 @@ namespace Zeusz {
             return this.Tárgynév + "\n"
             + this.kezdésIdõpont.Hour.ToString() + ":" + this.kezdésIdõpont.Minute.ToString() + " - " +
             this.végeIdõpont.Hour.ToString() + ":" + this.végeIdõpont.Minute.ToString() + "\n " +
+            this.hétnapja + "\n" +
             this.hét + "\n" +
             this.helyszín + "\n" +
             this.oktatók + "\n" +
