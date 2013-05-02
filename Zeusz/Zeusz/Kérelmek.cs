@@ -48,7 +48,7 @@ namespace Zeusz
             set { küldésDátum = value; }
         }
 
-        private int KérelemAzonosító;
+        private int kérelemAzonosító;
         public int KérelemAzonosító
         {
             get { return KérelemAzonosító; }
@@ -122,7 +122,7 @@ namespace Zeusz
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.mireMódosít = mireMódosít;
             Aktív = true;
-            KérelemAzonosító1 = 0; //később átírni adatbázisból következő lekérésre
+            KérelemAzonosító = 0; //később átírni adatbázisból következő lekérésre
             Elfogadva = false;
             //létrehoz az adatbázisban, megírni
         }
@@ -139,7 +139,7 @@ namespace Zeusz
             this.Feladó = feladó;
             this.Indoklás = indoklás;
             this.KüldésDátum = küldésDátum;
-            this.KérelemAzonosító1 = KérelemAzonosító;
+            this.KérelemAzonosító = KérelemAzonosító;
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.mireMódosít = mireMódosít;
         }
@@ -164,7 +164,7 @@ namespace Zeusz
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.újTantárgy = újTantárgy;
             Aktív = true;
-            KérelemAzonosító1 = 0; //később átírni adatbázisból következő lekérésre
+            KérelemAzonosító = 0; //később átírni adatbázisból következő lekérésre
             Elfogadva = false;
             //létrehoz az adatbázisban, megírni
         }
@@ -181,7 +181,7 @@ namespace Zeusz
             this.Feladó = feladó;
             this.Indoklás = indoklás;
             this.KüldésDátum = küldésDátum;
-            this.KérelemAzonosító1 = KérelemAzonosító;
+            this.KérelemAzonosító = KérelemAzonosító;
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.újTantárgy = újTantárgy;
         }
@@ -206,16 +206,16 @@ namespace Zeusz
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.mireMódosít = mireMódosít;
             Aktív = true;
-            KérelemAzonosító1 = 0; //később átírni adatbázisból következő lekérésre
+            KérelemAzonosító = 0; //később átírni adatbázisból következő lekérésre
             Elfogadva = false;
             //létrehoz az adatbázisban, megírni
         }
 
         public tanárMódKérelem(bool aktív, DateTime elbírálásDátum, bool elfogadva,
-           string feladó, string indoklás, DateTime küldésDátum, int KérelemAzonosító,
+           string feladó, string indoklás, DateTime küldésDátum, int kérelemAzonosító,
             bool passzív_kijelentkezési, Tanár mireMódosít)
             : base(aktív, elbírálásDátum, elfogadva, feladó, indoklás,
-                küldésDátum, KérelemAzonosító, passzív_kijelentkezési)
+                küldésDátum, kérelemAzonosító, passzív_kijelentkezési)
         {
             this.Aktív = aktív;
             this.ElbírálásDátum = elbírálásDátum;
@@ -223,7 +223,7 @@ namespace Zeusz
             this.Feladó = feladó;
             this.Indoklás = indoklás;
             this.KüldésDátum = küldésDátum;
-            this.KérelemAzonosító1 = KérelemAzonosító;
+            this.KérelemAzonosító = kérelemAzonosító;
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.mireMódosít = mireMódosít;
         }
@@ -256,7 +256,7 @@ namespace Zeusz
             this.miről_Tárgykód = miről_Tárgykód;
             this.mireMódosít = mireMódosít;
             Aktív = true;
-            KérelemAzonosító1 = 0; //később átírni adatbázisból következő lekérésre
+            KérelemAzonosító = 0; //később átírni adatbázisból következő lekérésre
             Elfogadva = false;
             //létrehoz az adatbázisban, megírni
         }
@@ -273,7 +273,7 @@ namespace Zeusz
             this.Feladó = feladó;
             this.Indoklás = indoklás;
             this.KüldésDátum = küldésDátum;
-            this.KérelemAzonosító1 = KérelemAzonosító;
+            this.KérelemAzonosító = KérelemAzonosító;
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.miről_Tárgykód = miről_Tárgykód;
             this.mireMódosít = mireMódosít;
@@ -299,7 +299,7 @@ namespace Zeusz
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.törlTantárgy = törlTantárgy;
             Aktív = true;
-            KérelemAzonosító1 = 0; //később átírni adatbázisból következő lekérésre
+            KérelemAzonosító = 0; //később átírni adatbázisból következő lekérésre
             Elfogadva = false;
             //létrehoz az adatbázisban, megírni
         }
@@ -316,7 +316,7 @@ namespace Zeusz
             this.Feladó = feladó;
             this.Indoklás = indoklás;
             this.KüldésDátum = küldésDátum;
-            this.KérelemAzonosító1 = KérelemAzonosító;
+            this.KérelemAzonosító = KérelemAzonosító;
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.törlTantárgy = törlTantárgy;
         }
@@ -349,14 +349,14 @@ namespace Zeusz
             this.zeusz = zeusz;
             this.leadTantárgy = leadTantárgy;
             Aktív = true;
-            KérelemAzonosító1 = 0; //később átírni adatbázisból következő lekérésre
+            KérelemAzonosító = 0; //később átírni adatbázisból következő lekérésre
             Elfogadva = false;
             //létrehoz az adatbázisban, megírni
         }
 
         public tantárgyLeadásKérelem(bool aktív, DateTime elbírálásDátum, bool elfogadva,
            string feladó, string indoklás, DateTime küldésDátum, int KérelemAzonosító,
-            bool passzív_kijelentkezési,, string zeusz, Tantárgy leadTantárgy)
+            bool passzív_kijelentkezési,string zeusz, Tantárgy leadTantárgy)
             : base(aktív, elbírálásDátum, elfogadva, feladó, indoklás,
                 küldésDátum, KérelemAzonosító, passzív_kijelentkezési)
         {
@@ -366,7 +366,7 @@ namespace Zeusz
             this.Feladó = feladó;
             this.Indoklás = indoklás;
             this.KüldésDátum = küldésDátum;
-            this.KérelemAzonosító1 = KérelemAzonosító;
+            this.KérelemAzonosító = KérelemAzonosító;
             this.Passzív_kijelentkezési = passzív_kijelentkezési;
             this.zeusz = zeusz;
             this.leadTantárgy = leadTantárgy;
