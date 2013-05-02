@@ -129,6 +129,25 @@ namespace Zeusz {
 		/// 
 		/// <param name="tantárgy"></param>
 		public void Tárgyleadás(Tantárgy tantárgy, string hallgatóZeuszkód){
+
+            try
+            {
+
+                if (File.Exists("Hallgató.xml"))
+                {
+                    //XDocument doc = XDocument.Load("Hallgató.xml");
+                    //var törlendõTárgy = doc.Root.Elements("Hallgató")
+                    //    .Where(c => c.Elements("Hallgató")
+                    //        .Where(d => d.Attribute("Zeuszkód").Value == hallgatóZeuszkód)
+                    //            .Where(e => e.Elements("FelvettTárgyak")
+                    //                .Where(f => f.Elements("FelvettTantárgy")
+                    //                    .Where(g => g.Attribute("tárgykód").Value == tantárgy.Tárgykód)
+                    //törlendõTárgy.Remove();
+                    //doc.Save("Hallgató.xml");
+
+                } //if file exists
+            }
+            catch (Exception e) { throw (e); }
             throw new System.NotImplementedException();
 		}
 
