@@ -14,9 +14,10 @@ namespace Zeusz
         static string zeusz;
         static Adatkezelő adatKezelő = new Adatkezelő();
         static Tantárgykezelő tantárgykezelő = new Tantárgykezelő();
+        static Kérelemkezelő kérelemKezelő = new Kérelemkezelő();
         static Üzenetkezelő üzenetKezelő = new Üzenetkezelő();
         static List<Hallgató> hallgatók = adatKezelő.hallgatóListázás();
-        static Hallgató hallgató = belépve();
+        static Hallgató hallgató;// = belépve();
         static List<Üzenet> üzenetek = null;
         static List<Tantárgy> tantárgyak = null;
         static List<Tantárgy> felvettek = null;
@@ -46,9 +47,15 @@ namespace Zeusz
              */
             név = hallgató.Név;
             if (hallgató.Aktiv)
+            { 
                 státusz = "aktív";
+                rb_passziv.Enabled = true;
+            }
             else
+            {
                 státusz = "passzív";
+                rb_passziv.Enabled = false;
+            }
             int magassag_a = Screen.PrimaryScreen.Bounds.Height;
             int szelesseg_a = Screen.PrimaryScreen.Bounds.Width;
             int magassag_b = this.Size.Height / 2;
@@ -58,9 +65,14 @@ namespace Zeusz
             this.Text = "Belépve " + név + " néven.";
             lbl_zeusz2.Text = zeusz;
             lbl_statusz2.Text = státusz;
+            txb_nev.Text = hallgató.Név;
+            txb_személyiIgsz.Text = hallgató.SzemélyIgsz;
+            txb_lakhely.Text = hallgató.Lakhely;
+            txb_szulhely.Text = hallgató.SzületésiHely;
+            dtp_szulDatum.Value = hallgató.SzületésiDátum;
         }
 
-        static Hallgató belépve()
+        /*static Hallgató belépve()
         {
             Hallgató bent = null;
             foreach (Hallgató h in hallgatók)
@@ -72,18 +84,7 @@ namespace Zeusz
             }
             return bent;
         }
-        
-        private void ÉrtesítésekTab_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
-                lsb_lista.DataSource = üzenetek;
-            }
-            catch
-            {
-            }
-        }
+        */
 
         private void btn_frissit_Click(object sender, EventArgs e)
         {
@@ -177,6 +178,14 @@ namespace Zeusz
                         {
                             lsb_felvett.Items.Clear();
                             felvettek = hallgató.FelvettTárgyak;
+                            if (felvettek.First() == null)
+                            {
+                                lsb_felvett.Items.Add("Nincs felvett");
+                            }
+                            else
+                            {
+                                lsb_felvett.DataSource = tantárgyak;
+                            }
                         }
                         catch
                         {
@@ -189,12 +198,42 @@ namespace Zeusz
                     {
                         try
                         {
+                            üzenetek = üzenetKezelő.üzenetListázás(hallgató.Zeuszkód, true);
+                            lsb_lista.DataSource = üzenetek;
                         }
                         catch
                         {
                         }
                         break;
                     }
+            }
+        }
+
+        private void btn_kuldes_Click(object sender, EventArgs e)
+        {
+            bool aktiv;
+            if (lbl_statusz2.Text == "aktív")
+                aktiv = true;
+            else
+                aktiv = false;
+            Hallgató uj = new Hallgató(lbl_zeusz2.Text, txb_nev.Text, txb_lakhely.Text, txb_személyiIgsz.Text,
+                dtp_szulDatum.Value, txb_szulhely.Text, aktiv, hallgató.Végzett);
+            hallgMódKérelem kérelemmod = new hallgMódKérelem(hallgató.Zeuszkód,"Adatok módosítása",DateTime.Now,
+                false, uj);
+            kérelemKezelő.Kérelmezés("hallgatómód", kérelemmod);
+        }
+
+        private void btn_kerelem_Click(object sender, EventArgs e)
+        {
+            if (rb_passziv.Checked)
+            {
+                Kérelem passzív = new Kérelem(hallgató.Zeuszkód, "Passzív kérelem", DateTime.Now, false);
+                kérelemKezelő.Kérelmezés("passzív", passzív);
+            }
+            else
+            {
+                Kérelem kijelentkezesi = new Kérelem(hallgató.Zeuszkód, "Passzív kérelem", DateTime.Now, true);
+                kérelemKezelő.Kérelmezés("kijelentkezési", kijelentkezesi);
             }
         }
     }
