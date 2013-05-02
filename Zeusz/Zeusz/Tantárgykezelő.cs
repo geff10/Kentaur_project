@@ -170,10 +170,11 @@ namespace Zeusz {
             beolvasottTantárgyak.Clear();
             tantárgyBeolvasás();
             List<Tantárgy> tantárgyLista = new List<Tantárgy>();
-            //foreach (var tárgy in beolvasottTantárgyak)
-            //{
-            //    if(tárgy.Oktatók.Contains(
-            //}
+            foreach (var tárgy in beolvasottTantárgyak)
+            {
+                if(tárgy.Oktatók.Contains(tanárZeuszkód))
+                    tantárgyLista.Add(tárgy);
+            }
             return tantárgyLista;
         }
 

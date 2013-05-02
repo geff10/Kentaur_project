@@ -132,8 +132,11 @@ namespace Zeusz {
         public string TárgyKódGen()
         {
             //pszeudorandom
-            string str = this.tárgynév[0] + this.oktatók[0][0] + this.kezdésIdõpont.ToString()[0] +
-                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString() + (char)R.Next(65, 90);
+            string str = this.tárgynév[0].ToString() +
+                this.oktatók[0][0].ToString() +
+                this.kezdésIdõpont.ToString()[0].ToString() +
+                this.hét[this.hét.Length-1] + R.Next(0, 9).ToString() +
+                ((char)R.Next(65, 90)).ToString();
             return str;
         }
 
