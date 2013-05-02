@@ -38,17 +38,16 @@
             this.lbl_statusz = new System.Windows.Forms.Label();
             this.grb_adatok = new System.Windows.Forms.GroupBox();
             this.btn_kuldes = new System.Windows.Forms.Button();
-            this.mc_szuldatum = new System.Windows.Forms.MonthCalendar();
             this.lbl_szuldatum = new System.Windows.Forms.Label();
-            this.txtb_szulhely = new System.Windows.Forms.TextBox();
+            this.txb_szulhely = new System.Windows.Forms.TextBox();
             this.lbl_szulhely = new System.Windows.Forms.Label();
-            this.txtb_lakhely = new System.Windows.Forms.TextBox();
+            this.txb_lakhely = new System.Windows.Forms.TextBox();
             this.lbl_lakhely = new System.Windows.Forms.Label();
             this.lbl_személyiIgsz = new System.Windows.Forms.Label();
             this.lbl_zeusz2 = new System.Windows.Forms.Label();
-            this.txtb_személyiIgsz = new System.Windows.Forms.TextBox();
+            this.txb_személyiIgsz = new System.Windows.Forms.TextBox();
             this.lbl_zeusz = new System.Windows.Forms.Label();
-            this.txtb_nev = new System.Windows.Forms.TextBox();
+            this.txb_nev = new System.Windows.Forms.TextBox();
             this.lbl_nev = new System.Windows.Forms.Label();
             this.TantárgykezelőTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -91,6 +90,7 @@
             this.btn_frissit = new System.Windows.Forms.Button();
             this.lsb_lista = new System.Windows.Forms.ListBox();
             this.lbl_üzenetbe = new System.Windows.Forms.Label();
+            this.dtp_szulDatum = new System.Windows.Forms.DateTimePicker();
             this.tabc_hallgato.SuspendLayout();
             this.SzemélyiAdatokTab.SuspendLayout();
             this.grb_kerelem.SuspendLayout();
@@ -149,6 +149,7 @@
             this.btn_kerelem.TabIndex = 4;
             this.btn_kerelem.Text = "Kérelem elküldése";
             this.btn_kerelem.UseVisualStyleBackColor = true;
+            this.btn_kerelem.Click += new System.EventHandler(this.btn_kerelem_Click);
             // 
             // rb_kijelentkezes
             // 
@@ -164,6 +165,7 @@
             // rb_passziv
             // 
             this.rb_passziv.AutoSize = true;
+            this.rb_passziv.Checked = true;
             this.rb_passziv.Location = new System.Drawing.Point(222, 23);
             this.rb_passziv.Name = "rb_passziv";
             this.rb_passziv.Size = new System.Drawing.Size(147, 17);
@@ -192,18 +194,18 @@
             // 
             // grb_adatok
             // 
+            this.grb_adatok.Controls.Add(this.dtp_szulDatum);
             this.grb_adatok.Controls.Add(this.btn_kuldes);
-            this.grb_adatok.Controls.Add(this.mc_szuldatum);
             this.grb_adatok.Controls.Add(this.lbl_szuldatum);
-            this.grb_adatok.Controls.Add(this.txtb_szulhely);
+            this.grb_adatok.Controls.Add(this.txb_szulhely);
             this.grb_adatok.Controls.Add(this.lbl_szulhely);
-            this.grb_adatok.Controls.Add(this.txtb_lakhely);
+            this.grb_adatok.Controls.Add(this.txb_lakhely);
             this.grb_adatok.Controls.Add(this.lbl_lakhely);
             this.grb_adatok.Controls.Add(this.lbl_személyiIgsz);
             this.grb_adatok.Controls.Add(this.lbl_zeusz2);
-            this.grb_adatok.Controls.Add(this.txtb_személyiIgsz);
+            this.grb_adatok.Controls.Add(this.txb_személyiIgsz);
             this.grb_adatok.Controls.Add(this.lbl_zeusz);
-            this.grb_adatok.Controls.Add(this.txtb_nev);
+            this.grb_adatok.Controls.Add(this.txb_nev);
             this.grb_adatok.Controls.Add(this.lbl_nev);
             this.grb_adatok.Location = new System.Drawing.Point(8, 6);
             this.grb_adatok.Name = "grb_adatok";
@@ -220,13 +222,7 @@
             this.btn_kuldes.TabIndex = 12;
             this.btn_kuldes.Text = "Küldés";
             this.btn_kuldes.UseVisualStyleBackColor = true;
-            // 
-            // mc_szuldatum
-            // 
-            this.mc_szuldatum.Location = new System.Drawing.Point(236, 44);
-            this.mc_szuldatum.Name = "mc_szuldatum";
-            this.mc_szuldatum.ShowToday = false;
-            this.mc_szuldatum.TabIndex = 11;
+            this.btn_kuldes.Click += new System.EventHandler(this.btn_kuldes_Click);
             // 
             // lbl_szuldatum
             // 
@@ -237,12 +233,12 @@
             this.lbl_szuldatum.TabIndex = 10;
             this.lbl_szuldatum.Text = "Születési dátum:";
             // 
-            // txtb_szulhely
+            // txb_szulhely
             // 
-            this.txtb_szulhely.Location = new System.Drawing.Point(9, 155);
-            this.txtb_szulhely.Name = "txtb_szulhely";
-            this.txtb_szulhely.Size = new System.Drawing.Size(215, 20);
-            this.txtb_szulhely.TabIndex = 9;
+            this.txb_szulhely.Location = new System.Drawing.Point(9, 155);
+            this.txb_szulhely.Name = "txb_szulhely";
+            this.txb_szulhely.Size = new System.Drawing.Size(215, 20);
+            this.txb_szulhely.TabIndex = 9;
             // 
             // lbl_szulhely
             // 
@@ -253,12 +249,12 @@
             this.lbl_szulhely.TabIndex = 8;
             this.lbl_szulhely.Text = "Születési hely:";
             // 
-            // txtb_lakhely
+            // txb_lakhely
             // 
-            this.txtb_lakhely.Location = new System.Drawing.Point(9, 116);
-            this.txtb_lakhely.Name = "txtb_lakhely";
-            this.txtb_lakhely.Size = new System.Drawing.Size(215, 20);
-            this.txtb_lakhely.TabIndex = 7;
+            this.txb_lakhely.Location = new System.Drawing.Point(9, 116);
+            this.txb_lakhely.Name = "txb_lakhely";
+            this.txb_lakhely.Size = new System.Drawing.Size(215, 20);
+            this.txb_lakhely.TabIndex = 7;
             // 
             // lbl_lakhely
             // 
@@ -287,12 +283,12 @@
             this.lbl_zeusz2.TabIndex = 4;
             this.lbl_zeusz2.Text = "label1";
             // 
-            // txtb_személyiIgsz
+            // txb_személyiIgsz
             // 
-            this.txtb_személyiIgsz.Location = new System.Drawing.Point(9, 77);
-            this.txtb_személyiIgsz.Name = "txtb_személyiIgsz";
-            this.txtb_személyiIgsz.Size = new System.Drawing.Size(215, 20);
-            this.txtb_személyiIgsz.TabIndex = 3;
+            this.txb_személyiIgsz.Location = new System.Drawing.Point(9, 77);
+            this.txb_személyiIgsz.Name = "txb_személyiIgsz";
+            this.txb_személyiIgsz.Size = new System.Drawing.Size(215, 20);
+            this.txb_személyiIgsz.TabIndex = 3;
             // 
             // lbl_zeusz
             // 
@@ -303,12 +299,12 @@
             this.lbl_zeusz.TabIndex = 1;
             this.lbl_zeusz.Text = "Zeusz kód:";
             // 
-            // txtb_nev
+            // txb_nev
             // 
-            this.txtb_nev.Location = new System.Drawing.Point(75, 38);
-            this.txtb_nev.Name = "txtb_nev";
-            this.txtb_nev.Size = new System.Drawing.Size(149, 20);
-            this.txtb_nev.TabIndex = 2;
+            this.txb_nev.Location = new System.Drawing.Point(75, 38);
+            this.txb_nev.Name = "txb_nev";
+            this.txb_nev.Size = new System.Drawing.Size(149, 20);
+            this.txb_nev.TabIndex = 2;
             // 
             // lbl_nev
             // 
@@ -335,7 +331,6 @@
             this.TantárgykezelőTab.Size = new System.Drawing.Size(441, 344);
             this.TantárgykezelőTab.TabIndex = 1;
             this.TantárgykezelőTab.Text = "Tantárgyak kezelése";
-
             // 
             // panel1
             // 
@@ -608,7 +603,6 @@
             this.ÉrtesítésekTab.Size = new System.Drawing.Size(441, 344);
             this.ÉrtesítésekTab.TabIndex = 4;
             this.ÉrtesítésekTab.Text = "Üzenetek";
-            this.ÉrtesítésekTab.Click += new System.EventHandler(this.ÉrtesítésekTab_Click);
             // 
             // btn_torol
             // 
@@ -708,7 +702,6 @@
             this.lsb_lista.Name = "lsb_lista";
             this.lsb_lista.Size = new System.Drawing.Size(120, 186);
             this.lsb_lista.TabIndex = 1;
-
             // 
             // lbl_üzenetbe
             // 
@@ -718,6 +711,14 @@
             this.lbl_üzenetbe.Size = new System.Drawing.Size(105, 13);
             this.lbl_üzenetbe.TabIndex = 0;
             this.lbl_üzenetbe.Text = "Beérkezett üzenetek";
+            // 
+            // dtp_szulDatum
+            // 
+            this.dtp_szulDatum.Enabled = false;
+            this.dtp_szulDatum.Location = new System.Drawing.Point(233, 38);
+            this.dtp_szulDatum.Name = "dtp_szulDatum";
+            this.dtp_szulDatum.Size = new System.Drawing.Size(166, 20);
+            this.dtp_szulDatum.TabIndex = 13;
             // 
             // Hallgató_window
             // 
@@ -754,18 +755,17 @@
         private System.Windows.Forms.TabPage ÓrarendTab;
         private System.Windows.Forms.TabPage LeckekönyvTab;
         private System.Windows.Forms.TabPage ÉrtesítésekTab;
-        private System.Windows.Forms.TextBox txtb_személyiIgsz;
-        private System.Windows.Forms.TextBox txtb_nev;
+        private System.Windows.Forms.TextBox txb_személyiIgsz;
+        private System.Windows.Forms.TextBox txb_nev;
         private System.Windows.Forms.Label lbl_zeusz;
         private System.Windows.Forms.Label lbl_nev;
         private System.Windows.Forms.GroupBox grb_adatok;
         private System.Windows.Forms.Label lbl_zeusz2;
         private System.Windows.Forms.Label lbl_személyiIgsz;
-        private System.Windows.Forms.MonthCalendar mc_szuldatum;
         private System.Windows.Forms.Label lbl_szuldatum;
-        private System.Windows.Forms.TextBox txtb_szulhely;
+        private System.Windows.Forms.TextBox txb_szulhely;
         private System.Windows.Forms.Label lbl_szulhely;
-        private System.Windows.Forms.TextBox txtb_lakhely;
+        private System.Windows.Forms.TextBox txb_lakhely;
         private System.Windows.Forms.Label lbl_lakhely;
         private System.Windows.Forms.GroupBox grb_kerelem;
         private System.Windows.Forms.Button btn_kuldes;
@@ -811,5 +811,6 @@
         private System.Windows.Forms.Label lbl_segedlet;
         private System.Windows.Forms.Label lbl_jegy;
         private System.Windows.Forms.Label lbl_követelmeny;
+        private System.Windows.Forms.DateTimePicker dtp_szulDatum;
     }
 }
