@@ -33,4 +33,15 @@
     <Végzett>false</Végzett>
     <Jelszó>passw1234</Jelszó>
   </Hallgató>
+  <Hallgató Zeuszkód="teszth">
+    <Név>teszthallgató</Név>
+    <Lakhely>nagy Város</Lakhely>
+    <SzemélyIgazolványSzám>asdf423</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T02:35:50</SzületésiDátum>
+    <Születésihely>kis város</Születésihely>
+<FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
 </Hallgatók>

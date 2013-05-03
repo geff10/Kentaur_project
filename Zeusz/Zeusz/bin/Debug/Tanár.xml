@@ -27,4 +27,13 @@
     <Beosztás>tanár</Beosztás>
     <Jelszó>passw1234</Jelszó>
   </Tanár>
+  <Tanár Zeuszkód="tesztt">
+    <Név>TesztT</Név>
+    <Lakhely>kisváros</Lakhely>
+    <SzemélyIgazolványSzám>asdf342</SzemélyIgazolványSzám>
+    <SzületésiDátum>2000-05-19T02:38:15</SzületésiDátum>
+    <Születésihely>kisfalu</Születésihely>
+    <Beosztás>segéd</Beosztás>
+    <Jelszó>passw1234</Jelszó>
+  </Tanár>
 </Tanárok>

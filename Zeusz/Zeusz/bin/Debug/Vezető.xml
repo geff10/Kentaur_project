@@ -1,46 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Vezetők>
-  <Vezető Zeuszkód="cccccc">
-    <Név>cccccc</Név>
-    <Lakhely>Vlak</Lakhely>
-    <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
-    <SzületésiDátum>2013-05-01T04:43:25.1623138+02:00</SzületésiDátum>
-    <Születésihely>Vszül</Születésihely>
-  </Vezető>
-  <Vezető Zeuszkód="]E[uN@">
-    <Név>Vteszt</Név>
-    <Lakhely>Vlak</Lakhely>
-    <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
-    <SzületésiDátum>2013-05-01T04:44:46.9949944+02:00</SzületésiDátum>
-    <Születésihely>Vszül</Születésihely>
-  </Vezető>
-  <Vezető Zeuszkód="viAh`y">
-    <Név>Vteszt</Név>
-    <Lakhely>Vlak</Lakhely>
-    <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
-    <SzületésiDátum>2013-05-01T04:45:53.8208166+02:00</SzületésiDátum>
-    <Születésihely>Vszül</Születésihely>
-  </Vezető>
-  <Vezető Zeuszkód="mPD7gZ">
-    <Név>Vteszt</Név>
-    <Lakhely>Vlak</Lakhely>
-    <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
-    <SzületésiDátum>2013-05-01T04:45:53.8208166+02:00</SzületésiDátum>
-    <Születésihely>Vszül</Születésihely>
-  </Vezető>
-  <Vezető Zeuszkód="i:ZbP@">
-    <Név>Vteszt</Név>
-    <Lakhely>Vlak</Lakhely>
-    <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
-    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
-    <Születésihely>Vszül</Születésihely>
-  </Vezető>
-  <Vezető Zeuszkód="i:ZbP@">
-    <Név>Vteszt</Név>
-    <Lakhely>Vlak</Lakhely>
-    <SzemélyIgazolványSzám>Vszem478963</SzemélyIgazolványSzám>
-    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
-    <Születésihely>Vszül</Születésihely>
+
+   <Vezető Zeuszkód="tesztv">
+    <Név>Béres István</Név>
+    <Lakhely>Szeged</Lakhely>
+    <SzemélyIgazolványSzám>21345678</SzemélyIgazolványSzám>
+    <SzületésiDátum>1973-02-01T23:52:59</SzületésiDátum>
+    <Születésihely>Szeged</Születésihely>
+    <Jelszó>passw1234</Jelszó>
   </Vezető>
   <Vezető Zeuszkód="C37Z73">
     <Név>Balogh Ferenc</Név>
