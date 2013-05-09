@@ -93,6 +93,7 @@
             this.Name = "Login_window";
             this.Text = "Belépés";
             this.Load += new System.EventHandler(this.Login_window_Load);
+            this.Enter += new System.EventHandler(this.btn_belepes_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
