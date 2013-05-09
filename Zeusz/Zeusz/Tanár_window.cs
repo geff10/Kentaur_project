@@ -75,8 +75,15 @@ namespace Zeusz
                 //tantárgyHozzáadKérelem kérelem = new tantárgyHozzáadKérelem("toma", "új tárgy",
                 //    DateTime.Now, false, tárgy);
                 //kérelemKezelő.Kérelmezés("újTárgy", kérelem);
-                tárgyak = tantárgyKezelő.tantárgyListázás();
+                tárgyak = tantárgyKezelő.tantárgyListázás(belépve.Zeuszkód);
+                lsb_tantargyak.Items.Clear();
+                foreach (Tantárgy t in tárgyak)
+                {
+                    lsb_tantargyak.Items.Add(t.Tárgykód.ToString() + "    " + t.Tárgynév);
+                }
+
                 lsb_tantargyak.Invalidate();
+                //lsb_tantargyak.Refresh();
             }
             catch
             {
@@ -112,7 +119,7 @@ namespace Zeusz
                     //tantárgyMódKérelem kérelem = new tantárgyMódKérelem("toma", "új tárgy",
                     //    DateTime.Now, false, tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem).ToString(), tárgy);
                     //kérelemKezelő.Kérelmezés("újTárgy", kérelem);
-                    tárgyak = tantárgyKezelő.tantárgyListázás();
+                    tárgyak = tantárgyKezelő.tantárgyListázás(belépve.Zeuszkód);
                     lsb_tantargyak.Invalidate();
                 }
             }
@@ -142,10 +149,13 @@ namespace Zeusz
             nud_vora.Value = tárgy.VégeIdőpont.Hour;
             nud_vperc.Value = tárgy.VégeIdőpont.Minute;
             string[] tanarok = tárgy.Oktatók;
+            //ha másik tárgyat választunk először töröljük a tárgy oktatóinak listáját, majd az aktuálisakat hozzáadjuk
+            lsb_tanarok.Items.Clear();
             for (int i = 0; i < tanarok.Length; i++)
             {
                 lsb_tanarok.Items.Add(tanarok[i]);
             }
+            lsb_tanarok.Refresh();
         }
 
         private void btn_hozzaad_Click(object sender, EventArgs e)
@@ -170,10 +180,10 @@ namespace Zeusz
                 if (lsb_tanarok.SelectedIndex != -1)
                 {
                     lsb_tanarok.Items.Remove(lsb_tanarok.SelectedItem);
-                    lsb_tanarok.Invalidate();
+                    lsb_tanarok.Refresh();
                 }
             }
-            catch { }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString()); }
         }
 
         private void btn_targytorol_Click(object sender, EventArgs e)

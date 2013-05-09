@@ -43,6 +43,27 @@ namespace Zeusz
             Location = kezd;
             cmb_tipus.SelectedIndex = 0;
             this.Text = "Belépve " + név + " néven.";
+
+
+            //létező személyek listázása
+            List<Vezető> vezetok = adatKezelő.vezetőListázás();
+            List<Tanár> tanarok = adatKezelő.tanárListázás();
+            List<Hallgató> hallgatok = adatKezelő.hallgatóListázás();
+
+            foreach (var item in vezetok)
+            {
+                lsb_felhazsnalok.Items.Add(item.Név + " (vezető)");
+            }
+
+            foreach (var item in tanarok)
+            {
+                lsb_felhazsnalok.Items.Add(item.Név + " (tanár)");
+            }
+
+            foreach (var item in hallgatok)
+            {
+                lsb_felhazsnalok.Items.Add(item.Név + " (hallgató)");
+            }
         }
 
         private void btn_felvetel_Click(object sender, EventArgs e)
@@ -56,6 +77,7 @@ namespace Zeusz
                             Vezető vezető = new Vezető("", txb_nev.Text, txb_lakhely.Text, txb_szig.Text,
                                 dtp_szulido.Value, txb_szulhely.Text);
                             adatKezelő.vezetőFelvétel(vezető);
+                            lsb_felhazsnalok.Items.Add(vezető.Név + " (vezető)");
                             break;
                         }
                     case 1:
@@ -63,6 +85,7 @@ namespace Zeusz
                             Tanár tanár = new Tanár("", txb_nev.Text, txb_lakhely.Text, txb_szig.Text,
                                 dtp_szulido.Value, txb_szulhely.Text, txb_beosztas.Text);
                             adatKezelő.tanárFelvétel(tanár);
+                            lsb_felhazsnalok.Items.Add(tanár.Név + " (tanár)");
                             break;
                         }
                     case 2:
@@ -70,6 +93,7 @@ namespace Zeusz
                             Hallgató hallgató = new Hallgató("", txb_nev.Text, txb_lakhely.Text, txb_szig.Text,
                                 dtp_szulido.Value, txb_szulhely.Text, true, false);
                             adatKezelő.hallgatóFelvétel(hallgató);
+                            lsb_felhazsnalok.Items.Add(hallgató.Név + " (hallgató)");
                             break;
                         }
                 }
@@ -87,6 +111,9 @@ namespace Zeusz
                 txb_szulhely.Text = "";
                 cmb_tipus.SelectedIndex = 0;
                 dtp_szulido.Value = DateTime.Now;
+
+                //listbox frissítése
+                lsb_felhazsnalok.Refresh();
             }
         }
 
