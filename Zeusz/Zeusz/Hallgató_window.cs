@@ -185,13 +185,18 @@ namespace Zeusz
         {
             if (rb_passziv.Checked)
             {
+
+                adatKezelő.passzívFélév(hallgató);
+                /*
                 Kérelem passzív = new Kérelem(hallgató.Zeuszkód, "Passzív kérelem", DateTime.Now, false);
-                kérelemKezelő.Kérelmezés("passzív", passzív);
+                kérelemKezelő.Kérelmezés("passzív", passzív);*/
             }
             else
             {
+                adatKezelő.hallgatóTörlés("Nem tetszik az iskola.", hallgató);
+                /*
                 Kérelem kijelentkezesi = new Kérelem(hallgató.Zeuszkód, "Passzív kérelem", DateTime.Now, true);
-                kérelemKezelő.Kérelmezés("kijelentkezési", kijelentkezesi);
+                kérelemKezelő.Kérelmezés("kijelentkezési", kijelentkezesi);*/
             }
         }
 
