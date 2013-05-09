@@ -331,9 +331,6 @@ namespace Zeusz
             try
             {
 
-                
-
-
                 //tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
                 foreach (Tantárgy t in tantárgyak)
                 {
@@ -359,6 +356,7 @@ namespace Zeusz
                 else
                 {
                     tantárgykezelő.Tárgyfelvétel(tárgy, hallgató.Zeuszkód);
+                    lsb_felvett.Items.Add(lsb_felveheto.SelectedItem);
                 }
             }
             catch (InvalidCastException ex) { MessageBox.Show(ex.Message); }
