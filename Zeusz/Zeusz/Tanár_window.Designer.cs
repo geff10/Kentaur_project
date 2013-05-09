@@ -226,6 +226,7 @@
             this.lsb_oktatok.Name = "lsb_oktatok";
             this.lsb_oktatok.Size = new System.Drawing.Size(135, 121);
             this.lsb_oktatok.TabIndex = 1;
+   
             // 
             // lbl_oktatók
             // 

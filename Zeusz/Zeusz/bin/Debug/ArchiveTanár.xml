@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tanárok>
+  <Tanár Zeuszkód="qwertz">
+    <Név>Tanárnéni</Név>
+    <Lakhely>Thome</Lakhely>
+    <SzemélyIgazolványSzám>fdas34</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:03:54.7847723+02:00</SzületésiDátum>
+    <Születésihely>Tszül</Születésihely>
+    <Beosztás>TB</Beosztás>
+    <Indoklás>csakmertazért</Indoklás>
+  </Tanár>
+  <Tanár Zeuszkód="qwertz">
+    <Név>Tanárnéni</Név>
+    <Lakhely>Thome</Lakhely>
+    <SzemélyIgazolványSzám>fdas34</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:12:53.0645601+02:00</SzületésiDátum>
+    <Születésihely>Tszül</Születésihely>
+    <Beosztás>TB</Beosztás>
+    <Indoklás>csakmertazért</Indoklás>
+  </Tanár>
+  <Tanár Zeuszkód="qwertz">
+    <Név>Tanárnéni</Név>
+    <Lakhely>Thome</Lakhely>
+    <SzemélyIgazolványSzám>fdas34</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:13:28.1825688+02:00</SzületésiDátum>
+    <Születésihely>Tszül</Születésihely>
+    <Beosztás>TB</Beosztás>
+    <Indoklás>csakmertazért</Indoklás>
+  </Tanár>
+  <Tanár Zeuszkód="qwertz">
+    <Név>Tanárnéni</Név>
+    <Lakhely>Thome</Lakhely>
+    <SzemélyIgazolványSzám>fdas34</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:15:02.7039751+02:00</SzületésiDátum>
+    <Születésihely>Tszül</Születésihely>
+    <Beosztás>TB</Beosztás>
+    <Indoklás>csakmertazért</Indoklás>
+  </Tanár>
+</Tanárok>

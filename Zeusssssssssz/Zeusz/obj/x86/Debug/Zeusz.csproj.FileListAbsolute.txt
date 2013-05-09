@@ -1,0 +1,40 @@
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\bin\Debug\Zeusz.exe
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\bin\Debug\Zeusz.pdb
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Properties.Resources.resources
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\Zeusz.exe
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\Zeusz.pdb
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Login_window.resources
+c:\users\toma\documents\visual studio 2010\Projects\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Hallgató_window.resources
+I:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.exe
+I:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.pdb
+I:\Zeusz\Zeusz\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Hallgató_window.resources
+I:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Login_window.resources
+I:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Properties.Resources.resources
+I:\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.exe
+F:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.pdb
+F:\Zeusz\Zeusz\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Hallgató_window.resources
+F:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Login_window.resources
+F:\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Properties.Resources.resources
+F:\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Zeusz\Zeusz\bin\Debug\Zeusz.exe
+F:\Zeusz\Zeusz\bin\Debug\Zeusz.pdb
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.exe
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.pdb
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Hallgató_window.resources
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Login_window.resources
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Properties.Resources.resources
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\bin\Debug\Zeusz.exe
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\bin\Debug\Zeusz.pdb
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Tanár_window.resources
+c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Vezető_window.resources

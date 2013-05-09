@@ -99,6 +99,7 @@ namespace Zeusz {
 		/// <param name="tantárgy"></param>
         public void Tárgyfelvétel(Tantárgy tantárgy, string hallgatóZeuszkód)
         {
+
             try
             {
 
@@ -107,22 +108,30 @@ namespace Zeusz {
                     XDocument doc = XDocument.Load("Hallgató.xml");
 
 
-                    XElement tantárgyElem = new XElement("FelvettTantárgy",
-                        new XAttribute("tárgykód", tantárgy.Tárgykód),
-                        new XElement("Tárgynév", tantárgy.Tárgynév),
-                        new XElement("Helyszín", tantárgy.Helyszín),
-                        new XElement("Kezdés", tantárgy.KezdésIdõpont.ToString()),
-                        new XElement("Vége", tantárgy.VégeIdõpont.ToString()),
-                        new XElement("Hét", tantárgy.Hét),
-                        new XElement("Oktatók", tantárgy.Oktatók),
-                        new XElement("Követelmények", tantárgy.Követelmények),
-                        new XElement("Segédletek", tantárgy.Segédletek));
-                    doc.Element("FelvettTárgyak").Add(tantárgyElem);
+                   //bence
+                        var hallgatók = from x in doc.Descendants("Hallgató")
+                                    where x.Attribute("Zeuszkód").Value == hallgatóZeuszkód
+                                    select x;
+                        foreach (XElement hallgatóadat in hallgatók)
+                        {
 
-                    doc.Save("Hallgató.xml");
+                            XElement tantárgyElem = new XElement("FelvettTantárgy",
+                            new XAttribute("tárgykód", tantárgy.Tárgykód),
+                            new XElement("Tárgynév", tantárgy.Tárgynév),
+                            new XElement("Helyszín", tantárgy.Helyszín),
+                            new XElement("Kezdés", tantárgy.KezdésIdõpont.ToString()),
+                            new XElement("Vége", tantárgy.VégeIdõpont.ToString()),
+                            new XElement("Hét", tantárgy.Hét),
+                            new XElement("Oktatók", tantárgy.Oktatók),
+                            new XElement("Követelmények", tantárgy.Követelmények),
+                            new XElement("Segédletek", tantárgy.Segédletek));
+                            doc.Element("FelvettTárgyak").Add(tantárgyElem);
 
+                            doc.Save("Hallgató.xml");
+                        }
                 } //if file exists
             }
+            catch (NullReferenceException ex) { throw (ex); }
             catch (Exception e) { throw (e); }
 		}
 

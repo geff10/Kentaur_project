@@ -183,6 +183,7 @@ namespace Zeusz
 
         private void btn_kerelem_Click(object sender, EventArgs e)
         {
+            
             if (rb_passziv.Checked)
             {
 
@@ -212,6 +213,7 @@ namespace Zeusz
                         if (t.Tárgykód == lsb_felveheto.SelectedItem.ToString().Substring(0,6))
                         {
                             tárgy = t;
+                            break;
                         }
                     }
                     //tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
@@ -252,7 +254,7 @@ namespace Zeusz
                             }
                     }
                     txb_segedlet.Text = tárgy.Segédletek;
-                    btn_felvetel.Enabled = true;
+                  //  btn_felvetel.Enabled = true;
                 }
                 else
                 { 
@@ -328,7 +330,20 @@ namespace Zeusz
         {
             try
             {
-                tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
+
+                
+
+
+                //tárgy = tantárgyak.Find((Predicate<Tantárgy>)lsb_felveheto.SelectedItem);
+                foreach (Tantárgy t in tantárgyak)
+                {
+                    if (t.Tárgykód == lsb_felveheto.SelectedItem.ToString().Substring(0, 6))
+                    {
+                        tárgy = t;
+                        break;
+                    }
+                }
+             
                 bool van = false;
                 for (int i = 0; i < lsb_felvett.Items.Count; i++)
                 {
@@ -346,8 +361,7 @@ namespace Zeusz
                     tantárgykezelő.Tárgyfelvétel(tárgy, hallgató.Zeuszkód);
                 }
             }
-            catch
-            { }
+            catch (InvalidCastException ex) { MessageBox.Show(ex.Message); }
 
         }
 

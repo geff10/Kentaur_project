@@ -230,6 +230,7 @@
             this.cmb_tipus.Name = "cmb_tipus";
             this.cmb_tipus.Size = new System.Drawing.Size(121, 21);
             this.cmb_tipus.TabIndex = 1;
+            this.cmb_tipus.SelectedIndexChanged += new System.EventHandler(this.cmb_tipus_SelectedIndexChanged);
             // 
             // lbl_tipus
             // 

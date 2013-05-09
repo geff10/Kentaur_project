@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Hallgatók>
+  <Hallgató Zeuszkód="G45X5M">
+    <Név>Tóth Ildikó</Név>
+    <Lakhely>Pilisvörösvár</Lakhely>
+    <SzemélyIgazolványSzám>12354668</SzemélyIgazolványSzám>
+    <SzületésiDátum>1992-08-06T23:57:07</SzületésiDátum>
+    <Születésihely>Pilisvörösvár</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
+  <Hallgató Zeuszkód="T6U4B1">
+    <Név>Nagy Gabriella</Név>
+    <Lakhely>Budapest</Lakhely>
+    <SzemélyIgazolványSzám>8888887777</SzemélyIgazolványSzám>
+    <SzületésiDátum>2006-07-01T23:58:12</SzületésiDátum>
+    <Születésihely>Budapest</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
+  <Hallgató Zeuszkód="T2ZV85">
+    <Név>Kiss János</Név>
+    <Lakhely>Szeged</Lakhely>
+    <SzemélyIgazolványSzám></SzemélyIgazolványSzám>
+    <SzületésiDátum>1993-02-01T23:58:44</SzületésiDátum>
+    <Születésihely>Szeged</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
+  <Hallgató Zeuszkód="teszth">
+    <Név>teszthallgató</Név>
+    <Lakhely>nagy Város</Lakhely>
+    <SzemélyIgazolványSzám>asdf423</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T02:35:50</SzületésiDátum>
+    <Születésihely>kis város</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
+  <Hallgató Zeuszkód="1QKH6T">
+    <Név>sdfgsg</Név>
+    <Lakhely>sdfgsdfg</Lakhely>
+    <SzemélyIgazolványSzám>gfds</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-09T21:41:15.2187772+02:00</SzületésiDátum>
+    <Születésihely>sdfgs</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
+</Hallgatók>

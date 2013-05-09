@@ -54,5 +54,17 @@ namespace Zeusz
             BejelenktkezésKezelő bejelentkezésKezelő = new BejelenktkezésKezelő();
             bejelentkezésKezelő.Beléptetés(txtb_azonosito.Text, txtb_jelszo.Text);
         }
+
+        private void btn_belepes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+            }
+        }
+
+
+
+
     }
 }

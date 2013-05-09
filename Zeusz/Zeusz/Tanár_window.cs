@@ -81,37 +81,43 @@ namespace Zeusz
             catch
             {
             }
+            Refresh();
         }
 
         private void btn_modosit_Click(object sender, EventArgs e)
         {
-            if (lsb_tantargyak.SelectedIndex != -1)
+            try
             {
-                Tantárgy valasztott = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem); ;
-                string nev = txb_nev.Text;
-                string het = cmb_het.SelectedItem.ToString();
-                string terem = txb_terem.Text;
-                int kezdo = (int)nud_kora.Value;
-                int kezdp = (int)nud_kperc.Value;
-                int vego = (int)nud_vora.Value;
-                int vegp = (int)nud_vperc.Value;
-                string nap = cmb_nap.SelectedItem.ToString();
-                string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
-                string segedlet = txb_segedlet.Text;
-                string[] tanár = null;
-                for (int i = 0; i < lsb_tanarok.Items.Count; i++)
+                if (lsb_tantargyak.SelectedIndex != -1)
                 {
-                    tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
+                    Tantárgy valasztott = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
+                    string nev = txb_nev.Text;
+                    string het = cmb_het.SelectedItem.ToString();
+                    string terem = txb_terem.Text;
+                    int kezdo = (int)nud_kora.Value;
+                    int kezdp = (int)nud_kperc.Value;
+                    int vego = (int)nud_vora.Value;
+                    int vegp = (int)nud_vperc.Value;
+                    string nap = cmb_nap.SelectedItem.ToString();
+                    string kovetelmeny = cmb_kovetelmeny.SelectedItem.ToString();
+                    string segedlet = txb_segedlet.Text;
+                    string[] tanár = null;
+                    for (int i = 0; i < lsb_tanarok.Items.Count; i++)
+                    {
+                        tanár[i] = tanárok.Find((Predicate<Tanár>)lsb_tanarok.SelectedItem).Zeuszkód;
+                    }
+                    //tanár[0] = "toma";
+                    Tantárgy tárgy = new Tantárgy(nev, terem, kezdo, kezdp, vego, vegp,
+                        nap, het, tanár, kovetelmeny, segedlet);
+                    //tantárgyMódKérelem kérelem = new tantárgyMódKérelem("toma", "új tárgy",
+                    //    DateTime.Now, false, tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem).ToString(), tárgy);
+                    //kérelemKezelő.Kérelmezés("újTárgy", kérelem);
+                    tárgyak = tantárgyKezelő.tantárgyListázás();
+                    lsb_tantargyak.Invalidate();
                 }
-                //tanár[0] = "toma";
-                Tantárgy tárgy = new Tantárgy(nev, terem, kezdo, kezdp, vego, vegp,
-                    nap, het, tanár, kovetelmeny, segedlet);
-                //tantárgyMódKérelem kérelem = new tantárgyMódKérelem("toma", "új tárgy",
-                //    DateTime.Now, false, tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem).ToString(), tárgy);
-                //kérelemKezelő.Kérelmezés("újTárgy", kérelem);
-                tárgyak = tantárgyKezelő.tantárgyListázás();
-                lsb_tantargyak.Invalidate();
             }
+            catch (InvalidCastException ex) { MessageBox.Show(ex.Message+"\n Jelenleg csak egy tanár tarthat egy tárgyat."); }
+            Refresh();
         }
 
         private void lsb_tantargyak_SelectedIndexChanged(object sender, EventArgs e)
@@ -184,6 +190,7 @@ namespace Zeusz
             }
             catch
             { }
+            Refresh();
         }
 
         private void nud_kora_ValueChanged(object sender, EventArgs e)
@@ -210,5 +217,6 @@ namespace Zeusz
                 nud_vperc.Minimum = nud_kperc.Value;
             }
         }
+
     }
 }

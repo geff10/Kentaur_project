@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vezetők>
+  <Vezető Zeuszkód="123456">
+    <Név>fdasfasdfds</Név>
+    <Lakhely>+fdsafasdf</Lakhely>
+    <SzemélyIgazolványSzám>sdfljkdslak</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:15:02.7039751+02:00</SzületésiDátum>
+    <Születésihely>fdsafdasfdfasfsfsf</Születésihely>
+    <Indoklás>mert</Indoklás>
+  </Vezető>
+</Vezetők>

@@ -37,6 +37,9 @@
             this.lbl_statusz2 = new System.Windows.Forms.Label();
             this.lbl_statusz = new System.Windows.Forms.Label();
             this.grb_adatok = new System.Windows.Forms.GroupBox();
+            this.btn_jelszo = new System.Windows.Forms.Button();
+            this.txb_jelszo = new System.Windows.Forms.TextBox();
+            this.lbl_jelszo = new System.Windows.Forms.Label();
             this.dtp_szulDatum = new System.Windows.Forms.DateTimePicker();
             this.btn_kuldes = new System.Windows.Forms.Button();
             this.lbl_szuldatum = new System.Windows.Forms.Label();
@@ -78,9 +81,6 @@
             this.lbl_felvett = new System.Windows.Forms.Label();
             this.lsb_felveheto = new System.Windows.Forms.ListBox();
             this.lbl_felveheto = new System.Windows.Forms.Label();
-            this.lbl_jelszo = new System.Windows.Forms.Label();
-            this.txb_jelszo = new System.Windows.Forms.TextBox();
-            this.btn_jelszo = new System.Windows.Forms.Button();
             this.tabc_hallgato.SuspendLayout();
             this.SzemélyiAdatokTab.SuspendLayout();
             this.grb_kerelem.SuspendLayout();
@@ -129,6 +129,7 @@
             // 
             // btn_kerelem
             // 
+            this.btn_kerelem.Enabled = false;
             this.btn_kerelem.Location = new System.Drawing.Point(236, 69);
             this.btn_kerelem.Name = "btn_kerelem";
             this.btn_kerelem.Size = new System.Drawing.Size(108, 23);
@@ -202,6 +203,32 @@
             this.grb_adatok.TabIndex = 4;
             this.grb_adatok.TabStop = false;
             this.grb_adatok.Text = "Személyi adatok megváltoztatása";
+            // 
+            // btn_jelszo
+            // 
+            this.btn_jelszo.Location = new System.Drawing.Point(257, 103);
+            this.btn_jelszo.Name = "btn_jelszo";
+            this.btn_jelszo.Size = new System.Drawing.Size(101, 23);
+            this.btn_jelszo.TabIndex = 16;
+            this.btn_jelszo.Text = "Jelszó módosítás";
+            this.btn_jelszo.UseVisualStyleBackColor = true;
+            this.btn_jelszo.Click += new System.EventHandler(this.btn_jelszo_Click);
+            // 
+            // txb_jelszo
+            // 
+            this.txb_jelszo.Location = new System.Drawing.Point(230, 77);
+            this.txb_jelszo.Name = "txb_jelszo";
+            this.txb_jelszo.Size = new System.Drawing.Size(166, 20);
+            this.txb_jelszo.TabIndex = 15;
+            // 
+            // lbl_jelszo
+            // 
+            this.lbl_jelszo.AutoSize = true;
+            this.lbl_jelszo.Location = new System.Drawing.Point(233, 61);
+            this.lbl_jelszo.Name = "lbl_jelszo";
+            this.lbl_jelszo.Size = new System.Drawing.Size(88, 13);
+            this.lbl_jelszo.TabIndex = 14;
+            this.lbl_jelszo.Text = "Jelszó módosítás";
             // 
             // dtp_szulDatum
             // 
@@ -529,6 +556,7 @@
             // 
             // btn_leadas
             // 
+            this.btn_leadas.Enabled = false;
             this.btn_leadas.Location = new System.Drawing.Point(185, 57);
             this.btn_leadas.Name = "btn_leadas";
             this.btn_leadas.Size = new System.Drawing.Size(75, 23);
@@ -539,6 +567,7 @@
             // 
             // btn_felvetel
             // 
+            this.btn_felvetel.Enabled = false;
             this.btn_felvetel.Location = new System.Drawing.Point(185, 28);
             this.btn_felvetel.Name = "btn_felvetel";
             this.btn_felvetel.Size = new System.Drawing.Size(75, 23);
@@ -582,32 +611,6 @@
             this.lbl_felveheto.Size = new System.Drawing.Size(92, 13);
             this.lbl_felveheto.TabIndex = 0;
             this.lbl_felveheto.Text = "Felvehető tárgyak";
-            // 
-            // lbl_jelszo
-            // 
-            this.lbl_jelszo.AutoSize = true;
-            this.lbl_jelszo.Location = new System.Drawing.Point(233, 61);
-            this.lbl_jelszo.Name = "lbl_jelszo";
-            this.lbl_jelszo.Size = new System.Drawing.Size(88, 13);
-            this.lbl_jelszo.TabIndex = 14;
-            this.lbl_jelszo.Text = "Jelszó módosítás";
-            // 
-            // txb_jelszo
-            // 
-            this.txb_jelszo.Location = new System.Drawing.Point(230, 77);
-            this.txb_jelszo.Name = "txb_jelszo";
-            this.txb_jelszo.Size = new System.Drawing.Size(166, 20);
-            this.txb_jelszo.TabIndex = 15;
-            // 
-            // btn_jelszo
-            // 
-            this.btn_jelszo.Location = new System.Drawing.Point(257, 103);
-            this.btn_jelszo.Name = "btn_jelszo";
-            this.btn_jelszo.Size = new System.Drawing.Size(101, 23);
-            this.btn_jelszo.TabIndex = 16;
-            this.btn_jelszo.Text = "Jelszó módosítás";
-            this.btn_jelszo.UseVisualStyleBackColor = true;
-            this.btn_jelszo.Click += new System.EventHandler(this.btn_jelszo_Click);
             // 
             // Hallgató_window
             // 

@@ -1,0 +1,12 @@
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\bin\Release\Zeusz.exe
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\bin\Release\Zeusz.pdb
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\ResolveAssemblyReference.cache
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.Hallgató_window.resources
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.Login_window.resources
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.Properties.Resources.resources
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.Tanár_window.resources
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.Vezető_window.resources
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\GenerateResource.read.1.tlog
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\GenerateResource.write.1.tlog
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.exe
+D:\! SULI\SZTTGyak\Kentaur_project\Zeusz\Zeusz\obj\x86\Release\Zeusz.pdb

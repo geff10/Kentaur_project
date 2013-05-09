@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Hallgatók>
+  <Hallgató Zeuszkód="abcdef">
+    <Név>asdf</Név>
+    <Lakhely>asdf</Lakhely>
+    <SzemélyIgazolványSzám>asdf</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:03:54.7847723+02:00</SzületésiDátum>
+    <Születésihely>asdf</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Indoklás>csak</Indoklás>
+  </Hallgató>
+  <Hallgató Zeuszkód="abcdef">
+    <Név>asdf</Név>
+    <Lakhely>asdf</Lakhely>
+    <SzemélyIgazolványSzám>asdf</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:12:53.0645601+02:00</SzületésiDátum>
+    <Születésihely>asdf</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Indoklás>csak</Indoklás>
+  </Hallgató>
+  <Hallgató Zeuszkód="abcdef">
+    <Név>asdf</Név>
+    <Lakhely>asdf</Lakhely>
+    <SzemélyIgazolványSzám>asdf</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:13:28.1825688+02:00</SzületésiDátum>
+    <Születésihely>asdf</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Indoklás>csak</Indoklás>
+  </Hallgató>
+  <Hallgató Zeuszkód="abcdef">
+    <Név>asdf</Név>
+    <Lakhely>asdf</Lakhely>
+    <SzemélyIgazolványSzám>asdf</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T23:15:02.7039751+02:00</SzületésiDátum>
+    <Születésihely>asdf</Születésihely>
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Indoklás>csak</Indoklás>
+  </Hallgató>
+</Hallgatók>

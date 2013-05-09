@@ -1,39 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Tanárok>
-  <Tanár Zeuszkód="2ZBKET">
-    <Név>Fehér Miklós</Név>
-    <Lakhely>Budapest</Lakhely>
-    <SzemélyIgazolványSzám>31245678</SzemélyIgazolványSzám>
-    <SzületésiDátum>1979-01-01T23:53:56</SzületésiDátum>
-    <Születésihely>Debrecen</Születésihely>
-    <Beosztás>tanár</Beosztás>
-    <Jelszó>passw1234</Jelszó>
+  <Tanár Zeuszkód="@]LT&lt;A">
+    <Név>Tteszt</Név>
+    <Lakhely>Tlakhfdasely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsfdasz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:44:46.9949944+02:00</SzületésiDátum>
+    <Születésihely>Tszüfdsalhely</Születésihely>
+    <Beosztás>portás</Beosztás>
   </Tanár>
-  <Tanár Zeuszkód="K78Z4N">
-    <Név>Nagy Péter</Név>
-    <Lakhely>Budapest</Lakhely>
-    <SzemélyIgazolványSzám>87654388</SzemélyIgazolványSzám>
-    <SzületésiDátum>1953-01-15T23:55:03</SzületésiDátum>
-    <Születésihely>Budapest</Születésihely>
-    <Beosztás>tanár</Beosztás>
-    <Jelszó>passw1234</Jelszó>
+  <Tanár Zeuszkód="7Xy{=">
+    <Név>Ttessszt</Név>
+    <Lakhely>Tlakhely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:45:53.8208166+02:00</SzületésiDátum>
+    <Születésihely>Tszülhely</Születésihely>
+    <Beosztás>sajt</Beosztás>
   </Tanár>
-  <Tanár Zeuszkód="115LZ6">
-    <Név>Kiss Béla</Név>
-    <Lakhely>Miskolc</Lakhely>
-    <SzemélyIgazolványSzám>74568123</SzemélyIgazolványSzám>
-    <SzületésiDátum>1981-01-24T23:56:17</SzületésiDátum>
-    <Születésihely>Miskolc</Születésihely>
-    <Beosztás>tanár</Beosztás>
-    <Jelszó>passw1234</Jelszó>
+  <Tanár Zeuszkód="e5WJ8N">
+    <Név>Tteszt</Név>
+    <Lakhely>Tlakhfdasely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsfdasz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:45:53.8208166+02:00</SzületésiDátum>
+    <Születésihely>Tszüfdsalhely</Születésihely>
+    <Beosztás>portás</Beosztás>
   </Tanár>
-  <Tanár Zeuszkód="tesztt">
-    <Név>TesztT</Név>
-    <Lakhely>kisváros</Lakhely>
-    <SzemélyIgazolványSzám>asdf342</SzemélyIgazolványSzám>
-    <SzületésiDátum>2000-05-19T02:38:15</SzületésiDátum>
-    <Születésihely>kisfalu</Születésihely>
-    <Beosztás>segéd</Beosztás>
-    <Jelszó>passw1234</Jelszó>
+  <Tanár Zeuszkód="i:ZbP@">
+    <Név>Ttessszt</Név>
+    <Lakhely>Tlakhely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
+    <Születésihely>Tszülhely</Születésihely>
+    <Beosztás>sajt</Beosztás>
+  </Tanár>
+  <Tanár Zeuszkód="i:ZbP@">
+    <Név>Tteszt</Név>
+    <Lakhely>Tlakhfdasely</Lakhely>
+    <SzemélyIgazolványSzám>Tszemsfdasz1654</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-01T04:49:58.0887879+02:00</SzületésiDátum>
+    <Születésihely>Tszüfdsalhely</Születésihely>
+    <Beosztás>portás</Beosztás>
   </Tanár>
 </Tanárok>

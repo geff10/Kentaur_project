@@ -38,3 +38,15 @@ c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\bin\Debug\Zeusz.exe
 c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\bin\Debug\Zeusz.pdb
 c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Tanár_window.resources
 c:\Users\Toma\Documents\GitHub\Kentaur_project\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Vezető_window.resources
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.exe
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.pdb
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\bin\Debug\Zeusz.exe
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\bin\Debug\Zeusz.pdb
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Hallgató_window.resources
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Login_window.resources
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Properties.Resources.resources
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Tanár_window.resources
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\Zeusz.Vezető_window.resources
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\! SULI\SZTTGyak\Zeusz\Zeusz\obj\x86\Debug\GenerateResource.write.1.tlog

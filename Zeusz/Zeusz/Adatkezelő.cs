@@ -49,7 +49,8 @@ namespace Zeusz
                 doc.Save("Hallgató.xml");
 
             }
-            catch(Exception ex){throw ex;}
+            catch
+            { }
 
         }
 
@@ -91,7 +92,7 @@ namespace Zeusz
                 //if (siker = false) throw new Exception();
 
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
         }
         public void hallgatóTörlés(string indoklás, Hallgató hallgató)
         {
@@ -141,7 +142,7 @@ namespace Zeusz
                 hallgatók.Remove();
                 doc.Save("Hallgató.xml");
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
 
 
         }
@@ -178,7 +179,7 @@ namespace Zeusz
                     }
                 }
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
         }
 
         public void tanárFelvétel(Tanár újTanár)
@@ -214,7 +215,8 @@ namespace Zeusz
                 doc.Save("Tanár.xml");
 
             }
-            catch (Exception ex) { throw ex; }
+            catch
+            { }
         }
 
 
@@ -253,7 +255,7 @@ namespace Zeusz
                 //if (siker = false) throw new Exception();
 
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
         }
 
 
@@ -302,7 +304,7 @@ namespace Zeusz
                tanárok.Remove();
                doc.Save("Tanár.xml");
            }
-           catch (Exception ex) { throw ex; }
+           catch { }
 
 
        }
@@ -344,7 +346,8 @@ namespace Zeusz
                 doc.Save("Vezető.xml");
 
             }
-            catch (Exception ex) { throw ex; }
+            catch
+            { }
         }
 
 
@@ -384,7 +387,7 @@ namespace Zeusz
                 //if (siker = false) throw new Exception();
 
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
         }
 
 
@@ -432,7 +435,7 @@ namespace Zeusz
                 vezetők.Remove();
                 doc.Save("Vezető.xml");
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
 
 
         }
@@ -524,7 +527,7 @@ namespace Zeusz
                     }
                 }
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
         }
 
         public bool Jelszóellenőrzés(string zeuszkód, string jelszó)
@@ -580,7 +583,7 @@ namespace Zeusz
             }
 
 
-            catch (Exception ex) { throw ex; }
+            catch { }
 
             return false;
         }
@@ -660,7 +663,7 @@ namespace Zeusz
                          );
                 }
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
 
         }
 
@@ -686,7 +689,7 @@ namespace Zeusz
                          (string)p.Element("Beosztás")));
                 }
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
 
         }
         private void VezetőBeolvasás()
@@ -710,7 +713,7 @@ namespace Zeusz
                          (string)p.Element("Születésihely")));
                 }
             }
-            catch (Exception ex) { throw ex; }
+            catch { }
 
         }
 

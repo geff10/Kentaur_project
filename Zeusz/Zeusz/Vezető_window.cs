@@ -89,5 +89,17 @@ namespace Zeusz
                 dtp_szulido.Value = DateTime.Now;
             }
         }
+
+        private void cmb_tipus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmb_tipus.SelectedItem != "Tanár")
+            {
+                groupBox1.Visible = false;
+            }
+            else
+            {
+                groupBox1.Visible = true;
+            }
+        }
     }
 }

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tantárgyak>
+  <Tantárgy tárgykód="F22s7I">
+    <Tárgynév>Földrajz</Tárgynév>
+    <Helyszín>A0</Helyszín>
+    <Kezdés>2013.05.14. 8:00:00</Kezdés>
+    <Vége>2013.05.14. 10:00:00</Vége>
+    <Hét>Páros</Hét>
+    <Oktatók>2ZBKET</Oktatók>
+    <Követelmények>Évközi jegy</Követelmények>
+    <Segédletek>segédlet1</Segédletek>
+  </Tantárgy>
+  <Tantárgy tárgykód="M22s4F">
+    <Tárgynév>Matematika</Tárgynév>
+    <Helyszín>A2</Helyszín>
+    <Kezdés>2013.05.14. 8:00:00</Kezdés>
+    <Vége>2013.05.14. 13:00:00</Vége>
+    <Hét>Páros</Hét>
+    <Oktatók>K78Z4N</Oktatók>
+    <Követelmények>Évközi jegy</Követelmények>
+    <Segédletek>segédlet1</Segédletek>
+  </Tantárgy>
+  <Tantárgy tárgykód="ET2s7K">
+    <Tárgynév>Elméleti Fizika</Tárgynév>
+    <Helyszín>A42</Helyszín>
+    <Kezdés>2013.05.16. 10:00:00</Kezdés>
+    <Vége>2013.05.16. 10:45:00</Vége>
+    <Hét>Páros</Hét>
+    <Oktatók>tesztt</Oktatók>
+    <Követelmények>Aláírás</Követelmények>
+    <Segédletek>-</Segédletek>
+  </Tantárgy>
+</Tantárgyak>

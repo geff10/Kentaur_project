@@ -39,7 +39,18 @@
     <SzemélyIgazolványSzám>asdf423</SzemélyIgazolványSzám>
     <SzületésiDátum>2013-05-01T02:35:50</SzületésiDátum>
     <Születésihely>kis város</Születésihely>
-<FelvettTárgyak />
+    <FelvettTárgyak />
+    <Aktív>true</Aktív>
+    <Végzett>false</Végzett>
+    <Jelszó>passw1234</Jelszó>
+  </Hallgató>
+  <Hallgató Zeuszkód="B0W34P">
+    <Név>sdfgsdf</Név>
+    <Lakhely>gdfsgsd</Lakhely>
+    <SzemélyIgazolványSzám>gfdsg</SzemélyIgazolványSzám>
+    <SzületésiDátum>2013-05-09T21:43:16.6557229+02:00</SzületésiDátum>
+    <Születésihely>gfsdg</Születésihely>
+    <FelvettTárgyak />
     <Aktív>true</Aktív>
     <Végzett>false</Végzett>
     <Jelszó>passw1234</Jelszó>
