@@ -129,31 +129,38 @@ namespace Zeusz
 
         private void lsb_tantargyak_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tantárgy tárgy = null;// = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
-            foreach (Tantárgy t in tárgyak)
+            if (lsb_tantargyak.SelectedIndex != -1)
             {
-                if (t.Tárgykód == lsb_tantargyak.SelectedItem.ToString().Substring(0,6))
+                Tantárgy tárgy = null;// = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
+                foreach (Tantárgy t in tárgyak)
                 {
-                    tárgy = t;
+                    if (t.Tárgykód == lsb_tantargyak.SelectedItem.ToString().Substring(0, 6))
+                    {
+                        tárgy = t;
+                    }
+                }
+                lbl_kod2.Text = tárgy.Tárgykód;
+                txb_nev.Text = tárgy.Tárgynév;
+                cmb_het.SelectedItem = cmb_het.FindString(tárgy.Hét);
+                txb_terem.Text = tárgy.Helyszín;
+                txb_segedlet.Text = tárgy.Segédletek;
+                cmb_kovetelmeny.SelectedItem = cmb_kovetelmeny.FindString(tárgy.Követelmények);
+                cmb_nap.SelectedItem = cmb_nap.FindString(tárgy.Hétnapja);
+                nud_kora.Value = tárgy.KezdésIdőpont.Hour;
+                nud_kperc.Value = tárgy.KezdésIdőpont.Minute;
+                nud_vora.Value = tárgy.VégeIdőpont.Hour;
+                nud_vperc.Value = tárgy.VégeIdőpont.Minute;
+                string[] tanarok = tárgy.Oktatók;
+                //ha másik tárgyat választunk először töröljük a tárgy oktatóinak listáját, majd az aktuálisakat hozzáadjuk
+                lsb_tanarok.Items.Clear();
+                for (int i = 0; i < tanarok.Length; i++)
+                {
+                    lsb_tanarok.Items.Add(tanarok[i]);
                 }
             }
-            lbl_kod2.Text = tárgy.Tárgykód;
-            txb_nev.Text = tárgy.Tárgynév;
-            cmb_het.SelectedItem = cmb_het.FindString(tárgy.Hét);
-            txb_terem.Text = tárgy.Helyszín;
-            txb_segedlet.Text = tárgy.Segédletek;
-            cmb_kovetelmeny.SelectedItem = cmb_kovetelmeny.FindString(tárgy.Követelmények);
-            cmb_nap.SelectedItem = cmb_nap.FindString(tárgy.Hétnapja);
-            nud_kora.Value = tárgy.KezdésIdőpont.Hour;
-            nud_kperc.Value = tárgy.KezdésIdőpont.Minute;
-            nud_vora.Value = tárgy.VégeIdőpont.Hour;
-            nud_vperc.Value = tárgy.VégeIdőpont.Minute;
-            string[] tanarok = tárgy.Oktatók;
-            //ha másik tárgyat választunk először töröljük a tárgy oktatóinak listáját, majd az aktuálisakat hozzáadjuk
-            lsb_tanarok.Items.Clear();
-            for (int i = 0; i < tanarok.Length; i++)
+            else
             {
-                lsb_tanarok.Items.Add(tanarok[i]);
+                lsb_tanarok.Items.Clear();
             }
             lsb_tanarok.Refresh();
         }
@@ -188,18 +195,39 @@ namespace Zeusz
 
         private void btn_targytorol_Click(object sender, EventArgs e)
         {
+            Tantárgy[] törlendőTömb;
             try
             {
                 if (lsb_tantargyak.SelectedIndex != -1)
                 {
-                    Tantárgy törlendő = tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
-                    tantárgyKezelő.Tárgytörlés(törlendő);
-                    tárgyak = tantárgyKezelő.tantárgyListázás();
-                    lsb_tantargyak.Invalidate();
+                    //azt a tárgyat töröljük, aminek a Zeusz kódja az amelyiket kiválasztottuk a listboxból
+                    törlendőTömb =
+                        //(Tantárgy)(tárgyak.Where(x => (x.Tárgykód ==lsb_tantargyak.ToString().Substring(0,6))));
+                        (tárgyak.ToArray());
+                    Tantárgy törlendő;
+                    int i = 0;
+                    while (i < törlendőTömb.Length && törlendőTömb[i].Tárgykód != lsb_tantargyak.ToString().Substring(0, 6))
+                    {
+                        i++;
+                    }
+                    i--;
+
+                    if (i < törlendőTömb.Length)
+                    {
+                        törlendő = törlendőTömb[i];
+                        //MessageBox.Show(törlendő.ToString());
+
+                        //tárgyak.Find((Predicate<Tantárgy>)lsb_tantargyak.SelectedItem);
+                        tantárgyKezelő.Tárgytörlés(törlendő);
+                        tárgyak = tantárgyKezelő.tantárgyListázás();
+                        lsb_tantargyak.Invalidate();
+                    }
                 }
             }
-            catch
-            { }
+            catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message.ToString() + "\n");
+            }
             Refresh();
         }
 
